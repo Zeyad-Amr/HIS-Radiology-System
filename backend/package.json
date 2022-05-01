@@ -1,0 +1,18 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Akwa web for hospital",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "AR",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
