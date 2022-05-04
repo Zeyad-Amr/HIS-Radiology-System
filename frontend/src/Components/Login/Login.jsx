@@ -44,10 +44,15 @@ class Login extends Component {
             <FontAwesomeIcon className='icon' icon={faTree}/>
             </div>
             <Link className="SignUp" to="/SignUp">
-              <button className="btn-signup">SignUp</button>
+              <button className="btn-signup">Creat an account</button>
             </Link>
           </div>
-        </form>
+          <div className='or-block'> 
+        <hr className='lines' size="1"></hr>
+        <div className='or'>Or</div>
+        <hr className='lines' size="1"></hr>
+          </div>
+          </form>
         </div>
          );
   }
