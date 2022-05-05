@@ -1,15 +1,15 @@
-  *:before,
-  *:after{
+*:before,
+*:after{
       padding: 0;
       margin: 0;
       box-sizing: border-box;
-  }
+}
 
- body{
+body{
     background-image: url(./Images/pexels-pixabay-40568.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
   .background .shape{
     height: 200px;
@@ -63,6 +63,7 @@ label{
   border-radius: 5px;
   box-sizing: border-box;
 }
+
 body{
   height: 100vh;
   display: flex;
@@ -73,16 +74,19 @@ body{
   background-size: cover;
   background-position: center;
 }
+
 .container{
   position: relative;
   width: 400px;
   padding: 60px 40px;
 }
+
 header{
   font-size: 40px;
   margin-bottom: 60px;
   font-family: 'Montserrat', sans-serif;
 }
+
 .input-field-L, form .button{
   margin-top: 67px;
   margin-bottom: -27px;
@@ -90,6 +94,7 @@ header{
   height: 50px;
   width: 100%;
 }
+
 .input-field-L input{
   height: 100%;
   width: 100%;
@@ -101,15 +106,18 @@ header{
   margin-top: 10px;
   border-radius: 20px;
 }
+
 input:focus{
   border: 2px solid #1DA1F2;
 }
+
 .input-field-L label, span.show{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 10px;
 }
+
 .input-field-L label{
   left: 10px;
   pointer-events: none;
@@ -119,6 +127,7 @@ input:focus{
   font-weight: 100;
   top: 10px;
 }
+
 span.show{
   right: 20px;
   color: #111;
@@ -129,9 +138,11 @@ span.show{
   visibility: hidden;
   font-family: 'Open Sans', sans-serif;
 }
+
 input:valid ~ span.show{
   visibility: visible;
 }
+
 input:focus ~ label,
 input:valid ~ label{
   transform: translateY(-33px);
@@ -145,6 +156,7 @@ input:valid ~ label{
   border-right: none;
   margin-top: 10px;
 }
+
 form .button{
   margin-top: 30px;
   overflow: hidden;
@@ -260,13 +272,38 @@ form .button{
     width: 100px;
     position: absolute;
     height: 120px;
-    top: 435px;
+    top: 445px;
     left: 144px;
 }
+
+.icon-google:hover{
+  transform: translateY(4px);
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce-2;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes bounce-2 {
+  0%   { transform: scale(1,1)      translateY(0); }
+  10%  { transform: scale(1.1,.9)   translateY(0); }
+  30%  { transform: scale(.9,1.1)   translateY(-17px); }
+  50%  { transform: scale(1.05,.95) translateY(0); }
+  57%  { transform: scale(1,1)      translateY(-7px); }
+  64%  { transform: scale(1,1)      translateY(0); }
+  100% { transform: scale(1,1)      translateY(0); }
+}
+
 
 .icon-login{
   position: absolute;
   margin-top: 18px;
   left: 50%;
   transform: translate(-50%);
+}
+
+
+.bounce-2 {
+  animation-name: bounce-2;
+  animation-timing-function: ease;
 }
