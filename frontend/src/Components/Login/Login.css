@@ -56,21 +56,6 @@ label{
   color: black;
 }
 
-/* input{
-  display: block;
-  height: 50px;
-  width: 100%;
-  background-color: rgba(255,255,255,0.3);
-  border-radius: 20px;
-  padding: 0 10px;
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 300;
-  border-color: #000000af;
-  border-style: solid;
-  border-width: 1px;
-} */
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Noto+Sans|Open+Sans:400,700&display=swap');
 *{
   margin: 0;
@@ -99,7 +84,8 @@ header{
   font-family: 'Montserrat', sans-serif;
 }
 .input-field-L, form .button{
-  margin: 25px 0;
+  margin-top: 67px;
+  margin-bottom: -27px;
   position: relative;
   height: 50px;
   width: 100%;
@@ -221,7 +207,18 @@ form .button{
   border: 1px solid;
   border-color: #000000af;
   background-color: transparent;
-  left: 150px;
+  left: 148px;
+  transition: 0.4s;
+}
+
+.btn-login:hover{
+  background-color:  black;
+  opacity: 0.5;
+  color: rgba(255,255,255,0.9);
+  box-shadow: 0 0 10px rgba(8,7,16,0.6);
+  width: calc(91px + 5px);
+  height: calc(38px + 5px);
+  font-weight: 700;
 }
 
 .or-block{
@@ -231,7 +228,8 @@ form .button{
   display: flex;
   flex-direction: row;
   color: rgb(32, 24, 187, 0.7);
-  left: 87px;
+  left: 83px;
+  margin: 4px;
 }
 
 .lines{
@@ -250,14 +248,25 @@ form .button{
 }
 
 .icon-google {
-    /* background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent; */
-  width: 100px;
+  /*            <---------      to adjust google icon color      ------> */
+ 
+   /* background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+   -webkit-background-clip: text;
+   background-clip: text;
+   color: transparent;
+   -webkit-text-fill-color: transparent; */
+   /* --------------------------------------------------------------------------------------------------------------------------------- */
+
+    width: 100px;
     position: absolute;
     height: 120px;
     top: 435px;
     left: 144px;
+}
+
+.icon-login{
+  position: absolute;
+  margin-top: 18px;
+  left: 50%;
+  transform: translate(-50%);
 }

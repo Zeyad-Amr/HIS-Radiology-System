@@ -1,6 +1,7 @@
 import './Login.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faGoogle} from '@fortawesome/free-brands-svg-icons'
+import {faArrowCircleRight} from '@fortawesome/free-solid-svg-icons'
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 class Login extends Component {
@@ -13,6 +14,7 @@ class Login extends Component {
       </div>
         <form className="form">
               <h3>Login</h3>
+              <FontAwesomeIcon className="icon-login" icon={faArrowCircleRight} size="2x" />
         <div class="input-field-L">
                <input type="text" required></input>
                <label>Username</label>
@@ -31,7 +33,7 @@ class Login extends Component {
           <button className="btn-login">Login</button>
         </Link>
         <div className="icon-google">
-            <FontAwesomeIcon className="icon" icon={faGoogle} size="2x" />
+            <FontAwesomeIcon className="icon" icon={faGoogle} size="2x"/>
         </div>
         <Link className="SignUp" to="/SignUp">
           <button className="btn-signup">Creat an account</button>
