@@ -1,9 +1,8 @@
 
 
-form {
-  margin-top: 200px;
-  height: 1050px;
-  width: 400px;
+.form-signup {
+  height: 671px;
+  width: 50%;
   background-color: rgba(255,255,255,0.13);
   position: absolute;
   transform: translate(-50%,-50%);
@@ -15,17 +14,16 @@ form {
   box-shadow: 0 0 40px rgb(8 7 16 / 60%);
   padding: 50px 35px;
   bottom: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-body {
-  margin-bottom: 20px;
-  background-image: url(./Images/pexels-chokniti-khongchum-2280547.jpg);
-  background-size:auto
-}
-.input-field, form .button{
+
+.input-field, .form-signup .button{
   margin: 25px 0;
   position: relative;
   height: 50px;
-  width: 100%;
+  width: 40%;
 }
 .input-field input{
   height: 100%;
@@ -37,6 +35,7 @@ body {
   transition: .4s;
   margin-top: 10px;
   border-radius: 20px;
+  
 }
 input:focus{
   border: 2px solid #1DA1F2;
@@ -91,18 +90,18 @@ input:valid ~ label{
   border-right: none;
   margin-top: 10px;
 }
-form .button{
+.form-signup .button{
   margin-top: 30px;
   overflow: hidden;
   z-index: 111;
 }
 
-.btn-signup {
+.btn-submit {
   color: black;
   width: 91px;
   height: 38px;
   position: absolute;
-  top: 986px;
+  top: 100px;
   cursor: pointer;
   border-radius: 20px;
   border: 1px solid;
@@ -115,25 +114,11 @@ form .button{
   width: 91px;
   height: 38px;
   position: absolute;
-  top: 986px;
+  top: 100px;
   cursor: pointer;
   border-radius: 20px;
   border: 1px solid;
   border-color: #000000af;
   background-color: transparent;
   left: 151px;
-}
-
-.btn-back {
-  color: black;
-  width: 91px;
-  height: 38px;
-  position: absolute;
-  top: 986px;
-  cursor: pointer;
-  border-radius: 20px;
-  border: 1px solid;
-  border-color: #000000af;
-  background-color: transparent;
-  left: 273px;
 }

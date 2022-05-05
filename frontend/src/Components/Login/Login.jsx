@@ -13,11 +13,11 @@ class Login extends Component {
       </div>
         <form className="form">
               <h3>Login</h3>
-        <div class="input-field">
+        <div class="input-field-L">
                <input type="text" required></input>
                <label>Username</label>
             </div>
-            <div class="input-field">
+            <div class="input-field-L">
                <input class="pswrd" type="password" required></input>
                <span class="show">SHOW</span>
                <label>Password</label>
