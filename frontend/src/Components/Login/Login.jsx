@@ -1,6 +1,6 @@
 import './Login.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTree } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faGoogle} from '@fortawesome/free-brands-svg-icons'
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 class Login extends Component {
@@ -31,7 +31,7 @@ class Login extends Component {
           <button className="btn-login">Login</button>
         </Link>
         <div className="icon-google">
-        {/* <FontAwesomeIcon className='icon' icon={faTree}/> */}
+            <FontAwesomeIcon className="icon" icon={faGoogle} size="2x" />
         </div>
         <Link className="SignUp" to="/SignUp">
           <button className="btn-signup">Creat an account</button>
