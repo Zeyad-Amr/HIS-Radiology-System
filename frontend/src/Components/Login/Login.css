@@ -64,22 +64,15 @@ label{
   box-sizing: border-box;
 }
 
-body{
+/* .container{
   height: 100vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
   font-family: sans-serif;
   justify-content: center;
   background-size: cover;
   background-position: center;
-}
-
-.container{
-  position: relative;
-  width: 400px;
-  padding: 60px 40px;
-}
+  background-image: url(../Login/Images/pexels-pixabay-40568.jpg);
+  background-repeat: no-repeat;
+} */
 
 header{
   font-size: 40px;
@@ -307,3 +300,4 @@ form .button{
   animation-name: bounce-2;
   animation-timing-function: ease;
 }
+

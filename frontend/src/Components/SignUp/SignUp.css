@@ -1,72 +1,87 @@
-
 /* baack icon link -->                   <i class="fa-solid fa-angle-left"></i>           <--  */
+/* 
+.cont-img {
+  background-image: url(../SignUp/Images/pexels-daniel-frank-305565.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
+body {
+  background-image: url(../SignUp/Images/pexels-daniel-frank-305565.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
 
 .form-signup {
-  height: 671px;
-  width: 50%;
-  background-color: rgba(255,255,255,0.13);
+  height: 665px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255,255,255,0.1);
-  box-shadow: 0 0 40px rgb(8 7 16 / 60%);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 50px 35px;
-  bottom: 200px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-.input-field, .form-signup .button{
+.form-signup * {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.input-field,
+.form-signup .button {
   margin: 25px 0;
   position: relative;
   height: 50px;
-  width: 40%;
+  width: 100%;
 }
-.input-field input{
+.input-field input {
   height: 100%;
   width: 100%;
   border: 1px solid silver;
   padding-left: 15px;
   outline: none;
   font-size: 15px;
-  transition: .4s;
+  transition: 0.4s;
   margin-top: 10px;
   border-radius: 20px;
-  
 }
-input:focus{
-  border: 2px solid #1DA1F2;
+input:focus {
+  border: 2px solid #1da1f2;
 }
-.input-field label, span.show{
+.input-field label,
+span.show {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 10px;
 }
-.input-field label{
+.input-field label {
   left: 10px;
   pointer-events: none;
   color: black;
   font-size: 15px;
-  transition: .4s;
+  transition: 0.4s;
   font-weight: 100;
   top: 10px;
 }
 .birthdate {
   left: 10px;
-  pointer-events: none;
   color: black;
   font-size: 15px;
-  transition: .4s;
+  transition: 0.4s;
   font-weight: 100;
   top: 10px;
+  /* color: transparent; */
 }
-span.show{
+span.show {
   right: 20px;
   color: #111;
   font-size: 10px;
@@ -74,13 +89,13 @@ span.show{
   cursor: pointer;
   user-select: none;
   visibility: hidden;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-input:valid ~ span.show{
+input:valid ~ span.show {
   visibility: visible;
 }
 input:focus ~ label,
-input:valid ~ label{
+input:valid ~ label {
   transform: translateY(-33px);
   background: transparent;
   border: none;
@@ -92,35 +107,142 @@ input:valid ~ label{
   border-right: none;
   margin-top: 10px;
 }
-.form-signup .button{
+.form-signup .button {
   margin-top: 30px;
   overflow: hidden;
   z-index: 111;
 }
 
-.btn-submit {
+.btn-next1 {
   color: black;
   width: 91px;
   height: 38px;
   position: absolute;
-  top: 100px;
+  top: 450px;
   cursor: pointer;
   border-radius: 20px;
-  border: 1px solid;
+  border: 3px solid;
   border-color: #000000af;
   background-color: transparent;
-  left: 28px;
+  left: 245px;
+  transition: 0.5s;
 }
-.btn-reset {
+
+.btn-next1:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.btn-back1 {
+  color: black;
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  top: 445px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 60px;
+  transition: 0.5s;
+}
+
+.btn-back1:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.btn-back2 {
+  color: black;
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  top: 599px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 60px;
+  transition: 0.5s;
+}
+
+.btn-back2:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.input-field {
+  margin-top: 40px;
+}
+
+.input-field-cont {
+  margin-top: 70px;
+}
+
+.icon-next {
+  position: absolute;
+  top: 455px;
+  left: 342px;
+}
+
+.icon-back {
+  position: absolute;
+  top: 462px;
+  left: 45px;
+}
+
+.icon-submit {
+  position: absolute;
+  top: 610px;
+  left: 340px;
+  color: #000000af;
+}
+
+.btn-next2 {
   color: black;
   width: 91px;
   height: 38px;
   position: absolute;
-  top: 100px;
+  top: 605px;
   cursor: pointer;
   border-radius: 20px;
-  border: 1px solid;
+  border: 3px solid;
   border-color: #000000af;
   background-color: transparent;
-  left: 151px;
+  left: 245px;
+  transition: 0.5s;
+}
+
+.btn-next2:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.icon-back2 {
+  position: absolute;
+  top: 615px;
+  right: 347px;
+  color: #000000af;
 }
