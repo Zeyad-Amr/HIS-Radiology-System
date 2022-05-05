@@ -7,110 +7,79 @@ class Signup extends Component {
     return (
       <form className="form">
         <div className="text-SignUp">
-          <span>SignUp</span>
+            <h3>SignUp</h3>
         </div>
-        <div className="first-name">
-          <label htmlFor="first">First Name :</label>
-          <input
-            id="first"
-            type="text"
-            placeholder="write your First Name"
-            name="firstname"
-          />
-        </div>
-        <div className="Last-name">
-          <label htmlFor="Last">Last Name :</label>
-          <input
-            id="Last"
-            type="text"
-            placeholder="write your Last Name"
-            name="lastname"
-          />
-        </div>
-        <div className="Username">
-          <label htmlFor="username">UserName</label>
-          <input
-            id="username"
-            type="text"
-            placeholder="write your Username"
-            name="username"
-          />
-        </div>
-        <div className="password">
-          <label htmlFor="pass">Password :</label>
-          <input
-            id="pass"
-            type="password"
-            placeholder="write your password"
-            name="password"
-          />
-        </div>
-        <div className="confirm-password">
-          <label htmlFor="confirm-pass">Confirm Password :</label>
-          <input
-            id="confirm-pass"
-            type="password"
-            placeholder="Confirm your password"
-            name="confirm-password"
-          />
-        </div>
-        <div className="email">
-          <label htmlFor="email">Email :</label>
-          <input
-            id="email"
-            type="email"
-            placeholder="write your Email"
-            name="Email"
-          />
-        </div>
-        <div className="National-ID">
-          <label htmlFor="N-ID">National-ID :</label>
-          <input
-            id="N-ID"
-            type="text"
-            placeholder="write your National ID"
-            name="National-ID"
-          />
-        </div>
-        <div className="phone">
-          <label htmlFor="phone">Phone :</label>
-          <input
-            id="phone"
-            type="text"
-            placeholder="write your phone"
-            name="phone"
-          />
-        </div>
-        <div className="address">
-          <label htmlFor="address">Address :</label>
-          <input
-            id="address"
-            type="text"
-            placeholder="write your address"
-            name="address"
-          />
-        </div>
-        <div className="birthdate">
-          <label htmlFor="birthdate">Birthdate :</label>
-          <input id="birthdate" type="date" name="birthdate" />
-        </div>
-        <div>
-          <label htmlFor="gender">Gender :</label>
-          <input list="gender_" id="gender" name="gender" />
-          <datalist id="gender_">
-            <option value="male"></option>
-            <option value="female"></option>
-          </datalist>
-        </div>
-        <div className="buttons-signup">
-          <Link to="/submit">
-            <input type="submit" value="Submit" />
+        <div class="input-field">
+               <input type="text" required></input>
+               <label>First Name</label>
+            </div>
+            <div class="input-field">
+               <input type="text" required></input>
+               <label>Last Name</label>
+            </div>
+           <div class="input-field">
+               <input type="text" required></input>
+               <label>Username</label>
+            </div>
+            <div class="input-field">
+               <input class="pswrd" type="password" required></input>
+               <span class="show">SHOW</span>
+               <label>Password</label>
+            </div>
+            <div class="input-field">
+               <input class="pswrd" type="password" required></input>
+               <span class="show">SHOW</span>
+               <label>Confirm Password</label>
+            </div>
+            <div class="input-field">
+               <input type="text" required></input>
+               <label>Email</label>
+            </div>
+            <div class="input-field">
+               <input type="text" required></input>
+               <label>National ID</label>
+            </div>
+            <div class="input-field">
+               <input type="text" required></input>
+               <label>Phone number</label>
+            </div>
+            <div class="input-field">
+               <input type="text" required></input>
+               <label>Address</label>
+            </div>
+            <div className="birthdate">
+                <label htmlFor="birthdate">Birthdate :</label>
+                <input id="birthdate" type="date" name="birthdate" />
+           </div>
+            <div class="input-field">
+               <input list="gender_" id="gender" name="gender" required></input>
+               <datalist id="gender_">
+               <option value="Male"></option>
+               <option value="Female"></option>
+               </datalist>
+               <label>Gender</label>
+            </div>
+
+            <div className="btns-signup">
+          <Link className="save" to="/submit">
+            <button className="btn-signup">Submit</button>
           </Link>
-          <input type="reset" value="Reset" />
-          <Link to="/">
-            <button>back</button>
+           </div>
+
+           <div className="btns-reset">
+          <Link className="save" to="/submit">
+            <button className="btn-reset">Reset</button>
           </Link>
-        </div>
+           </div>
+
+           <div className="btns-back">
+          <Link className="save" to="/submit">
+            <button className="btn-back">Back</button>
+          </Link>
+           </div>
+
+
+
       </form>
     );
   }

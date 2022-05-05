@@ -1,0 +1,139 @@
+
+
+form {
+  margin-top: 200px;
+  height: 1050px;
+  width: 400px;
+  background-color: rgba(255,255,255,0.13);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgb(8 7 16 / 60%);
+  padding: 50px 35px;
+  bottom: 200px;
+}
+body {
+  margin-bottom: 20px;
+  background-image: url(./Images/pexels-pixabay-40568.jpg);
+  background-size:auto
+}
+.input-field, form .button{
+  margin: 25px 0;
+  position: relative;
+  height: 50px;
+  width: 100%;
+}
+.input-field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid silver;
+  padding-left: 15px;
+  outline: none;
+  font-size: 15px;
+  transition: .4s;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+input:focus{
+  border: 2px solid #1DA1F2;
+}
+.input-field label, span.show{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+}
+.input-field label{
+  left: 10px;
+  pointer-events: none;
+  color: black;
+  font-size: 15px;
+  transition: .4s;
+  font-weight: 100;
+  top: 10px;
+}
+.birthdate {
+  left: 10px;
+  pointer-events: none;
+  color: black;
+  font-size: 15px;
+  transition: .4s;
+  font-weight: 100;
+  top: 10px;
+}
+span.show{
+  right: 20px;
+  color: #111;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  visibility: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+input:valid ~ span.show{
+  visibility: visible;
+}
+input:focus ~ label,
+input:valid ~ label{
+  transform: translateY(-33px);
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  border-width: 1px;
+  border-bottom: none;
+  color: black;
+  border-left: none;
+  border-right: none;
+  margin-top: 10px;
+}
+form .button{
+  margin-top: 30px;
+  overflow: hidden;
+  z-index: 111;
+}
+
+.btn-signup {
+  color: black;
+  width: 91px;
+  height: 38px;
+  position: absolute;
+  top: 986px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 28px;
+}
+.btn-reset {
+  color: black;
+  width: 91px;
+  height: 38px;
+  position: absolute;
+  top: 986px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 151px;
+}
+
+.btn-back {
+  color: black;
+  width: 91px;
+  height: 38px;
+  position: absolute;
+  top: 986px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 273px;
+}
