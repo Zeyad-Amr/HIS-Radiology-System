@@ -12,7 +12,7 @@ class Next2 extends Component {
   render() {
     return (
       <div className="cont-img">
-        <form className="form-signup">
+        <form className="form-signup-next2">
         <div className="text-SignUp">
           <h3>SignUp</h3>
           <FontAwesomeIcon className="icon-login" icon={faArrowRightToBracket} size="2x" />

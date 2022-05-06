@@ -5,11 +5,6 @@
       box-sizing: border-box;
 }
 
-body{
-    background-image: url(./Images/pexels-pixabay-40568.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
   .background .shape{
     height: 200px;
@@ -64,14 +59,32 @@ label{
   box-sizing: border-box;
 }
 
-/* .container{
-  height: 100vh;
-  font-family: sans-serif;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
+.container{
   background-image: url(../Login/Images/pexels-pixabay-40568.jpg);
   background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+/* 
+@media (min-width: 1200px) {
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin: 0;
+    width: 100%;
+  }
 } */
 
 header{
