@@ -1,51 +1,21 @@
 import "./SignUp.css";
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from "react";
+import Next1 from "../Next_1/Next1";
+import Next2 from "../Next_2/Next2";
+import Next3 from "../Next_3/Next3";
+import Next4 from "../Next_4/Next4";
 
-class Signup extends Component {
-  render() {
-    return (
-      <div className="cont-img">
-        <form className="form-signup">
-          <div className="text-SignUp">
-            <h3>SignUp</h3>
-            <FontAwesomeIcon
-              className="icon-login"
-              icon={faArrowRightToBracket}
-              size="2x"
-            />
-          </div>
-          <div className="input-field-cont">
-            <div class="input-field">
-              <input type="text" required></input>
-              <label>First Name</label>
-            </div>
-            <div class="input-field">
-              <input type="text" required></input>
-              <label>Last Name</label>
-            </div>
-            <div class="input-field">
-              <input type="text" required></input>
-              <label>Username</label>
-            </div>
-          </div>
-          <div className="btns-signup">
-            <Link className="next" to="/next1">
-              <button className="btn-next1">Next</button>
-            </Link>
-            <FontAwesomeIcon
-              className="icon-next"
-              icon={faAngleRight}
-              size="2x"
-            />
-          </div>
-        </form>
-      </div>
-    );
-  }
+function Signup() {
+  const [step, setStep] = useState(1);
+
+  return (
+    <form className="form-signup">
+      <Next1 setStep={setStep} step={step} />
+      <Next2 setStep={setStep} step={step} />
+      <Next3 setStep={setStep} step={step} />
+      <Next4 setStep={setStep} step={step} />
+    </form>
+  );
 }
 
 export default Signup;

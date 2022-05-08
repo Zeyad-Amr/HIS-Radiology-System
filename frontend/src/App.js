@@ -3,10 +3,10 @@ import Login from "./Components/Login/Login";
 import Signup from './Components/SignUp/Signup';
 import Forgetpass from "./Components/ForgetPass/ForgetPass";
 import Submit from './Components/Submit/Submit';
+import Home from './Components/Home/Home';
 import './Components/SignUp/SignUp.css';
 import "./App.css";
-import Next1 from './Components/Next_1/Next1';
-import Next2 from './Components/Next_2/Next2';
+
 
 function App() {
   return (
@@ -17,8 +17,7 @@ function App() {
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/forgetpass" element={<Forgetpass />} />
           <Route path="/submit" element={<Submit />} />
-          <Route path="/next1" element={<Next1 />} />
-          <Route path="/next2" element={<Next2 />} />
+          <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
     </div>
