@@ -46,6 +46,18 @@ body {
   border: none;
 }
 
+.gender-selection {
+  height: 100%;
+  width: 100%;
+  border: 1px solid silver;
+  padding-left: 15px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
 .input-field,
 .form-signup .button {
   margin: 25px 0;
@@ -206,7 +218,9 @@ input:valid ~ label {
 .input-field-cont {
   margin-top: 70px;
 }
-
+.input-field-cont-1 {
+  margin-top: -7px;
+}
 .icon-next {
   position: absolute;
   top: 455px;

@@ -22,12 +22,12 @@ function Next4({ step, setStep }) {
       </div>
       <div className="input-field-cont">
       <div class="input-field">
-        <input list="gender_" id="gender" name="gender" required></input>
-        <datalist id="gender_">
-          <option value="Male"></option>
-          <option value="Female"></option>
-        </datalist>
-        <label>Gender</label>
+      <label className="input-field-cont-1">Gender</label>
+    <select class="gender-selection">
+      <option value="Choose Gender">Choose Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
       </div>
       <div class="input-field">
           <input type="text" required></input>
