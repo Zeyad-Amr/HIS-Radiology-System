@@ -14,7 +14,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("/login", JSON.stringify({ user, pwd }));
+    const response = await axios.post("/login", { user, pwd });
     // localStorage.setItem("token", response.data.token)
     console.log(response)
   };
