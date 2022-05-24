@@ -3,7 +3,6 @@ const db = require("./mysql-con");
 const cors = require("cors");
 const app = express();
 
-const PORT = 4000;
 
 //parse the body of the request
 app.use(express.urlencoded({ extended: true }));
@@ -24,6 +23,11 @@ db.connect((err) => {
   console.log("***connected to database***");
 });
 
+
+const PORT = 4000;
+const FRONT_HOST = 3000;
+
 app.listen(PORT, () => {
   console.log(`listening to ${PORT}`);
+  console.log(`Frontend Host: ${FRONT_HOST}`);
 });
