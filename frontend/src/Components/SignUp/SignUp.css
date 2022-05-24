@@ -1,0 +1,273 @@
+/* baack icon link -->                   <i class="fa-solid fa-angle-left"></i>           <--  */
+/* 
+.cont-img {
+  background-image: url(../SignUp/Images/pexels-daniel-frank-305565.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+body {
+  background-image: url(../SignUp/Images/pexels-daniel-frank-305565.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.next2 {
+  height: 715px;
+}
+
+.form-signup, .form-signup-next2 {
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+}
+
+.form-signup {
+  height: 515px;
+}
+
+.form-signup-next2 {
+  height: 665px;
+}
+
+.form-signup * {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+.gender-selection {
+  height: 100%;
+  width: 100%;
+  border: 1px solid silver;
+  padding-left: 15px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.input-field,
+.form-signup .button {
+  margin: 25px 0;
+  position: relative;
+  height: 50px;
+  width: 100%;
+}
+.input-field input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid silver;
+  padding-left: 15px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+input:focus {
+  border: 2px solid #1da1f2;
+}
+.input-field label,
+span.show {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+}
+.input-field label {
+  left: 10px;
+  pointer-events: none;
+  color: black;
+  font-size: 15px;
+  transition: 0.4s;
+  font-weight: 100;
+  top: 10px;
+}
+.birthdate {
+  left: 10px;
+  color: black;
+  font-size: 15px;
+  transition: 0.4s;
+  font-weight: 100;
+  top: 10px;
+  /* color: transparent; */
+}
+span.show {
+  right: 20px;
+  color: #111;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  visibility: hidden;
+  font-family: "Open Sans", sans-serif;
+}
+input:valid ~ span.show {
+  visibility: visible;
+}
+input:focus ~ label,
+input:valid ~ label {
+  transform: translateY(-33px);
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  border-width: 1px;
+  border-bottom: none;
+  color: black;
+  border-left: none;
+  border-right: none;
+  margin-top: 10px;
+}
+.form-signup .button {
+  margin-top: 30px;
+  overflow: hidden;
+  z-index: 111;
+}
+
+.btn-next1 {
+  color: black;
+  width: 91px;
+  height: 38px;
+  position: absolute;
+  top: 450px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 3px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 245px;
+  transition: 0.5s;
+}
+
+.btn-next1:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.btn-back1 {
+  color: black;
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  top: 445px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 60px;
+  transition: 0.5s;
+}
+
+.btn-back1:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.btn-back2 {
+  color: black;
+  width: 47px;
+  height: 47px;
+  position: absolute;
+  top: 599px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 60px;
+  transition: 0.5s;
+}
+
+.btn-back2:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.input-field {
+  margin-top: 40px;
+}
+
+.input-field-cont {
+  margin-top: 70px;
+}
+.input-field-cont-1 {
+  margin-top: -7px;
+}
+.icon-next {
+  position: absolute;
+  top: 455px;
+  left: 342px;
+}
+
+.icon-back {
+  position: absolute;
+  top: 462px;
+  left: 45px;
+}
+
+.icon-submit {
+  position: absolute;
+  top: 610px;
+  left: 340px;
+  color: #000000af;
+}
+
+.btn-next2 {
+  color: black;
+  width: 91px;
+  height: 38px;
+  position: absolute;
+  top: 605px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 3px solid;
+  border-color: #000000af;
+  background-color: transparent;
+  left: 245px;
+  transition: 0.5s;
+}
+
+.btn-next2:hover {
+  background-color: black;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(8, 7, 16, 0.6);
+  /* width: calc(91px + 5px);
+  height: calc(38px + 5px); */
+  font-weight: 700;
+}
+
+.icon-back2 {
+  position: absolute;
+  top: 615px;
+  right: 347px;
+  color: #000000af;
+}
