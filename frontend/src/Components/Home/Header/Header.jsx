@@ -3,7 +3,7 @@ import "./Header"
 
 function Header() {
   return (
-    <div>Header</div>
+    <div className='btn btn-primary'>header</div>
   )
 }
 
