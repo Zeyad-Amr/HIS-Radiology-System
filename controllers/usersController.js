@@ -47,7 +47,22 @@ const createToken = (id) => {
 };
 
 module.exports = {
-  registerUsers: async (req, res) => {
+  //get all users
+  getAllUsers: (req,res) => {
+    try {
+        db.query(`SELECT * FROM user`,(err,result) => {
+          if (err) {
+            return res.status(404).json({message: "No users found"})
+          }
+          res.status(200).json(result)
+        })
+    } catch (err) {
+    res.status(500).json(err);
+    }
+  },
+
+  //create a new patient user
+  createUser: async (req, res) => {
     try {
       // const result = validate(req.body);
       // if (result.error)
@@ -67,23 +82,23 @@ module.exports = {
       const userPassword = await bcrypt.hash(result.value.password, salt);
       console.log(userPassword);
 
-      data = [
-        result.value.username,
-        result.value.email,
-        userPassword,
-        result.value.fname,
-        result.value.lname,
-        result.value.bdate,
-        result.value.gender,
-        result.value.phone,
-        result.value.SSN,
-        result.value.address,
-        result.value.role,
-        result.value.depID,
-      ];
+      const {username, email, fname, lname, bdate, gender,phone,SSN,address} = result.value
 
-      sqlStatment = `INSERT INTO user(username,email,password,fname,lname,bdate,gender,phone,SSN,address,role,depID) 
-        VALUES (?,?,?,?,?,?,?,?,?,?,IFNULL(?,'patient'),IFNULL(?,0))`;
+      data = {
+        username,
+        email,
+        password: userPassword,
+        fname,
+        lname,
+        bdate,
+        gender,
+        phone,
+        SSN,
+        address,
+        role: 'patient',
+    }
+
+      sqlStatment = `INSERT INTO user SET ?`;
       db.query(sqlStatment, data, (err, result) => {
         if (err) {
           return res.status(400).json(err);
