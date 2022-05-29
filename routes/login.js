@@ -3,8 +3,7 @@ const bcrypt = require("bcrypt");
 const db = require("../mysql-con");
 const jwt = require("jsonwebtoken");
 
-const createToken = (id) => {
-  const payload = { id };
+const createToken = (payload) => {
   const token = jwt.sign(payload, "temporary secret for testing");
   return token;
 };
@@ -32,8 +31,10 @@ router.post("/login", (req, res) => {
             .status(400)
             .json({ message: "Invalid username or password" });
         }
-        const token = createToken(user.id);
+
+        const token = createToken({id: user.id,role: user.role });
         res.header("auth-token", token);
+        console.log(token);
         res.status(200).send(user);
       }
     );
