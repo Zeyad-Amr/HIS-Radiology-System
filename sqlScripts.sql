@@ -29,3 +29,11 @@ CREATE TABLE `akwa-his`.`emp` (
     REFERENCES `akwa-his`.`dep` (`id`)
     ON DELETE SET NULL
     ON UPDATE CASCADE);
+
+-- Create device 
+CREATE TABLE `akwa-his`.`device` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(100) NOT NULL,
+  `arrivial_date` TIMESTAMP NULL,
+  `installation_date` TIMESTAMP NULL,
+  PRIMARY KEY (`id`));
