@@ -1,0 +1,408 @@
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }
+
+
+:root{
+    --blue:#0e087c;
+    --black:#444;
+    --light-color:#777;
+    --box-shadow:.5rem .5rem 0 rgba(22, 160, 133, .2);
+    --text-shadow:.4rem .4rem 0 rgba(0, 0, 0, .2);
+    --border:.1rem solid var(--blue);
+}
+
+*{
+    margin:0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-transform: none;
+    transition: all .2s ease-out;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+
+.header .navbar {
+    margin-bottom: 1px;
+}
+
+.header .navbar a{
+    font-size: 2rem;
+    color: var(--light-color);
+    margin-left: 2rem;
+}
+
+.header .navbar a:hover{
+    color: var(--blue);
+    text-decoration: wavy;
+    transition: 0.5s;
+}
+
+.header .image img{
+    padding-left: 0px;
+    margin-left: -200px;
+    width: 120px;
+}
+
+.header .image a{
+    font-size: 2.5rem;
+    color: var(--black);
+    position: relative;
+    padding-left: 0px;
+    bottom: 2px;
+    font-weight: bold;
+    margin-left: -65px;
+}
+
+.header .image{
+    flex:1 1 45rem;
+}
+
+.header{
+    padding:1rem 9%;
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+}
+
+#menu-btn{
+    font-size: 2.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--blue);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* media queries  */
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+    section{
+        padding:2rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: initial;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:115%; right: 2rem;
+        border-radius: .5rem;
+        box-shadow: var(--box-shadow);
+        width: 30rem;
+        border: var(--border);
+        background: #fff;
+        transform: scale(0);
+        opacity: 0;
+        transform-origin: top right;
+        transition: none;
+    }
+
+    .header .navbar.active{
+        transform: scale(1);
+        opacity: 1;
+        transition: .2s ease-out;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        display: block;
+        margin:2.5rem;
+    }
+
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+section{
+    padding:3rem 4%;
+    position: relative;
+}
+
+section:nth-child(even){
+    background: #f5f5f5;
+}
+
+/* home section */
+.home{
+    display: flex;
+    align-items:center ;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding-top: 18rem;
+}
+
+.home span1{
+    text-transform: uppercase;
+    color:var(--blue);
+}
+
+.home .image{
+    flex:1 1 45rem;
+}
+
+.home .image img{
+    width: 100%;
+}
+
+.home .content{
+    flex:1 1 45rem;
+}
+
+.home .content h2{
+    font-size: 2.5rem;
+    color:var(--black);
+    line-height: 1.5rem;
+    text-shadow: var(--text-shadow);
+    /* text-align: left; */
+    margin-top: -20px;
+}
+
+.home .content h3{
+    font-size: 6.4rem;
+    color:var(--black);
+    line-height: 1.8;
+    text-shadow: var(--text-shadow);
+}
+
+/* about section */
+.about{
+    display: flex;
+    align-items:center;
+    flex-wrap: wrap;
+    gap:0rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.about span1{
+    text-transform: uppercase;
+    color:var(--blue);
+}
+
+.about .image{
+    flex:1 1 45rem;
+}
+
+.about .image img{
+    width: 100%;
+}
+
+.about .content{
+    flex:1 1 45rem;
+}
+
+.about .content h2{
+    font-size: 2.5rem;
+    color:var(--black);
+    line-height: 1.5rem;
+    text-shadow: var(--text-shadow);
+    margin-top: -20px;
+}
+
+.about .content h3{
+    font-size: 6.4rem;
+    color:var(--black);
+    line-height: 1.8;
+    text-shadow: var(--text-shadow);
+}
+
+.about .content h1{
+    font-size: small;
+}
+
+.records-boxes{
+    display: flex;
+    gap: 1.1rem;
+}
+
+.records-boxes .box{
+    flex: 1 1 45rem;
+    align-items: center;
+    border: var(--border);
+    margin: 3px;
+    padding: 1%;
+    box-shadow: var(--box-shadow);
+    background-color: var(--light-color);
+    background: #f5f5f5;
+}
+
+.records-boxes .box span{
+    display: block;
+    text-align: center;
+    margin: 0%;
+}
+
+.records-boxes .box .num{
+    color: var(--blue);
+    display: block;
+    text-align: center;
+    margin: 0%;
+}
+
+.departments span1{
+    text-transform: uppercase;
+    color:var(--blue);
+}
+
+.departments .content h3{
+    font-size: 6.4rem;
+    color:var(--black);
+    line-height: 1.8;
+    text-shadow: var(--text-shadow);
+    margin-top: 7px
+}
+
+
+
+
+
+
+/* the caaaaaaard */
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+
+.container-dep{
+    display:flex ;
+    flex: 1 1 4rem;
+    gap: 10%;
+    justify-content: center;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 32%;
+    height: 480px;
+    border: var(--border);
+    perspective: 1000px;   /*Remove this if you don't want the 3D effect */
+    box-shadow: var(--box-shadow);
+}
+
+@media (max-width:510px){
+
+    .flip-card{
+        width: 40%;
+        height:300px;
+    }
+
+}
+  
+  /* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+  /* radiology card */
+  /* Position the front and back side */
+.flip-card-front-radiology, .flip-card-back-radiology {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+  
+  /* Style the front side (fallback if image is missing) */
+.flip-card-front-radiology {
+    background-color: f5f5f5;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back-radiology {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+
+/* lab card */
+.flip-card-front-lab, .flip-card-back-lab {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front-lab {
+    background-color: white;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back-lab {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-front-radiology img{
+    width:100%;
+    height:480px;
+    opacity: 0.8
+}
+
+@media (max-width:510px){
+
+    .flip-card-front-radiology img{
+        height:300px;
+    }
+
+}
