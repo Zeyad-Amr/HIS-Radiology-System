@@ -1,8 +1,5 @@
 const db = require("../mysql-con");
 const Joi = require("joi");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const passwordComplexity = require("joi-password-complexity");
 
 function validate(user) {
   const passwordValidations = {
@@ -43,68 +40,27 @@ function validate(user) {
 module.exports = {
   createEmp: async (req, res) => {
     try {
-      // const result = validate(req.body);
-      // if (result.error)
-      //   return res
-      //     .status(400)
-      //     .send({ message: result.error.details[0].message });
-
-      const value = req.body;
-      const result = { value };
-
-      if (req.body.password !== req.body.confirm_password) {
-        return res.status(400).send({ message: "Password didn't match" });
-      }
-
-      //encrypt password
-      const salt = await bcrypt.genSalt(10);
-      const userPassword = await bcrypt.hash(result.value.password, salt);
-      console.log(userPassword);
-
-      const {username, email, fname, lname, bdate, gender,phone,SSN,address,role} = result.value
-
-      data = {
-        username,
-        email,
-        password: userPassword,
-        fname,
-        lname,
-        bdate,
-        gender,
-        phone,
-        SSN,
-        address,
-        role,
+      const {salary, degree, shift,dep_id,user_id} = req.body
+      const empData = {
+        salary,
+        degree,
+        shift,
+        user_id,
+        dep_id
     }
-
-      sqlStatment = `INSERT INTO user SET ?`;
-      db.query(sqlStatment, data, (err, result) => {
-        if (err) {
-          return res.status(400).json(err);
-        }
-        const user_id = result.insertId.toString()
-        const {salary, degree, shift,dep_id} = req.body
-        const empData = {
-          salary,
-          degree,
-          shift,
-          user_id,
-          dep_id
-      }
-        db.query(
-          `INSERT INTO emp SET ?`,
-          empData,
-          (err, result) => {
-            if (err) {
-              return res.status(400).send(err);
-            }
-            console.log(result);
-            
-            res.status(200).json(result);
+      db.query(
+        `INSERT INTO emp SET ?`,
+        empData,
+        (err, result) => {
+          if (err) {
+            return res.status(400).send(err);
           }
-        );
-        // res.status(200).json(result);
-      });
+          console.log(result);
+          
+          res.status(200).json(result);
+        }
+      );
+       
     } catch (err) {
       console.log(err);
       res.status(500).json({ err });

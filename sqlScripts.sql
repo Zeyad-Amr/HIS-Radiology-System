@@ -8,26 +8,25 @@ CREATE TABLE `akwa-his`.`dep` (
 
 -- create empolyee table
 CREATE TABLE `akwa-his`.`emp` (
-  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` INT NOT NULL,
   `salary` INT NOT NULL,
   `degree` VARCHAR(255) NULL,
   `shift` TIME NULL,
   `holidays` DATE NULL,
   `create_time` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `user_id` INT NULL,
   `dep_id` INT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`user_id`),
   INDEX `id_idx` (`user_id` ASC) VISIBLE,
   INDEX `depID_idx` (`dep_id` ASC) VISIBLE,
   CONSTRAINT `userID`
     FOREIGN KEY (`user_id`)
     REFERENCES `akwa-his`.`user` (`id`)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
     ON UPDATE CASCADE,
   CONSTRAINT `depID`
     FOREIGN KEY (`dep_id`)
     REFERENCES `akwa-his`.`dep` (`id`)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
     ON UPDATE CASCADE);
 
 -- Create device 

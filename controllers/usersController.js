@@ -121,4 +121,55 @@ module.exports = {
       res.status(500).json({ err });
     }
   },
+
+  //edit user
+  editUser: (req,res) => {
+    try {
+      const id = req.params.id
+      db.query(`SELECT * FROM user WHERE id = ?`,id,(err,result) => {
+        if (err) {
+          return res.status(400).send(err)
+        }
+        console.log(result);
+        if (result.length === 0) {
+          return res.status(404).send("user not found")
+        }
+        
+
+        db.query(`UPDATE user SET ? WHERE id = ?`,[req.body,id], (err,result) => {
+          if (err) {
+            return res.status(400).send(err)
+          }
+          res.sendStatus(200)
+        })
+      })
+    } catch (err) {
+    res.status(500).json(err);
+    }
+  },
+
+  //delete user
+  deleteUser: (req,res) => {
+    try {
+      const id = req.params.id
+      db.query(`SELECT * FROM user WHERE id = ?`,id,(err,result) => {
+        if (err) {
+          return res.status(400).send(err)
+        }
+        console.log(result);
+        if (result.length === 0) {
+          return res.status(404).send("user not found")
+        }
+
+        db.query(`DELETE FROM user WHERE id = ?`,id, (err,result) => {
+          if (err) {
+            return res.status(400).send(err)
+          }
+          res.sendStatus(200)
+        })
+      })
+    } catch (err) {
+    res.status(500).json(err);
+    }
+  }
 };
