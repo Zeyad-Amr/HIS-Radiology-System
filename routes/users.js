@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const auth = require('../middlewares/auth')
-const admin = require('../middlewares/admin')
+const auth = require('../middlewares/authn')
+const authz = require('../middlewares/authz')
 const usersController = require("../controllers/usersController");
 
 //get users
