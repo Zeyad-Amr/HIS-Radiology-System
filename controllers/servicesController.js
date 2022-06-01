@@ -3,10 +3,10 @@ const db = require("../mysql-con");
 
 
 module.exports = {
-    createDep: (req,res) => {
+    createservice: (req,res) => {
          
-        const sqlStatment = `INSERT INTO dep(name) VALUES (?)`
-        db.query(sqlStatment, req.body.name, (err,result) => {
+        const sqlStatment = `INSERT INTO services SET ?`
+        db.query(sqlStatment, req.body, (err,result) => {
             if (err) {
                 return res.status(400).json(err);
             }
