@@ -9,6 +9,7 @@ import AboutUs from './Components/About_us/AboutUs';
 import ContactUs from './Components/Contact_us/ContactUs';
 import Departments from './Components/Departments/Departments';
 import Services from './Components/Services_web/Services';
+import ErrorPage from './Components/404_page/ErrorPage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/404" element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>
