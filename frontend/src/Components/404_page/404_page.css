@@ -12,8 +12,14 @@
     font-size: initial;
     font-family: cursive;
     border-radius: 5px;
+    color:rgb(0, 125, 254);
+    background-color: white;
+    border: .1rem solid #0e087c;;
+}
+
+.Home:hover{
+    background-color:rgb(0, 125, 254);
     color: white;
-    background-color: rgb(0, 170, 183);
 }
 
 img {
