@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 
 // for images
-import logo from './images/logo.png';
-import home from './images/home.png';
+import logo from '../images/logo.png';
+import home from '../images/home.png';
 
 function Header() {
   
@@ -52,7 +52,7 @@ function Header() {
  {/* <div id="menu-btn" class="fas fa-bars"></div>*/}
 
 </header>
-<section className="home" id="home" >
+<section className="home" id="home-even" >
 
   <div className="content" data-aos="fade-left">
       <h3>HOSPITAL<span1> NAME </span1> </h3>

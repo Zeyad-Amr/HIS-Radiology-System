@@ -1,11 +1,11 @@
 import React from 'react'
-import radiology from '../Header/images/radiology.jpg';
+import radiology from '../images/radiology.jpg';
 
 
 function Departments() {
   return (
     <div>
-    <section className="departments" id="home" >
+    <section className="departments" id="dep-even" >
 
 <div className="content" data-aos="fade-left">
       <h3> OUR <span1> DEPARTMENTS </span1> </h3>

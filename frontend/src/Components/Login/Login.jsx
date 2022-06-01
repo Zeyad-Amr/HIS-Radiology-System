@@ -65,7 +65,7 @@ function Login() {
         <div className="btns-login">
             <button className="btn-login">Login</button>
           <div className="icon-google">
-            <FontAwesomeIcon className="icon" icon={faGoogle} size="2x" />
+            <FontAwesomeIcon className="icon" icon={faGoogle} size="2x"/>
           </div>
           <Link className="SignUp" to="/SignUp">
             <button className="btn-signup">Creat an account</button>
