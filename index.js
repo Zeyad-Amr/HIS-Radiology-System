@@ -18,7 +18,7 @@ app.use("/api", require("./routes/login"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/departement"));
-
+app.use("/api", require("./routes/device"));
 //connect to database
 db.connect((err) => {
   if (err) return console.log(err);
