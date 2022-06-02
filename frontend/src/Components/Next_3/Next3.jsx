@@ -1,11 +1,11 @@
 import "../SignUp/SignUp.css";
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+// import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+// import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-function Next3({ step, setStep }) {
+function Next3({ step, setStep ,setNationalId ,setCountry ,setAddress ,SSN ,country ,address}) {
   return (
     <div
       className="cont-img"
@@ -15,15 +15,15 @@ function Next3({ step, setStep }) {
               <div class="separator-1"></div>
       <div className="input-field-cont">
         <div class="input-field">
-          <input type="text" required></input>
+          <input type="text" required onChange={(e) => setNationalId(e.target.value)} value={SSN}></input>
           <label>National ID</label>
         </div>
         <div class="input-field">
-        <input type="text" required></input>
+        <input type="text" required onChange={(e) => setCountry(e.target.value)} value={country}></input>
         <label>Country</label>
       </div>
         <div class="input-field">
-          <input type="text" required></input>
+          <input type="text" required onChange={(e) => setAddress(e.target.value)} value={address}></input>
           <label>Address</label>
         </div>
       </div>

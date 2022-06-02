@@ -1,12 +1,12 @@
 import "../SignUp/Signup";
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+// import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+// import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
-function Next4({ step, setStep }) {
+function Next4({ step, setStep ,setDate ,setPhone ,setGender ,gender ,phone ,bdate }) {
   return (
     <div
       className="cont-img"
@@ -17,14 +17,14 @@ function Next4({ step, setStep }) {
       <div className="input-field-cont">
       <div class="input-field">
       <label className="input-field-cont-1">Gender</label>
-    <select class="gender-selection">
+    <select class="gender-selection" onChange={(e) => setGender(e.target.value)} value={gender}>
       <option value="Choose Gender">Choose Gender</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select>
       </div>
       <div class="input-field">
-          <input type="text" required></input>
+          <input type="text" required onChange={(e) => setPhone(e.target.value)} value={phone}></input>
           <label>Phone number</label>
         </div>
       <div className="input-field">
@@ -34,6 +34,7 @@ function Next4({ step, setStep }) {
           name="birthdate"
           className="birthdate"
           placeholder=""
+          onChange={(e) => setDate(e.target.value)} value={bdate}
         ></input>
         <label htmlFor="birthdate">Birthdate</label>
       </div>
@@ -43,9 +44,9 @@ function Next4({ step, setStep }) {
               <button className="btn-back1" onClick={() => setStep(3)}>Back</button>
           </div>
           <div className="btns-signup">
-          <Link className="submit-1" to="/submit">
+
           <button className="btn-next1">Submit</button>
-        </Link>
+       
           </div>
 
           </div>
