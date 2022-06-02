@@ -10,7 +10,6 @@ import ContactUs from './Components/Contact_us/ContactUs';
 import Departments from './Components/Departments/Departments';
 import Services from './Components/Services_web/Services';
 import ErrorPage from './Components/404_page/ErrorPage';
-import AddDeleteTableRows from './Components/Table/AddDeleteTableRows.jsx';
 import AdminPage from './Components/AdminPage/AdminPage';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
