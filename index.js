@@ -18,14 +18,10 @@ app.use("/api", require("./routes/login"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/departement"));
-<<<<<<< HEAD
 app.use("/api", require("./routes/category"));
 app.use("/api", require("./routes/services"));
 app.use("/api", require("./routes/order"));
 
-=======
-app.use("/api", require("./routes/device"));
->>>>>>> cd5d3ed51ef400969782967a64bd4498342cdc7c
 //connect to database
 db.connect((err) => {
   if (err) return console.log(err);
