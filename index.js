@@ -18,7 +18,7 @@ app.use("/api", require("./routes/login"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/departement"));
-app.use("/api", require("./routes/devices"));
+app.use("/api", require("./routes/device"));
 // app.use("/api", require("./routes/appointment"));
 // app.use("/api", require("./routes/bill"));
 app.use("/api", require("./routes/category"));
