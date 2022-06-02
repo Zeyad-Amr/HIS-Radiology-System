@@ -23,12 +23,13 @@ module.exports = {
   //add service
   createService: (req, res) => {
     const sqlStatment = `INSERT INTO services SET ?`;
-    db.query(sqlStatment, req.body, (err, result) => {
+    const query = db.query(sqlStatment, req.body, (err, result) => {
       if (err) {
         return res.status(400).json(err);
       }
       res.status(201).json(result);
     });
+    console.log(query);
   },
   //edit service
   updateService: (req, res) => {
