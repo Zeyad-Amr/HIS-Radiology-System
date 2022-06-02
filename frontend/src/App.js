@@ -31,8 +31,6 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/admin" element={<AdminPage />} />
-          {/* test path for table component */}
-          <Route path="/table" element={<AddDeleteTableRows />} />
         </Routes>
       </Router>
     </div>
