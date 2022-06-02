@@ -19,17 +19,18 @@ function validate(user) {
     username: Joi.string().min(6).max(255).required(),
     fname: Joi.string().min(2).max(50).required(),
     lname: Joi.string().min(2).max(50).required(),
-    phone: Joi.string().min(7).max(15).required(),
     email: Joi.string().min(5).max(255).email().required(),
-    address: Joi.string(),
     password: passwordComplexity(passwordValidations).required(),
     confirm_password: passwordComplexity(passwordValidations).required(),
-    gender: Joi.string().min(4).max(6).required(),
     SSN: Joi.string()
       .length(14)
       .pattern(/^[0-9]+$/)
       .required(),
-    bdate: Joi.date().required(),
+    country: Joi.string(),
+    address: Joi.string(),
+    gender: Joi.string().min(4).max(6).required(),
+    phone: Joi.string().min(7).max(15).required(),
+    bdate: Joi.date(),
     role: Joi.string().min(3).max(50),
     depID: Joi.number().integer().min(0),
   });
@@ -68,14 +69,16 @@ module.exports = {
 
   //create a new patient user
   createUser: async (req, res) => {
-    const result = validate(req.body);
-    if (result.error)
-      return res.status(400).send({ message: result.error.details[0].message });
+    // const result = validate(req.body);
+    // if (result.error)
+    //   return res.status(400).send({ message: result.error.details[0].message });
 
     if (req.body.password !== req.body.confirm_password) {
       return res.status(400).send({ message: "Password didn't match" });
     }
 
+    const value = req.body;
+    const result = { value };
     //encrypt password
     const salt = await bcrypt.genSalt(10);
     const userPassword = await bcrypt.hash(result.value.password, salt);

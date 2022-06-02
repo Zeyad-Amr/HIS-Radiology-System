@@ -15,16 +15,16 @@ function Next2({step , setStep ,setEmail ,setPassword ,setConfirmPassword ,email
               <div class="separator-1"></div>
           <div className="input-field-cont">
             <div class="input-field">
-              <input type="text" required onChange={(e) => setEmail(e.target.value)} value={email}></input>
+              <input type="text"   onChange={(e) => setEmail(e.target.value)} value={email}></input>
               <label>Email</label>
             </div>
             <div class="input-field">
-              <input class="pswrd" type="password" required onChange={(e) => setPassword(e.target.value)} value={password}></input>
+              <input class="pswrd" type="password"   onChange={(e) => setPassword(e.target.value)} value={password}></input>
               <span class="show">SHOW</span>
               <label>Password</label>
             </div>
             <div class="input-field">
-              <input class="pswrd" type="password" required onChange={(e) => setConfirmPassword(e.target.value)} value={confirm_password}></input>
+              <input class="pswrd" type="password"   onChange={(e) => setConfirmPassword(e.target.value)} value={confirm_password}></input>
               <span class="show">SHOW</span>
               <label>Confirm Password</label>
             </div>

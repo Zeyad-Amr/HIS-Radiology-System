@@ -15,15 +15,15 @@ function Next3({ step, setStep ,setNationalId ,setCountry ,setAddress ,SSN ,coun
               <div class="separator-1"></div>
       <div className="input-field-cont">
         <div class="input-field">
-          <input type="text" required onChange={(e) => setNationalId(e.target.value)} value={SSN}></input>
+          <input type="text"   onChange={(e) => setNationalId(e.target.value)} value={SSN}></input>
           <label>National ID</label>
         </div>
         <div class="input-field">
-        <input type="text" required onChange={(e) => setCountry(e.target.value)} value={country}></input>
+        <input type="text"   onChange={(e) => setCountry(e.target.value)} value={country}></input>
         <label>Country</label>
       </div>
         <div class="input-field">
-          <input type="text" required onChange={(e) => setAddress(e.target.value)} value={address}></input>
+          <input type="text"   onChange={(e) => setAddress(e.target.value)} value={address}></input>
           <label>Address</label>
         </div>
       </div>

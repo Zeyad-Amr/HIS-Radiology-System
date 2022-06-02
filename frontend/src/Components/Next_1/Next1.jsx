@@ -14,15 +14,15 @@ function Next1({step , setStep , setUser , setLast, setFirst ,fname ,lname ,user
               <div class="separator-1"></div>
         <div className="input-field-cont">
           <div class="input-field">
-            <input type="text" required onChange={(e) => setFirst(e.target.value)} value={fname}></input>
+            <input type="text"   onChange={(e) => setFirst(e.target.value)} value={fname}></input>
             <label>First Name</label>
           </div>
           <div class="input-field">
-            <input type="text" required onChange={(e) => setLast(e.target.value)} value={lname}></input>
+            <input type="text"   onChange={(e) => setLast(e.target.value)} value={lname}></input>
             <label>Last Name</label>
           </div>
           <div class="input-field">
-            <input type="text" required onChange={(e) => setUser(e.target.value)} value={username}></input>
+            <input type="text"   onChange={(e) => setUser(e.target.value)} value={username}></input>
             <label>Username</label>
           </div>
         </div>

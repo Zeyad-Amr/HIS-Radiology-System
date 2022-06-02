@@ -24,7 +24,7 @@ function Next4({ step, setStep ,setDate ,setPhone ,setGender ,gender ,phone ,bda
     </select>
       </div>
       <div class="input-field">
-          <input type="text" required onChange={(e) => setPhone(e.target.value)} value={phone}></input>
+          <input type="text" onChange={(e) => setPhone(e.target.value)} value={phone}></input>
           <label>Phone number</label>
         </div>
       <div className="input-field">
@@ -40,16 +40,11 @@ function Next4({ step, setStep ,setDate ,setPhone ,setGender ,gender ,phone ,bda
       </div>
       </div>
       <div className="container-3">
-          <div className="btns-back">
-              <button className="btn-back1" onClick={() => setStep(3)}>Back</button>
-          </div>
-          <div className="btns-signup">
-
-          <button className="btn-next1">Submit</button>
-       
-          </div>
-
-          </div>
+        <div className="btns-back">
+          <button className="btn-back1" onClick={() => setStep(3)}>Back</button>
+        </div>
+        
+      </div>
   
     </div>
   );
