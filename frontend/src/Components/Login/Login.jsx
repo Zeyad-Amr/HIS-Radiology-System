@@ -7,7 +7,7 @@ import {useState} from "react";
 import { Link } from "react-router-dom";
 import axios from "../API/axios";
 // import {motion} from 'framer-motion/dist/es/index'
-import imgLeft from "./Images/img.svg";
+import imgLeft from "./images/img.svg";
 
 function Login() {
 
