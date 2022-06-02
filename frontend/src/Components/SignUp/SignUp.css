@@ -57,13 +57,14 @@
   /* background-color: rgba(255, 255, 255, 0.13); */
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 41%;
-  left: 57%;
+  top: 40%;
+  left: 40%;
   border-radius: 10px;
   backdrop-filter: blur(10px);
   /* border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); */
   padding: 50px 35px;
+  background-color: white;
 }
 
 .form-signup {
@@ -79,6 +80,7 @@
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+  background-color: white;
 }
 
 .gender-selection {
@@ -185,6 +187,35 @@ input:valid ~ label {
   transition: opacity 0.4s;
   border-radius: 6%;
   opacity: 0.7;
+}
+.btn-next1-1 {
+  color: #fff;
+  padding: 14px 64px;
+  margin: 0px auto;
+  margin-left: 223px;
+  margin-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #8b33c5, #15a0e1);
+  cursor: pointer;
+  transition: opacity 0.4s;
+  border-radius: 6%;
+  opacity: 0.7;
+}
+.separator-1 {
+  width: 338px;
+  height: 4px;
+  background-color: #843bc7;
+  margin: 24px;
+}
+.title-1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-left: 50px;
 }
 
 .btn-next1:hover {

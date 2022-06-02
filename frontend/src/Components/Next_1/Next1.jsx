@@ -7,14 +7,8 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 function Next1({step , setStep}) {
     return (
       <div className="cont-img" style={{display : step === 1 ? "block" :"none"}}>
-        <div className="text-SignUp">
-          <h3>SignUp</h3>
-          <FontAwesomeIcon
-            className="icon-login"
-            icon={faArrowRightToBracket}
-            size="2x"
-          />
-        </div>
+              <p class="title-1">SIGN UP</p>
+              <div class="separator-1"></div>
         <div className="input-field-cont">
           <div class="input-field">
             <input type="text" required></input>
@@ -30,7 +24,7 @@ function Next1({step , setStep}) {
           </div>
         </div>
         <div className="btns-signup">
-            <button className="btn-next1" onClick={() => setStep(2)}>Next</button>
+            <button className="btn-next1-1" onClick={() => setStep(2)}>Next</button>
           {/* <FontAwesomeIcon
             className="icon-next"
             icon={faAngleRight}

@@ -13,6 +13,7 @@ function Signup() {
     <div className="signup">
 
       <section className="main">
+
         <div className="signup-container">
         <form className="form-signup">
           <Next1 setStep={setStep} step={step} />
@@ -22,7 +23,7 @@ function Signup() {
         </form>
         </div>
       </section>
-      <section className="side">
+      <section className="side-1">
         <img src={Photo} alt="" />
       </section>
     </div>

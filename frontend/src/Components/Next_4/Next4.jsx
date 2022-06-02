@@ -12,14 +12,8 @@ function Next4({ step, setStep }) {
       className="cont-img"
       style={{ display: step === 4 ? "block" : "none" }}
     >
-      <div className="text-SignUp">
-        <h3>SignUp</h3>
-        <FontAwesomeIcon
-          className="icon-login"
-          icon={faArrowRightToBracket}
-          size="2x"
-        />
-      </div>
+              <p class="title-1">SIGN UP</p>
+              <div class="separator-1"></div>
       <div className="input-field-cont">
       <div class="input-field">
       <label className="input-field-cont-1">Gender</label>
@@ -47,21 +41,11 @@ function Next4({ step, setStep }) {
       <div className="container-3">
           <div className="btns-back">
               <button className="btn-back1" onClick={() => setStep(3)}>Back</button>
-            {/* <FontAwesomeIcon
-              className="icon-back"
-              icon={faAngleLeft}
-              size="1x"
-            /> */}
           </div>
           <div className="btns-signup">
           <Link className="submit-1" to="/submit">
           <button className="btn-next1">Submit</button>
         </Link>
-            {/* <FontAwesomeIcon
-              className="icon-next"
-              icon={faAngleRight}
-              size="2x"
-            /> */}
           </div>
 
           </div>
