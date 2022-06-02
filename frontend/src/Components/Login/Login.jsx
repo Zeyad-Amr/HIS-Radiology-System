@@ -18,11 +18,14 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("/login", { user, pwd });
-    // localStorage.setItem("token", response.data.token)
-    console.log(response)
-    // window.location.href='/';
-    navigate('/');
+    try {
+      const response = await axios.post(`/login`, { user, pwd });
+      console.log(response.data)
+      localStorage.setItem("token", response.data.token)
+      // navigate('/');
+    } catch (error) {
+      console.log(error.response.data)
+    }
   };
 
   
@@ -42,12 +45,12 @@ function Login() {
 
                   <form class="login-form"  onSubmit={handleSubmit}>
                       <div class="form-control">
-                          <input type="text" placeholder="Username" onChange={() => setUser}/>
+                          <input type="text" placeholder="Username" onChange={(e) => setUser(e.target.value)} value={user}/>
                           <FontAwesomeIcon className="icon" icon={faUser} color="white" size="2x"/>
                       </div>
                       <div class="form-control">
-                          <input type="password" placeholder="Password"/>
-                          <FontAwesomeIcon className="icon" icon={faLock} color="white" size="2x" onChange={() => setPwd}/>
+                          <input type="password" placeholder="Password" onChange={(e) => setPwd(e.target.value)} value={pwd}/>
+                          <FontAwesomeIcon className="icon" icon={faLock} color="white" size="2x" />
                       </div>
                       <button class="submit">Login</button>
                       <div className="other">
