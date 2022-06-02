@@ -5,7 +5,7 @@ import React from "react";
 import {useState} from "react";
 import { Link } from "react-router-dom";
 import axios from "../API/axios";
-import {ImgLeft} from "../Home/images/img.svg";
+// import {ImgLeft} from "../Home/images/img.svg";
 
 function Login() {
 
@@ -25,7 +25,7 @@ function Login() {
     <div className="login">
 
           <section class="side">
-              <img src= {ImgLeft} alt=""/>
+              {/* <img src= {ImgLeft} alt=""/> */}
           </section>
 
           <section class="main">

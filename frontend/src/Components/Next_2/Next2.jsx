@@ -35,22 +35,26 @@ function Next2({step , setStep}) {
               <label>Confirm Password</label>
             </div>
           </div>
-          <div className="btns-signup">
-              <button className="btn-next1" onClick={() => setStep(3)}>Next</button>
-            <FontAwesomeIcon
-              className="icon-next"
-              icon={faAngleRight}
-              size="2x"
-            />
-          </div>
+          <div className="container-3">
           <div className="btns-back">
               <button className="btn-back1" onClick={() => setStep(1)}>Back</button>
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               className="icon-back"
               icon={faAngleLeft}
               size="1x"
-            />
+            /> */}
           </div>
+          <div className="btns-signup">
+              <button className="btn-next1" onClick={() => setStep(3)}>Next</button>
+            {/* <FontAwesomeIcon
+              className="icon-next"
+              icon={faAngleRight}
+              size="2x"
+            /> */}
+          </div>
+
+          </div>
+
       </div>
     );
   }

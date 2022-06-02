@@ -31,11 +31,11 @@ function Next1({step , setStep}) {
         </div>
         <div className="btns-signup">
             <button className="btn-next1" onClick={() => setStep(2)}>Next</button>
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             className="icon-next"
             icon={faAngleRight}
             size="2x"
-          />
+          /> */}
         </div>
     </div>
     );

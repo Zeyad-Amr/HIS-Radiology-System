@@ -44,22 +44,28 @@ function Next4({ step, setStep }) {
         <label htmlFor="birthdate">Birthdate</label>
       </div>
       </div>
-      <div className="btns-signup">
-        <Link className="submit" to="/submit">
+      <div className="container-3">
+          <div className="btns-back">
+              <button className="btn-back1" onClick={() => setStep(3)}>Back</button>
+            {/* <FontAwesomeIcon
+              className="icon-back"
+              icon={faAngleLeft}
+              size="1x"
+            /> */}
+          </div>
+          <div className="btns-signup">
+          <Link className="submit-1" to="/submit">
           <button className="btn-next1">Submit</button>
         </Link>
-        <FontAwesomeIcon
-          className="icon-next"
-          icon={faAngleRight}
-          size="2x"
-        />
-      </div>
-      <div className="btns-back">
-        <button className="btn-back1" onClick={() => setStep(3)}>
-          Back
-        </button>
-        <FontAwesomeIcon className="icon-back" icon={faAngleLeft} size="1x" />
-      </div>
+            {/* <FontAwesomeIcon
+              className="icon-next"
+              icon={faAngleRight}
+              size="2x"
+            /> */}
+          </div>
+
+          </div>
+  
     </div>
   );
 }
