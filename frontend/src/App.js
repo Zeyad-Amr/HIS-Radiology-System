@@ -5,7 +5,11 @@ import Forgetpass from "./Components/ForgetPass/ForgetPass";
 import Submit from './Components/Submit/Submit';
 import Home from './Components/Home/Home';
 import './Components/SignUp/SignUp.css';
-import "./App.css";
+import AboutUs from './Components/About_us/AboutUs';
+import ContactUs from './Components/Contact_us/ContactUs';
+import Departments from './Components/Departments/Departments';
+import Services from './Components/Services_web/Services';
+import ErrorPage from './Components/404_page/ErrorPage';
 
 
 function App() {
@@ -13,11 +17,16 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/forgetpass" element={<Forgetpass />} />
           <Route path="/submit" element={<Submit />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/departments" element={<Departments />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/404" element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>
