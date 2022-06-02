@@ -24,16 +24,14 @@ module.exports = {
 
   //add Department
   createDepartment: (req, res) => {
-    const { serial_number, name, arrivial_date, installation_date, id } =
-      req.body;
-    const deviceData = {
-      serial_number,
-      name,
-      arrivial_date,
-      installation_date,
+    const { id, name, create_time, update_time } = req.body;
+    const departmentData = {
       id,
+      name,
+      create_time,
+      update_time,
     };
-    db.query(`INSERT INTO dep SET ?`, deviceData, (err, result) => {
+    db.query(`INSERT INTO dep SET ?`, departmentData, (err, result) => {
       if (err) return res.status(400).send(err);
       console.log(result);
       res.status(201).json({ message: "Department added successfully" });
