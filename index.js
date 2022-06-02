@@ -3,7 +3,6 @@ const db = require("./mysql-con");
 const cors = require("cors");
 const app = express();
 
-
 //parse the body of the request
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -29,7 +28,6 @@ db.connect((err) => {
   if (err) return console.log(err);
   console.log("***connected to database***");
 });
-
 
 const PORT = 4000;
 const FRONT_HOST = 3000;
