@@ -7,10 +7,10 @@ const authz = require("../middlewares/authz");
 //get all Departemnts
 router.get("/department", [authn, authz("Admin")], depController.getAllDepartments);
 
-//add a Departemnt
+//get a Departemnt
 router.get("/department/:id", [authn, authz("Admin")], depController.getOneDepartment);
 
-//add a Departemnt
+//create a Departemnt
 router.post("/department", [authn, authz("Admin")], depController.createDepartment);
 
 //edit Departemnt
