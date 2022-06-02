@@ -18,6 +18,9 @@ app.use("/api", require("./routes/login"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/departement"));
+app.use("/api", require("./routes/category"));
+app.use("/api", require("./routes/services"));
+app.use("/api", require("./routes/order"));
 
 //connect to database
 db.connect((err) => {
