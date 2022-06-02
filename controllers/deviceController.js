@@ -10,6 +10,7 @@ module.exports = {
       res.status(200).json(result);
     });
   },
+
   //get one Device
   getOneDevice: (req, res) => {
     const id = req.params.id;
@@ -20,6 +21,18 @@ module.exports = {
       res.status(200).json(result[0]);
     });
   },
+
+  //Search with Device name
+  searchDeviceName: (req, res) => {
+    const name = req.params.name;
+    db.query(`SELECT * FROM device WHERE name = ?`, name, (err, result) => {
+      if (err) return res.status(400).send(err);
+      if (result.length === 0)
+        return res.status(404).json({ message: "Not Found" });
+      res.status(200).json(result[0]);
+      });
+    },
+  
   //add Device
   createDevice: (req, res) => {
     const { serial_number, name, arrivial_date, installation_date, id } = req.body;
@@ -33,10 +46,10 @@ module.exports = {
     db.query(`INSERT INTO device SET ?`, deviceData, (err, result) => {
       if (err) return res.status(400).send(err);
       console.log(result);
-
       res.status(201).json({ message: "Device added successfully" });
     });
   },
+
   //update Device
   updateDevice: (req, res) => {
     const id = req.params.id;
@@ -51,6 +64,7 @@ module.exports = {
       }
     );
   },
+
   //delete Device
   deleteDevice: (req, res) => {
     const id = req.params.id;
