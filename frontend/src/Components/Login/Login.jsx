@@ -1,11 +1,13 @@
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import {useState} from "react";
 import { Link } from "react-router-dom";
 import axios from "../API/axios";
-// import {ImgLeft} from "../Home/images/img.svg";
+// import {motion} from 'framer-motion/dist/es/index'
+import imgLeft from "./images/img.svg";
 
 function Login() {
 
@@ -25,7 +27,7 @@ function Login() {
     <div className="login">
 
           <section class="side">
-              {/* <img src= {ImgLeft} alt=""/> */}
+              <img src= {imgLeft} alt=""/>
           </section>
 
           <section class="main">
@@ -37,11 +39,11 @@ function Login() {
                   <form class="login-form">
                       <div class="form-control">
                           <input type="text" placeholder="Username"/>
-                          <i class="fas fa-user"></i>
+                          <FontAwesomeIcon className="icon" icon={faUser} color="white" size="2x"/>
                       </div>
                       <div class="form-control">
                           <input type="password" placeholder="Password"/>
-                          <i class="fas fa-lock"></i>
+                          <FontAwesomeIcon className="icon" icon={faLock} color="white" size="2x"/>
                       </div>
                       <button class="submit">Login</button>
                       <div className="other">
