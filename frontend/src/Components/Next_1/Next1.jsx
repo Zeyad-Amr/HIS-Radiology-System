@@ -4,7 +4,7 @@ import React  from "react";
 // import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 // import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-function Next1({step , setStep , setUser , setLast, setFirst}) {
+function Next1({step , setStep , setUser , setLast, setFirst ,fname ,lname ,username}) {
 
 
   
@@ -14,15 +14,15 @@ function Next1({step , setStep , setUser , setLast, setFirst}) {
               <div class="separator-1"></div>
         <div className="input-field-cont">
           <div class="input-field">
-            <input type="text" required onChange={() => setFirst}></input>
+            <input type="text" required onChange={(e) => setFirst(e.target.value)} value={fname}></input>
             <label>First Name</label>
           </div>
           <div class="input-field">
-            <input type="text" required onChange={() => setLast}></input>
+            <input type="text" required onChange={(e) => setLast(e.target.value)} value={lname}></input>
             <label>Last Name</label>
           </div>
           <div class="input-field">
-            <input type="text" required onChange={() => setUser}></input>
+            <input type="text" required onChange={(e) => setUser(e.target.value)} value={username}></input>
             <label>Username</label>
           </div>
         </div>

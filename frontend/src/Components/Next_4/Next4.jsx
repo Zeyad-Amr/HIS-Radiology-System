@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 // import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 // import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
-function Next4({ step, setStep ,setDate ,setPhone ,setGender }) {
+function Next4({ step, setStep ,setDate ,setPhone ,setGender ,gender ,phone ,bdate }) {
   return (
     <div
       className="cont-img"
@@ -17,14 +17,14 @@ function Next4({ step, setStep ,setDate ,setPhone ,setGender }) {
       <div className="input-field-cont">
       <div class="input-field">
       <label className="input-field-cont-1">Gender</label>
-    <select class="gender-selection" onChange={() => setGender}>
+    <select class="gender-selection" onChange={(e) => setGender(e.target.value)} value={gender}>
       <option value="Choose Gender">Choose Gender</option>
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select>
       </div>
       <div class="input-field">
-          <input type="text" required onChange={() => setPhone}></input>
+          <input type="text" required onChange={(e) => setPhone(e.target.value)} value={phone}></input>
           <label>Phone number</label>
         </div>
       <div className="input-field">
@@ -34,7 +34,7 @@ function Next4({ step, setStep ,setDate ,setPhone ,setGender }) {
           name="birthdate"
           className="birthdate"
           placeholder=""
-          onChange={() => setDate}
+          onChange={(e) => setDate(e.target.value)} value={bdate}
         ></input>
         <label htmlFor="birthdate">Birthdate</label>
       </div>
