@@ -26,26 +26,26 @@ function Login() {
   return (
     <div className="login">
 
-          <section class="side">
+          <section className="side">
               <img src= {imgLeft} alt=""/>
           </section>
 
-          <section class="main">
-              <div class="login-container">
-                  <p class="title">Welcome back</p>
-                  <div class="separator"></div>
-                  <p class="welcome-message">Please, provide login credential to proceed and have access to all our services</p>
+          <section className="main">
+              <div className="login-container">
+                  <p className="title">Welcome back</p>
+                  <div className="separator"></div>
+                  <p className="welcome-message">Please, provide login credential to proceed and have access to all our services</p>
 
-                  <form class="login-form">
-                      <div class="form-control">
+                  <form className="login-form">
+                      <div className="form-control">
                           <input type="text" placeholder="Username"/>
                           <FontAwesomeIcon className="icon" icon={faUser} color="white" size="2x"/>
                       </div>
-                      <div class="form-control">
+                      <div className="form-control">
                           <input type="password" placeholder="Password"/>
                           <FontAwesomeIcon className="icon" icon={faLock} color="white" size="2x"/>
                       </div>
-                      <button class="submit">Login</button>
+                      <button className="submit">Login</button>
                       <div className="other">
                         <a href="">Forget Password?</a>
                         <a href="">Creat an account</a>
@@ -53,7 +53,7 @@ function Login() {
                       <div id="google">
                         <h5>or</h5>
                         <h5>Login with</h5>
-                        <a href="#" class="facebook">
+                        <a href="#" className="facebook">
                           <FontAwesomeIcon icon={faGoogle} color="white" size="2x"/>
                         </a>
                       </div>
