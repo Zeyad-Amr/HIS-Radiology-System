@@ -1,13 +1,17 @@
 import "./Login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import {useState} from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import axios from "../API/axios";
+// import {motion} from 'framer-motion/dist/es/index'
+import imgLeft from "./Images/img.svg";
 
 function Login() {
+
+  const navigate = useNavigate();
 
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
@@ -17,66 +21,54 @@ function Login() {
     const response = await axios.post("/login", { user, pwd });
     // localStorage.setItem("token", response.data.token)
     console.log(response)
+    // window.location.href='/';
+    navigate('/');
   };
 
   
 
   return (
-    <div
-      className="container"
-      style={{ margin: "0", width: "100%", maxWidth: "100%" }}
-    >
-      <div className="background">
-        <div class="shape"></div>
-        <div class="shape"></div>
-      </div>
-      <form className="form" onSubmit={handleSubmit}>
-        <h3>Login</h3>
-        <FontAwesomeIcon
-          className="icon-login"
-          icon={faArrowCircleRight}
-          size="2x"
-        />
-        <div class="input-field-L">
-          <input
-            type="text"
-            id="username"
-            required
-            onChange={(e) => setUser(e.target.value)}
-            value={user}
-          ></input>
-          <label>Username</label>
-        </div>
-        <div class="input-field-L">
-          <input
-            class="pswrd"
-            type="password"
-            required
-            id="password"
-            onChange={(e) => setPwd(e.target.value)}
-            value={pwd}
-          ></input>
-          <span class="show">SHOW</span>
-          <label>Password</label>
-        </div>
-        <Link to="/forgetpass">
-          <button className="btn-forget">Forget Password?</button>
-        </Link>
-        <div className="btns-login">
-            <button className="btn-login">Login</button>
-          <div className="icon-google">
-            <FontAwesomeIcon className="icon" icon={faGoogle} size="2x"/>
-          </div>
-          <Link className="SignUp" to="/SignUp">
-            <button className="btn-signup">Creat an account</button>
-          </Link>
-        </div>
-        <div className="or-block">
-          <hr className="lines" size="1"></hr>
-          <div className="or">Or</div>
-          <hr className="lines" size="1"></hr>
-        </div>
-      </form>
+    <div className="login">
+
+          <section class="side">
+              <img src= {imgLeft} alt=""/>
+          </section>
+
+          <section class="main">
+              <div class="login-container">
+                  <p class="title">Welcome back</p>
+                  <div class="separator"></div>
+                  <p class="welcome-message">Please, provide login credential to proceed and have access to all our services</p>
+
+                  <form class="login-form"  onSubmit={handleSubmit}>
+                      <div class="form-control">
+                          <input type="text" placeholder="Username" onChange={() => setUser}/>
+                          <FontAwesomeIcon className="icon" icon={faUser} color="white" size="2x"/>
+                      </div>
+                      <div class="form-control">
+                          <input type="password" placeholder="Password"/>
+                          <FontAwesomeIcon className="icon" icon={faLock} color="white" size="2x" onChange={() => setPwd}/>
+                      </div>
+                      <button class="submit">Login</button>
+                      <div className="other">
+                      <Link to="/forgetpass">
+                        <a href="">Forget Password?</a>
+                        </Link>
+                        <Link to="/SignUp">
+                        <a href="">Creat an account</a>
+                        </Link>
+                      </div>
+                      <div id="google">
+                        <h5>or</h5>
+                        <h5>Login with</h5>
+                        <a href="#" class="facebook">
+                          <FontAwesomeIcon icon={faGoogle} color="white" size="2x"/>
+                        </a>
+                      </div>
+                  </form>
+              </div>
+          </section>
+
     </div>
   );
 }
