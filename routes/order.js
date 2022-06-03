@@ -7,8 +7,8 @@ const authz = require("../middlewares/authz");
 //get order
 // router.get("/order", orderController.getAllOrder);
 
-//get single order
-// router.get("/order/:id", orderController.getOneOrder);
+// get single order
+router.get("/order/:id", orderController.getOneOrder);
 
 //add a order
 router.post(
@@ -20,7 +20,7 @@ router.post(
 //edit order
 // router.put("/order/:id", orderController.updateOrder);
 
-//delete order
-// router.delete("/order/:id", orderController.deleteOrder);
+delete order;
+router.delete("/order/:id", orderController.deleteOrder);
 
 module.exports = router;

@@ -181,11 +181,13 @@ router.get("/users/:id", authn, usersController.getOneUser);
  * @apiBody {String} username The usernaem must be more than 6 char
  * @apiBody {String} email The email of the user
  * @apiBody {String} password The password more than 8 char must have at least 1 uppercase 1 lowercase 1 number
+ * @apiBody {String} confirm_password The password more than 8 char must have at least 1 uppercase 1 lowercase 1 number
  * @apiBody {String} fname The first name of the user
  * @apiBody {String} lname The last name of the user
  * @apiBody {String} gender The gender of the user (male or female not any thing else)
  * @apiBody {String} SSN The social security number of the user (national id)
  * @apiBody {String} address The address of the user
+ * @apiBody {String} country The country the user from
  * @apiBody {Date} bdate The date of the holidays the employee take
  * @apiBody {String} phone The id of the depeartemnt the employee works at
  * @apiSampleRequest http://127.0.0.1:4000/api/users
