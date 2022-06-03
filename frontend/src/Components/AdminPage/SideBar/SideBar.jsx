@@ -8,20 +8,23 @@ import { IconContext } from 'react-icons';
 import Admin from '../images/admin.png'
 
 function SideBar() {
-    const [sidebar, setSidebar] = useState(false);
+    const [sidebar, setSidebar] = useState(true);
   
     const showSidebar = () => setSidebar(!sidebar);
 
-    function close() {
-        if(sidebar === true) {
-            setSidebar(false);
-        }
-        console.log('momen')
-     }
+    // function close() {
+    //     if(sidebar === true) {
+    //         setSidebar(false);
+    //     }
+    //     console.log('momen')
+    //  }
+
+    function handleClick() {
+        document.getElementsByClassName("").style.display='none';
+    }
   
     return (
-        <div className='testing' onClick={close}>
-        <div className='testing-2' onClick={close}>
+    <div className='testing' onClick={close}>
         <IconContext.Provider value={{ color: '#fff' }}>
           <div className='navbar-admin'>
             <Link to='#' className='menu-bars'>
@@ -49,7 +52,6 @@ function SideBar() {
             </ul>
           </nav>
         </IconContext.Provider>
-      </div>
       </div>
     );
   }
