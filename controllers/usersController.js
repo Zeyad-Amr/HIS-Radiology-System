@@ -51,6 +51,7 @@ module.exports = {
       }
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
+
       res.status(200).json(result);
     });
   },
@@ -91,6 +92,7 @@ module.exports = {
       phone,
       SSN,
       address,
+      country,
     } = result.value;
 
     data = {
@@ -104,6 +106,7 @@ module.exports = {
       phone,
       SSN,
       address,
+      country,
       role: "patient",
     };
 
