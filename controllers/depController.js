@@ -3,11 +3,14 @@ const db = require("../mysql-con");
 module.exports = {
   //get all Department
   getAllDepartments: (req, res) => {
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
     db.query(`SELECT * FROM dep`, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
+      const page = parseInt(req.query.page);
+      const limit = parseInt(req.query.limit);
     });
   },
 
