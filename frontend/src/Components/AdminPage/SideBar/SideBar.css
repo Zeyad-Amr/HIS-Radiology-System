@@ -39,11 +39,10 @@
     justify-content: center;
     position: fixed;
     top: 0;
-    left: -20%;
+    left: -100%;
     transition: 850ms;
     /* padding-top: %; */
   }
-  
   
   .nav-menu.active {
     left: 0;
@@ -59,6 +58,16 @@
     padding: 8px 0px 8px 16px;
     list-style: none;
     height: 60px;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 63px;
+    list-style: none;
+    height: 60px;
+    margin-top: 20px;
   }
   
   .nav-text a {
@@ -101,3 +110,17 @@
       text-decoration: none ;
   }
   
+  
+  .akwa {
+    box-shadow: 0 0 15px rgba(8,7,16,0.4);
+    border: 2px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.13);
+    width: 60px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+  }
