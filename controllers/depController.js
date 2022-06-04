@@ -1,4 +1,5 @@
 const db = require("../mysql-con");
+const paginate = require("../methods/paginate");
 
 module.exports = {
   //get all Department
@@ -9,8 +10,8 @@ module.exports = {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
-      const page = parseInt(req.query.page);
-      const limit = parseInt(req.query.limit);
+      const paginatedResult = paginate(result, page, limit);
+      res.status(200).send(paginatedResult);
     });
   },
 
@@ -27,14 +28,7 @@ module.exports = {
 
   //add Department
   createDepartment: (req, res) => {
-    const { id, name, create_time, update_time } = req.body;
-    const departmentData = {
-      id,
-      name,
-      create_time,
-      update_time,
-    };
-    db.query(`INSERT INTO dep SET ?`, departmentData, (err, result) => {
+    db.query(`INSERT INTO dep SET ?`, req.body, (err, result) => {
       if (err) return res.status(400).send(err);
       console.log(result);
       res.status(201).json({ message: "Department added successfully" });

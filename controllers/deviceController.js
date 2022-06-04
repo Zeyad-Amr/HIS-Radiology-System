@@ -1,4 +1,5 @@
 const db = require("../mysql-con");
+const paginate = require("../methods/paginate");
 
 module.exports = {
   //get all Devices
@@ -38,14 +39,12 @@ module.exports = {
 
   //add Device
   createDevice: (req, res) => {
-    const { serial_number, name, arrivial_date, installation_date, id } =
-      req.body;
+    const { serial_number, name, arrivial_date, installation_date } = req.body;
     const deviceData = {
       serial_number,
       name,
       arrivial_date,
       installation_date,
-      id,
     };
     db.query(`INSERT INTO device SET ?`, deviceData, (err, result) => {
       if (err) return res.status(400).send(err);
