@@ -1,4 +1,5 @@
 const db = require("../mysql-con");
+const paginate = require("../methods/paginate");
 
 module.exports = {
   //get all orders
@@ -24,7 +25,7 @@ module.exports = {
     });
   },
   createOrder: (req, res) => {
-    const creatorId = req.user.id.toString();
+    const creatorId = req.user.id;
     if (Object.keys(req.body).length === 0) {
       return res.sendStatus(400);
     }
@@ -34,7 +35,7 @@ module.exports = {
       if (err) {
         return res.status(400).json(err);
       }
-      res.status(201).json(result);
+      res.sendStatus(201);
     });
   },
   //edit orders
