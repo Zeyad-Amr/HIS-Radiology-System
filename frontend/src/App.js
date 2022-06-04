@@ -1,16 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Login/Login";
-import Signup from './Components/SignUp/Signup';
+import Signup from "./Components/SignUp/Signup";
 import Forgetpass from "./Components/ForgetPass/ForgetPass";
-import Submit from './Components/Submit/Submit';
-import Home from './Components/Home/Home';
-import './Components/SignUp/SignUp.css';
-import AboutUs from './Components/About_us/AboutUs';
-import ContactUs from './Components/Contact_us/ContactUs';
-import Departments from './Components/Departments/Departments';
-import Services from './Components/Services_web/Services';
-import ErrorPage from './Components/404_page/ErrorPage';
-
+import Submit from "./Components/Submit/Submit";
+import Home from "./Components/Home/Home";
+import "./Components/SignUp/SignUp.css";
+import AboutUs from "./Components/About_us/AboutUs";
+import ContactUs from "./Components/Contact_us/ContactUs";
+import Departments from "./Components/Departments/Departments";
+import Services from "./Components/Services_web/Services";
+import ErrorPage from "./Components/404_page/ErrorPage";
+import AdminPage from "./Components/AdminPage/AdminPage";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Table from "./Components/Table/Table";
+import React from "react";
 
 function App() {
   return (
@@ -27,6 +30,8 @@ function App() {
           <Route path="/departments" element={<Departments />} />
           <Route path="/services" element={<Services />} />
           <Route path="/404" element={<ErrorPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/table" element={<Table />} />
         </Routes>
       </Router>
     </div>

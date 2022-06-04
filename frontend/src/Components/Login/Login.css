@@ -29,8 +29,7 @@
 }
 
 .side img {
-  width: 50%;
-  max-width: 50%;
+  max-width: 100%;
 }
 
 .login-container {

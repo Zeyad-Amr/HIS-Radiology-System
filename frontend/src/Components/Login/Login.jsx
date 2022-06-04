@@ -7,7 +7,7 @@ import {useState} from "react";
 import { Link , useNavigate } from "react-router-dom";
 import axios from "../API/axios";
 // import {motion} from 'framer-motion/dist/es/index'
-import imgLeft from "./Images/img.svg";
+import imgLeft from "./Images/login.svg";
 
 function Login() {
 
@@ -33,15 +33,15 @@ function Login() {
   return (
     <div className="login">
 
-          <section class="side">
-              <img src= {imgLeft} alt=""/>
+          <section className="side">
+              <img src= {imgLeft} alt="" size="2x"/>
           </section>
 
-          <section class="main">
-              <div class="login-container">
-                  <p class="title">Welcome back</p>
-                  <div class="separator"></div>
-                  <p class="welcome-message">Please, provide login credential to proceed and have access to all our services</p>
+          <section className="main">
+              <div className="login-container">
+                  <p className="title">Welcome back</p>
+                  <div className="separator"></div>
+                  <p className="welcome-message">Please, provide login credential to proceed and have access to all our services</p>
 
                   <form class="login-form"  onSubmit={handleSubmit}>
                       <div class="form-control">
@@ -52,7 +52,7 @@ function Login() {
                           <input type="password" placeholder="Password" onChange={(e) => setPwd(e.target.value)} value={pwd}/>
                           <FontAwesomeIcon className="icon" icon={faLock} color="white" size="2x" />
                       </div>
-                      <button class="submit">Login</button>
+                      <button className="submit">Login</button>
                       <div className="other">
                       <Link to="/forgetpass">
                         <a href="">Forget Password?</a>
@@ -64,7 +64,7 @@ function Login() {
                       <div id="google">
                         <h5>or</h5>
                         <h5>Login with</h5>
-                        <a href="#" class="facebook">
+                        <a href="#" className="facebook">
                           <FontAwesomeIcon icon={faGoogle} color="white" size="2x"/>
                         </a>
                       </div>
