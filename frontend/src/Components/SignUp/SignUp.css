@@ -104,11 +104,11 @@
   width: 100%;
 }
 
-.login-form input {
+.signup-form input {
   height: 100%;
   width: 100%;
   border: 1px solid silver;
-  padding-left: 15px;
+  padding-left: 15%;
   outline: none;
   font-size: 15px;
   transition: 0.4s;
@@ -357,4 +357,15 @@ input:valid ~ label {
   justify-content: center;
   align-items: center;
   transform: rotateY(180deg);
+}
+
+.signup-icon{
+  position: absolute;
+  right: 88%;
+  top: 72%;
+  transform: translateY(-50%);
+  color: #888;
+  transition: color   0.4s;
+  opacity: 0.8;
+  z-index: 2;
 }

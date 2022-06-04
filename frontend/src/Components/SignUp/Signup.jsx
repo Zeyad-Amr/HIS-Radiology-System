@@ -9,6 +9,7 @@ import axios from "../API/axios";
 import { useNavigate } from "react-router-dom";
 
 
+
 function Signup() {
   const navigate = useNavigate();
   const [step, setStep] = useState(1);
@@ -44,7 +45,7 @@ function Signup() {
       <section className="main">
 
         <div className="login-container">
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="signup-form" onSubmit={handleSubmit}>
           <Next1 setStep={setStep} step={step} setFirst={setFirst} setLast={setLast} setUser={setUser} fname={fname} lname={lname} username={username}/>
           <Next2 setStep={setStep} step={step} setEmail={setEmail} setPassword={setPassword} setConfirmPassword={setConfirmPassword} email={email} password={password} confirm_password={confirm_password}/>
           <Next3 setStep={setStep} step={step} setNationalId={setNationalId} setCountry={setCountry} setAddress={setAddress} SSN={SSN} country={country} address={address}/>

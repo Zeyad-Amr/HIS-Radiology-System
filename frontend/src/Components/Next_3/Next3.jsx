@@ -1,5 +1,7 @@
 import "../SignUp/SignUp.css";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEarthAmericas, faIdCard, faMapLocation } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 // import { faAngleLeft } from "@fortawesome/free-solid-svg-icons";
@@ -16,14 +18,17 @@ function Next3({ step, setStep ,setNationalId ,setCountry ,setAddress ,SSN ,coun
       <div className="input-field-cont">
         <div class="input-field">
           <input type="text" required onChange={(e) => setNationalId(e.target.value)} value={SSN}></input>
+          <FontAwesomeIcon className="signup-icon" icon={faIdCard} color="white" size="2x"/>
           <label>National ID</label>
         </div>
         <div class="input-field">
         <input type="text" required onChange={(e) => setCountry(e.target.value)} value={country}></input>
+        <FontAwesomeIcon className="signup-icon" icon={faEarthAmericas} color="white" size="2x"/>
         <label>Country</label>
       </div>
         <div class="input-field">
           <input type="text" required onChange={(e) => setAddress(e.target.value)} value={address}></input>
+          <FontAwesomeIcon className="signup-icon" icon={faMapLocation} color="white" size="2x"/>
           <label>Address</label>
         </div>
       </div>
