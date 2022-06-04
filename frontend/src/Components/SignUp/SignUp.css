@@ -41,18 +41,19 @@
   opacity: 0.7;
 }
 
-.signup-container {
+/* .signup-container {
   max-width: 450px;
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 .next2 {
   height: 715px;
 }
 
-.form-signup, .form-signup-next2 {
+/* .form-signup, */
+.form-signup-next2 {
   width: 400px;
   /* background-color: rgba(255, 255, 255, 0.13); */
   position: absolute;
@@ -67,25 +68,25 @@
   background-color: white;
 }
 
-.form-signup {
+/* .form-signup {
   height: 515px;
-}
+} */
 
-.form-signup-next2 {
+/* .form-signup-next2 {
   height: 665px;
-}
+} */
 
-.form-signup * {
+/* .form-signup * {
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
   background-color: white;
-}
+} */
 
 .gender-selection {
   height: 100%;
-  width: 120%;
+  width: 100%;
   border: 1px solid silver;
   padding-left: 15px;
   outline: none;
@@ -95,16 +96,18 @@
   border-radius: 20px;
 }
 
-.input-field,
-.form-signup .button {
+.input-field
+,.login-form .input
+ {
   margin: 25px 0;
   position: relative;
   height: 50px;
   width: 100%;
 }
-.input-field input {
+
+.login-form input {
   height: 100%;
-  width: 120%;
+  width: 100%;
   border: 1px solid silver;
   padding-left: 15px;
   outline: none;
@@ -125,12 +128,14 @@ span.show {
 }
 .input-field label {
   left: 10px;
+  background-color: #ffff;
   pointer-events: none;
   color: black;
   font-size: 15px;
   transition: 0.4s;
   font-weight: 100;
-  top: 10px;
+  top: 22%;
+  left: 5%;
 }
 .birthdate {
   left: 10px;
@@ -167,11 +172,11 @@ input:valid ~ label {
   border-right: none;
   margin-top: 10px;
 }
-.form-signup .button {
+/* .form-signup .button {
   margin-top: 30px;
   overflow: hidden;
   z-index: 111;
-}
+} */
 
 .btn-next1 {
   color: #fff;
@@ -215,7 +220,6 @@ input:valid ~ label {
   font-weight: bold;
   text-align: center;
   letter-spacing: 1px;
-  margin-left: 50px;
 }
 
 .btn-next1:hover {
@@ -295,9 +299,6 @@ input:valid ~ label {
 .input-field-cont {
   margin-top: 70px;
 }
-.input-field-cont-1 {
-  margin-top: -7px;
-}
 .icon-next {
   position: absolute;
   top: 455px;
@@ -347,4 +348,14 @@ input:valid ~ label {
   top: 615px;
   right: 347px;
   color: #000000af;
+}
+
+.side-1 {
+  background: url(../Login/Images/bk.png) no-repeat;
+  background-color: white;
+  background-size: 100% 102%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
 }
