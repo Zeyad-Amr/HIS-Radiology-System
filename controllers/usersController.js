@@ -3,6 +3,7 @@ const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const passwordComplexity = require("joi-password-complexity");
+const paginate = require("../methods/paginate");
 
 function validate(user) {
   const passwordValidations = {
@@ -46,25 +47,40 @@ const createToken = (id) => {
 module.exports = {
   //get all users
   getAllUsers: (req, res) => {
-    db.query(`SELECT * FROM user`, (err, result) => {
-      if (err) {
-        return res.status(400).json(err);
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    db.query(
+      `SELECT * 
+    FROM user LEFT JOIN emp
+    ON id = user_id`,
+      (err, result) => {
+        if (err) {
+          return res.status(400).json(err);
+        }
+        if (result.length === 0)
+          return res.status(404).json({ message: "Not Found" });
+        const paginatedResult = paginate(result, page, limit);
+        res.status(200).send(paginatedResult);
       }
-      if (result.length === 0)
-        return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
-    });
+    );
   },
 
   // get one user
   getOneUser: (req, res) => {
     const id = req.params.id;
-    db.query(`SELECT * FROM user WHERE id = ?`, id, (err, result) => {
-      if (err) return res.status(400).send(err);
-      if (result.length === 0)
-        return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
-    });
+    db.query(
+      `SELECT * 
+    FROM user LEFT JOIN emp 
+    ON id = user_id 
+    WHERE id = ?`,
+      id,
+      (err, result) => {
+        if (err) return res.status(400).send(err);
+        if (result.length === 0)
+          return res.status(404).json({ message: "Not Found" });
+        res.status(200).json(result);
+      }
+    );
   },
 
   //create a new patient user
@@ -94,6 +110,7 @@ module.exports = {
       phone,
       SSN,
       address,
+      country,
     } = result.value;
 
     data = {
@@ -107,6 +124,7 @@ module.exports = {
       phone,
       SSN,
       address,
+      country,
       role: "patient",
     };
 
