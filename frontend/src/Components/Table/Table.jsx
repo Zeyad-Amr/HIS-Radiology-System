@@ -13,6 +13,8 @@ class Table extends Component {
          ]
       }
    }
+
+
    renderTableData() {
     return this.state.students.map((student, index) => {
        const { id, name, age, email } = student //destructuring
