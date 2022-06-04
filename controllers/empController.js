@@ -1,4 +1,5 @@
 const db = require("../mysql-con");
+const paginate = require("../methods/paginate");
 
 module.exports = {
   //get all employees

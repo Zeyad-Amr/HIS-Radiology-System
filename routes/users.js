@@ -12,130 +12,87 @@ const usersController = require("../controllers/usersController");
    * @apiError (Error 400) valdiationError Something wrong with the body of the request 
    * @apiError (Error 404) usersNotFound error occur when there is no users stored in db
    * @apiHeader (Header) {String} auth-token the token of the user loged in
+   * @apiParam {String} page number of the page (defult value 1)
+   * @apiParam {String} limit limit of items per page (if you didn't send it the response will have all the data)
    * @apiSampleRequest http://127.0.0.1:4000/api/users
    * @apiSuccessExample sample:
-   *[
-    {
-        "id": 38,
-        "username": "ahmed12",
-        "email": "ahmed@gmail.com",
-        "password": "$2b$10$gtBpvEWanBq8Mc.qL1sBSOmC2fniMpV1Yy.29lviH7ALbWjG6wnRS",
-        "create_time": "2022-05-26T21:35:04.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893213",
-        "address": null,
-        "role": "patient"
+   *{
+    "totalData": 24,
+    "pages": {
+        "total": 8,
+        "next": {
+            "page": 6
+        },
+        "previous": {
+            "page": 4
+        }
     },
-    {
-        "id": 39,
-        "username": "users",
-        "email": "users@gmail.com",
-        "password": "$2b$10$/nS/3QOg8xgx6SmECwDitOzjUoh3IggMMvaqj04wWxvCK.5AVOcyi",
-        "create_time": "2022-05-27T15:18:17.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893222",
-        "address": null,
-        "role": "patient"
-    },
-    {
-        "id": 42,
-        "username": "users3",
-        "email": "users@gmail.com",
-        "password": "$2b$10$zXmn965cKgpV6mlS.gAg3OHVYo4xS9RVkO7rZiSQ/zJwCsEvt8k8G",
-        "create_time": "2022-05-27T21:42:02.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893224",
-        "address": null,
-        "role": "patient"
-    },
-    {
-        "id": 43,
-        "username": "users4",
-        "email": "users@gmail.com",
-        "password": "$2b$10$AGcLlpAL.Av9vS9KVo5zWOCgnIiEFvb7J4ckZHTcp1MDyz16M.6Be",
-        "create_time": "2022-05-27T21:43:49.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893225",
-        "address": null,
-        "role": "patient"
-    },
-    {
-        "id": 46,
-        "username": "users6",
-        "email": "users@gmail.com",
-        "password": "$2b$10$rGCAOLU5zPzKZrsNDi7GP.Rq53cM7Ew7dunfiVcIm9yyTi6CIrmtu",
-        "create_time": "2022-05-28T11:40:13.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893227",
-        "address": null,
-        "role": "patient"
-    },
-    {
-        "id": 48,
-        "username": "users7",
-        "email": "users@gmail.com",
-        "password": "$2b$10$kFW7H7u02vN6Q0Jxd3cJQOnAZ60uRlmOoErAOujOvshj7e3bCe7BW",
-        "create_time": "2022-05-28T11:42:27.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893228",
-        "address": null,
-        "role": "patient"
-    },
-    {
-        "id": 51,
-        "username": "omar12",
-        "email": "ahmed@gmail.com",
-        "password": "$2b$10$49RO05cDFcvHj3ZD1E2sqOYaLZ/0HCB4zB0JDQ8WOgWZGZuZ.ISde",
-        "create_time": "2022-05-28T15:28:47.000Z",
-        "fname": "ahmed",
-        "lname": "raouf",
-        "bdate": null,
-        "gender": null,
-        "phone": 1067662457,
-        "SSN": "01234567893221",
-        "address": null,
-        "role": "doctor"
-    },
-    {
-        "id": 56,
-        "username": "users8",
-        "email": "users@gmail.com",
-        "password": "$2b$10$UYOzpxv4pMj9/0.gH9dLDureD2RhAeMWGmOBu.ctghLzz6FVnV3uy",
-        "create_time": "2022-05-29T20:01:58.000Z",
-        "fname": null,
-        "lname": null,
-        "bdate": null,
-        "gender": null,
-        "phone": null,
-        "SSN": "01234567893229",
-        "address": null,
-        "role": "doctor"
-    }
-]
+    "data": [
+        {
+            "id": 51,
+            "username": "omar12",
+            "email": "ahmed@gmail.com",
+            "password": "$2b$10$49RO05cDFcvHj3ZD1E2sqOYaLZ/0HCB4zB0JDQ8WOgWZGZuZ.ISde",
+            "create_time": "2022-06-01T12:07:01.000Z",
+            "fname": "ahmed",
+            "lname": "raouf",
+            "bdate": null,
+            "gender": null,
+            "phone": "1067662457",
+            "SSN": "01234567893221",
+            "address": null,
+            "role": "reseptionist",
+            "user_id": 51,
+            "salary": 5000,
+            "degree": null,
+            "shift": "2022-06-04T14:11:13.000Z",
+            "holidays": null,
+            "dep_id": 2
+        },
+        {
+            "id": 56,
+            "username": "Employee8",
+            "email": "emp@gmail.com",
+            "password": "$2b$10$UYOzpxv4pMj9/0.gH9dLDureD2RhAeMWGmOBu.ctghLzz6FVnV3uy",
+            "create_time": "2022-05-29T20:22:20.000Z",
+            "fname": null,
+            "lname": null,
+            "bdate": null,
+            "gender": null,
+            "phone": null,
+            "SSN": "01234567893229",
+            "address": null,
+            "role": "doctor",
+            "user_id": 56,
+            "salary": 10000,
+            "degree": "BS in medicine",
+            "shift": "2022-06-04T14:11:13.000Z",
+            "holidays": null,
+            "dep_id": 1
+        },
+        {
+            "id": 60,
+            "username": "omar1",
+            "email": "ahmed@gmail.com",
+            "password": "$2b$10$51x43ph4sgibOKTmRE3pte.P47Rzc1pQC8awxUBkW6pH5gqjJcyui",
+            "create_time": null,
+            "fname": null,
+            "lname": null,
+            "bdate": null,
+            "gender": null,
+            "phone": null,
+            "SSN": "01234567893275",
+            "address": null,
+            "role": "patient",
+            "user_id": null,
+            "salary": null,
+            "degree": null,
+            "shift": null,
+            "holidays": null,
+            "dep_id": null
+        }
+    ]
+}
 */
 //get users
 router.get("/users", [authn, authz("Admin")], usersController.getAllUsers);
@@ -157,16 +114,22 @@ router.get("/users", [authn, authz("Admin")], usersController.getAllUsers);
         "username": "omar12",
         "email": "ahmed@gmail.com",
         "password": "$2b$10$49RO05cDFcvHj3ZD1E2sqOYaLZ/0HCB4zB0JDQ8WOgWZGZuZ.ISde",
-        "create_time": "2022-05-28T15:28:47.000Z",
+        "create_time": "2022-06-01T12:07:01.000Z",
         "fname": "ahmed",
         "lname": "raouf",
         "bdate": null,
         "gender": null,
-        "phone": 1067662457,
+        "phone": "1067662457",
         "SSN": "01234567893221",
         "address": null,
-        "role": "doctor"
-    }
+        "role": "reseptionist",
+        "user_id": 51,
+        "salary": 5000,
+        "degree": null,
+        "shift": "2022-06-04T14:11:13.000Z",
+        "holidays": null,
+        "dep_id": 2
+        }
 */
 //get one user
 router.get("/users/:id", authn, usersController.getOneUser);
