@@ -1,8 +1,0 @@
-{
-  "name": "Akwa-HIS backend API documentation",
-  "version": "1.0.0",
-  "description": "API for Akwa-HIS website",
-  "template": {
-    "forceLanguage": "en"
-  }
-}
