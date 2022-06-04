@@ -12,6 +12,7 @@ import Services from './Components/Services_web/Services';
 import ErrorPage from './Components/404_page/ErrorPage';
 import AdminPage from './Components/AdminPage/AdminPage';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Table from './Components/Table/Table';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/table" element={<Table />} />
         </Routes>
       </Router>
     </div>

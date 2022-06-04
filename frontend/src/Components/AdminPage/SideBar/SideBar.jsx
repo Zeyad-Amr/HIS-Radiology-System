@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import Admin from "../images/admin.png";
+import Table from "../../Table/Table";
 
 
 
@@ -72,6 +73,7 @@ function SideBar() {
           </div>
         </div>
       </IconContext.Provider>
+      <Table/>
     </div>
   );
 }
