@@ -1,13 +1,13 @@
-const paginate = (model, page, limit) => {
+const paginate = (model, page = 1, limit) => {
   const startIndex = (page - 1) * limit;
   const endIndex = page * limit;
-  const total = Math.ceil(model.length / limit);
+  const total = !limit ? 1 : Math.ceil(model.length / limit);
   const totalData = model.length;
   const result = { totalData };
 
   result.pages = { total };
 
-  if (page <= total) {
+  if (page < total) {
     result.pages.next = {
       page: page + 1,
     };
@@ -18,9 +18,12 @@ const paginate = (model, page, limit) => {
     };
   }
 
-  result.data = model.slice(startIndex, endIndex);
+  if (!limit) {
+    result.data = model;
+  } else {
+    result.data = model.slice(startIndex, endIndex);
+  }
 
-  console.log(result);
   return result;
 };
 module.exports = paginate;

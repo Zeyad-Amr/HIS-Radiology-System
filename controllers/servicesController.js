@@ -1,4 +1,5 @@
 const db = require("../mysql-con");
+const paginate = require("../methods/paginate");
 
 module.exports = {
   //get all services
@@ -30,7 +31,7 @@ module.exports = {
       if (err) {
         return res.status(400).json(err);
       }
-      res.status(201).json(result);
+      res.sendStatus(201);
     });
     console.log(query);
   },
