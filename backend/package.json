@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev-start": "concurrently \"npx nodemon index.js\" \"cd frontend && npm start\"",
-    "install-client": "cd frontend && npm install"
+    "devstart": "npx nodemon index",
+    "docs": "apidoc -i routes -o doc"
   },
   "author": "AR",
   "license": "ISC",
@@ -21,7 +21,6 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
-    "concurrently": "^7.2.1",
     "nodemon": "^2.0.16"
   }
 }

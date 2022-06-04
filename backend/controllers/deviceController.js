@@ -1,13 +1,17 @@
 const db = require("../mysql-con");
+const paginate = require("../methods/paginate");
 
 module.exports = {
   //get all Devices
   getAllDevices: (req, res) => {
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
     db.query(`SELECT * FROM device`, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
+      const paginatedResult = paginate(result, page, limit);
+      res.status(200).send(paginatedResult);
     });
   },
 
@@ -30,18 +34,17 @@ module.exports = {
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
       res.status(200).json(result[0]);
-      });
-    },
-  
+    });
+  },
+
   //add Device
   createDevice: (req, res) => {
-    const { serial_number, name, arrivial_date, installation_date, id } = req.body;
+    const { serial_number, name, arrivial_date, installation_date } = req.body;
     const deviceData = {
       serial_number,
       name,
       arrivial_date,
       installation_date,
-      id,
     };
     db.query(`INSERT INTO device SET ?`, deviceData, (err, result) => {
       if (err) return res.status(400).send(err);

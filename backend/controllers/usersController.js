@@ -3,6 +3,7 @@ const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const passwordComplexity = require("joi-password-complexity");
+const paginate = require("../methods/paginate");
 
 function validate(user) {
   const passwordValidations = {
@@ -19,18 +20,17 @@ function validate(user) {
     username: Joi.string().min(6).max(255).required(),
     fname: Joi.string().min(2).max(50).required(),
     lname: Joi.string().min(2).max(50).required(),
+    phone: Joi.string().min(7).max(15).required(),
     email: Joi.string().min(5).max(255).email().required(),
+    address: Joi.string(),
     password: passwordComplexity(passwordValidations).required(),
     confirm_password: passwordComplexity(passwordValidations).required(),
+    gender: Joi.string().min(4).max(6).required(),
     SSN: Joi.string()
       .length(14)
       .pattern(/^[0-9]+$/)
       .required(),
-    country: Joi.string(),
-    address: Joi.string(),
-    gender: Joi.string().min(4).max(6).required(),
-    phone: Joi.string().min(7).max(15).required(),
-    bdate: Joi.date(),
+    bdate: Joi.date().required(),
     role: Joi.string().min(3).max(50),
     depID: Joi.number().integer().min(0),
   });
@@ -46,39 +46,52 @@ const createToken = (id) => {
 module.exports = {
   //get all users
   getAllUsers: (req, res) => {
-    db.query(`SELECT * FROM user`, (err, result) => {
-      if (err) {
-        return res.status(400).json(err);
+    const page = parseInt(req.query.page);
+    const limit = parseInt(req.query.limit);
+    db.query(
+      `SELECT * 
+    FROM user LEFT JOIN emp
+    ON id = user_id`,
+      (err, result) => {
+        if (err) {
+          return res.status(400).json(err);
+        }
+        if (result.length === 0)
+          return res.status(404).json({ message: "Not Found" });
+        const paginatedResult = paginate(result, page, limit);
+        res.status(200).send(paginatedResult);
       }
-      if (result.length === 0)
-        return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
-    });
+    );
   },
 
   // get one user
   getOneUser: (req, res) => {
     const id = req.params.id;
-    db.query(`SELECT * FROM user WHERE id = ?`, id, (err, result) => {
-      if (err) return res.status(400).send(err);
-      if (result.length === 0)
-        return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
-    });
+    db.query(
+      `SELECT * 
+    FROM user LEFT JOIN emp 
+    ON id = user_id 
+    WHERE id = ?`,
+      id,
+      (err, result) => {
+        if (err) return res.status(400).send(err);
+        if (result.length === 0)
+          return res.status(404).json({ message: "Not Found" });
+        res.status(200).json(result);
+      }
+    );
   },
 
   //create a new patient user
   createUser: async (req, res) => {
-    // const result = validate(req.body);
-    // if (result.error)
-    //   return res.status(400).send({ message: result.error.details[0].message });
+    const result = validate(req.body);
+    if (result.error)
+      return res.status(400).send({ message: result.error.details[0].message });
 
     if (req.body.password !== req.body.confirm_password) {
       return res.status(400).send({ message: "Password didn't match" });
     }
 
-    const value = req.body;
-    const result = { value };
     //encrypt password
     const salt = await bcrypt.genSalt(10);
     const userPassword = await bcrypt.hash(result.value.password, salt);
@@ -94,6 +107,7 @@ module.exports = {
       phone,
       SSN,
       address,
+      country,
     } = result.value;
 
     data = {
@@ -107,6 +121,7 @@ module.exports = {
       phone,
       SSN,
       address,
+      country,
       role: "patient",
     };
 

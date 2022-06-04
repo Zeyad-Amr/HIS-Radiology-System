@@ -2,11 +2,11 @@ const db = require("../mysql-con");
 const paginate = require("../methods/paginate");
 
 module.exports = {
-  //get all services
-  getAllServices: (req, res) => {
+  //get all appointment
+  getAllAppts: (req, res) => {
     const page = parseInt(req.query.page);
     const limit = parseInt(req.query.limit);
-    db.query(`SELECT * FROM services`, (err, result) => {
+    db.query(`SELECT * FROM appointment`, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
@@ -14,19 +14,19 @@ module.exports = {
       res.status(200).send(paginatedResult);
     });
   },
-  //get one services
-  getOneService: (req, res) => {
+  //get one appointment
+  getOneAppt: (req, res) => {
     const id = req.params.id;
-    db.query(`SELECT * FROM services WHERE id = ?`, id, (err, result) => {
+    db.query(`SELECT * FROM appointment WHERE id = ?`, id, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
       res.status(200).json(result[0]);
     });
   },
-  //add service
-  createService: (req, res) => {
-    const sqlStatment = `INSERT INTO services SET ?`;
+  //add Appt
+  createAppt: (req, res) => {
+    const sqlStatment = `INSERT INTO appointment SET ?`;
     const query = db.query(sqlStatment, req.body, (err, result) => {
       if (err) {
         return res.status(400).json(err);
@@ -35,28 +35,28 @@ module.exports = {
     });
     console.log(query);
   },
-  //edit service
-  updateService: (req, res) => {
+  //edit Appt
+  updateAppt: (req, res) => {
     const id = req.params.id;
     db.query(
-      `UPDATE services SET ? WHERE id = ?`,
+      `UPDATE appointment SET ? WHERE id = ?`,
       [req.body, id],
       (err, result) => {
         if (err) return res.status(400).send(err);
         if (result.affectedRows === 0)
           return res.status(404).json({ message: "Not Found" });
-        res.status(200).json({ message: "service edited successfully" });
+        res.status(200).json({ message: "Appt edited successfully" });
       }
     );
   },
-  //delete service
-  deleteservices: (req, res) => {
+  //delete Appt
+  deleteAppt: (req, res) => {
     const id = req.params.id;
-    db.query(`DELETE FROM services WHERE id = ?`, id, (err, result) => {
+    db.query(`DELETE FROM appointment WHERE id = ?`, id, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.affectedRows === 0)
         return res.status(404).json({ message: "Not Found" });
-      res.status(200).json({ message: "service deleted successfully" });
+      res.status(200).json({ message: "Appt deleted successfully" });
     });
   },
 };
