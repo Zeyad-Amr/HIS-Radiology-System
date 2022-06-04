@@ -90,6 +90,7 @@ router.get("/services/:id", servicesController.getOneService);
  * @apiBody {Integer} dep_id  The id of the departement the service belong to
  * @apiBody {Integer} device_id  The id of the device the service connected to
  * @apiBody {Integer} category_id  The id of the category the service blenog to
+ * @apiBody {Boolean} hasTech  The the sevice result has techneician or not
  * @apiSampleRequest http://127.0.0.1:4000/api/services
  * @apiSuccessExample sample:
  * Created
