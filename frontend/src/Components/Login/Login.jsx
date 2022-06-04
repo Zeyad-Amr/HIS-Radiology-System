@@ -7,7 +7,7 @@ import {useState} from "react";
 import { Link , useNavigate } from "react-router-dom";
 import axios from "../API/axios";
 // import {motion} from 'framer-motion/dist/es/index'
-import imgLeft from "./Images/img.svg";
+import imgLeft from "./Images/login.svg";
 
 function Login() {
 
@@ -34,7 +34,7 @@ function Login() {
     <div className="login">
 
           <section className="side">
-              <img src= {imgLeft} alt=""/>
+              <img src= {imgLeft} alt="" size="2x"/>
           </section>
 
           <section className="main">
