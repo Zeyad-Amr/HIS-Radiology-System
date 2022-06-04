@@ -24,6 +24,8 @@ app.use("/api", require("./routes/appointment"));
 app.use("/api", require("./routes/category"));
 app.use("/api", require("./routes/services"));
 app.use("/api", require("./routes/order"));
+app.use("/api", require("./routes/report"));
+// app.use("/api", require("./routes/file"));
 
 //connect to database
 db.connect((err) => {
