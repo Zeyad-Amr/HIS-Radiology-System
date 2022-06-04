@@ -42,7 +42,8 @@ const authz = require("../middlewares/authz");
             "status": ""
         }
     ]
-}
+} 
+
 */
 //get order
 router.get("/order", orderController.getAllOrders);
