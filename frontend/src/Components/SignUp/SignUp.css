@@ -61,7 +61,7 @@
   top: 40%;
   left: 40%;
   border-radius: 10px;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   /* border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); */
   padding: 50px 35px;
@@ -96,9 +96,8 @@
   border-radius: 20px;
 }
 
-.input-field
-,.login-form .input
- {
+.input-field,
+.login-form .input {
   margin: 25px 0;
   position: relative;
   height: 50px;
@@ -152,7 +151,7 @@ span.show {
   font-size: 10px;
   font-weight: bold;
   cursor: pointer;
-  user-select: none;
+  /* user-select: none; */
   visibility: hidden;
   font-family: "Open Sans", sans-serif;
 }
@@ -257,7 +256,7 @@ input:valid ~ label {
   height: calc(38px + 5px); */
   font-weight: 700;
 }
-.btns-back{
+.btns-back {
   display: inline-block;
 }
 .btns-signup {
