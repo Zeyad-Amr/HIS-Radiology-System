@@ -1,17 +1,16 @@
 import React from "react";
-import SideBar from "./SideBar/SideBar";
+import SideBar from "../SideBar/SideBar";
+import Table from "../Table/Table";
+import { useState } from "react";
+function AdminPage() {
+  const [data, setData] = useState([]);
 
-
-
-function AdminPage(){
-    return (
-      
-    
-    
-    <SideBar/>
-
-    );
-  }
-
+  return (
+    <div className="container">
+      <SideBar />
+      <Table />
+    </div>
+  );
+}
 
 export default AdminPage;
