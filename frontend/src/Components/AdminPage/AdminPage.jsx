@@ -6,6 +6,14 @@ import axios from "../API/axios";
 
 function AdminPage() {
   const [data, setData] = useState([]);
+  const [width, setWidth] = useState(0);
+  const square_ref = React.createRef();
+
+  useEffect(() => {
+    if (square_ref.current) {
+      setWidth(square_ref.current.getBoundingClientRect().width);
+    }
+  }, []);
 
   const geetData = async () => {
     const response = await axios
@@ -28,12 +36,12 @@ function AdminPage() {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className="Container">
+      <div className="sidebar-container">
         <SideBar />
       </div>
 
-      <div>
+      <div className="table-container">
         {data.length > 0 ? (
           <Table
             list={data}
