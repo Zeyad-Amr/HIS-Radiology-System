@@ -15,6 +15,7 @@ import AdminPage from "./Components/AdminPage/AdminPage";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Test from "./Components/Test";
 import OrderDetails from "./Components/OrderDetails/OrderDetails";
+import UserDetails from "./Components/UserDetails/UserDetails";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/order" element={<OrderDetails />} />
+          <Route path="/user" element={<UserDetails />} />
           <Route path="/test" element={<Test />} />
         </Routes>
       </Router>
