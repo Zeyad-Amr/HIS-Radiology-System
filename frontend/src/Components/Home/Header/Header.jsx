@@ -17,7 +17,7 @@ function Header() {
 
   return (
   <div>
-    <header className="header"  data-aos="zoom-out">
+    <header className="header" id="home"  data-aos="zoom-out">
 
     <div className="image">
         <img src= {logo} alt=""/>
@@ -28,18 +28,18 @@ function Header() {
 
     <nav className="navbar">
         <a href="#home" >Home</a>
-        <Link to="/about">
-        <a>About Us</a>
-        </Link>
-        <Link to="/departments">
-        <a >Departments</a>
-        </Link>
-        <Link to="/services">
-        <a>Services</a>
-        </Link>
-        <Link to="/contact">
-        <a>Contact</a>
-        </Link>
+        {/* <Link to="/about"> */}
+        <a href="#about">About Us</a>
+        {/* </Link> */}
+        {/* <Link to="/departments"> */}
+        <a href="#departments">Departments</a>
+        {/* </Link> */}
+        {/* <Link to="/services"> */}
+        <a href="#services">Services</a>
+        {/* </Link> */}
+        {/* <Link to="/contact"> */}
+        <a href="#contact">Contact</a>
+        {/* </Link> */}
         <Link to="/login">
         <a>Login</a>
         </Link>
@@ -49,7 +49,7 @@ function Header() {
     </nav>
 
     {/* responsive */}
- {/* <div id="menu-btn" class="fas fa-bars"></div>*/}
+ <div id="menu-btn" class="fas fa-bars"></div>
 
 </header>
 <section className="home" id="home-even" >

@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Services() {
   return (
     <div> 
-      <section className="services">
+      <section className="services" id='services'>
 
         <div className="image" data-aos="fade-right">
               <h3>SERVICES</h3>

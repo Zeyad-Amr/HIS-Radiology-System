@@ -6,7 +6,7 @@ import lab from '../images/lab.jpg';
 function Departments() {
   return (
     <div>
-      <section className="departments" id="dep-even" >
+      <section className="departments dep-even" id="departments">
 
         <div className="content" data-aos="fade-left">
           <h3> OUR <span1> DEPARTMENTS </span1> </h3>
