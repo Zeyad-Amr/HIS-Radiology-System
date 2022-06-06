@@ -37,45 +37,45 @@ function AdminPage() {
 
   return (
     <div className="Container">
-      <div className="sidebar-container">
-        <SideBar />
-      </div>
+      <SideBar />
 
-      <div className="table-container">
-        <div
+      <div
+        style={{
+          marginLeft: "80%",
+          padding: "10px",
+          height: "80px",
+          width: "120px",
+        }}
+      >
+        <button
           style={{
-            marginLeft: "80%",
-            padding: "10px",
-            height: "80px",
-            width: "120px",
+            // padding: "20px",
+            height: "40px",
+            width: "90px",
+            borderRadius: "20px",
+            fontSize: "15px",
           }}
         >
-          <button
-            style={{
-              // padding: "20px",
-              height: "40px",
-              width: "90px",
-              borderRadius: "20px",
-              fontSize: "15px",
-            }}
-          >
-            Create
-          </button>
-        </div>
-        {data.length > 0 ? (
-          <Table
-            style={{ width: "20%" }}
-            list={data}
-            headers={[
-              { field: "id", headerName: "ID" },
-              { field: "username", headerName: "Username" },
-              { field: "fname", headerName: "First Name" },
-            ]}
-          />
-        ) : (
-          <div></div>
-        )}
+          Create
+        </button>
       </div>
+      {data.length > 0 ? (
+        <Table
+          list={data}
+          headers={[
+            { field: "id", headerName: "ID" },
+            { field: "username", headerName: "Username" },
+            { field: "fname", headerName: "First Name" },
+            { field: "lname", headerName: "Last Name" },
+            { field: "email", headerName: "Email" },
+            { field: "phone", headerName: "Phone" },
+            { field: "SSN", headerName: "SSN" },
+            { field: "role", headerName: "Role" },
+          ]}
+        />
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

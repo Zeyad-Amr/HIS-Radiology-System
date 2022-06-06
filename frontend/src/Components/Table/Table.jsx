@@ -55,7 +55,7 @@ export default function Table({ headers, list }) {
   }, [headersList]);
 
   return (
-    <div style={{ height: 400, marginLeft: "20%", marginRight: "10px" }}>
+    <div style={{ height: 400, marginLeft: "20%", marginRight: "20px" }}>
       <DataGrid
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
