@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button/Button";
 import './Services.css'
 
 function ServicesDetails() {
@@ -10,6 +11,12 @@ function ServicesDetails() {
       device_name: "CT",
     },
   ];
+
+  function handleClick(event) {
+    event.preventDefault();
+    alert('Button Clicked');
+};
+
   return (
     <form className="signup-form">
     <div className="serv-cont">
@@ -43,6 +50,10 @@ function ServicesDetails() {
             <option value="MRI">MRI</option>
           </select>
         </div>
+        <Button
+        onClick={handleClick}
+        value='Click me!'
+        />
         </div>
     </form>
   );

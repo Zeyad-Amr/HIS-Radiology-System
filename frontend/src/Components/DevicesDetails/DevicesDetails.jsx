@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../Button/Button'
 
 function DevicesDetails() {
 
@@ -9,6 +10,11 @@ function DevicesDetails() {
     serial_number: "null",
     last_checkup:"null"
      }
+
+     function handleClick(event) {
+        event.preventDefault();
+        alert('Button Clicked');
+    };
 
   return (
     <form className="signup-form">
@@ -37,6 +43,10 @@ function DevicesDetails() {
           <input type="text" required value={data.last_checkup}></input>
           <label >LastCheckup</label>
         </div>
+        <Button
+        onClick={handleClick}
+        value='Click me!'
+        />
         </div>
     </form>
   )
