@@ -14,7 +14,7 @@ function About() {
 
 <div className="content" data-aos="fade-left">
     <h3>ABOUT<span1> US </span1> </h3>
-    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus, totam dicta, iure vitae molestias accusantium quo perspiciatis et nihil deserunt officia saepe laborum ea deleniti possimus, quisquam sint mollitia ipsa.</h1>
+    <h1>The idea of establishing a world-class medical care facility with unique and high quality medical services originated in February 1992. The construction phase started in July 1996, the consultants during this phase were Egyptian, American and British construction and consultancy firms.</h1>
     <p></p>
 </div>
 
