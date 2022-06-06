@@ -1,7 +1,4 @@
 const { db, conConfig } = require("../mysql-con");
-const paginate = require("../methods/paginate");
-const mysql = require("mysql2/promise");
-const fanat = require("../methods/useless_function");
 
 module.exports = {
   //get all orders
