@@ -17,32 +17,92 @@ const authz = require("../middlewares/authz");
    * @apiParam {String} limit limit of items per page (if you didn't send it the response will have all the data)
    * @apiSampleRequest http://127.0.0.1:4000/api/order?page=1&limit=3
    * @apiSuccessExample sample:
-   *{
-    "totalData": 2,
-    "pages": {
-        "total": 1
+   *[
+    {
+        "id": 3,
+        "receptionist_id": 66,
+        "patient_id": 30,
+        "services_id": 2,
+        "result_id": null,
+        "create_time": "2022-06-02T13:39:30.000Z",
+        "status": "",
+        "ptId": 30,
+        "ptUsername": "zexo12",
+        "ptEmail": "bedo@gmail.com",
+        "ptFname": null,
+        "ptLname": null,
+        "ptBdate": null,
+        "ptGender": null,
+        "ptPhone": null,
+        "ptSSN": "01234567893215",
+        "ptAddress": null,
+        "ptRole": "patient",
+        "recptId": 66,
+        "recptUsername": "ahmedraouf",
+        "recptEmail": "ahmed@gmail.com",
+        "recptFname": "ahmed",
+        "recptLname": "raouf",
+        "recptBdate": "2001-07-11T21:00:00.000Z",
+        "recptGender": "male",
+        "recptPhone": "01067662457",
+        "recptSSN": "01234567893235",
+        "recptAddress": "5 hasan el saban fisl giza",
+        "recptRole": "Admin",
+        "recptShift": null,
+        "srvId": 2,
+        "srvName": "cat scan",
+        "cost": 5000,
+        "depName": "Radiology",
+        "catName": "scans",
+        "resID": null,
+        "fileId": null,
+        "fileURL": null,
+        "repId": null,
+        "repTxt": null
     },
-    "data": [
-        {
-            "id": 3,
-            "receptionist_id": 66,
-            "patient_id": 30,
-            "services_id": 2,
-            "result_id": null,
-            "create_time": "2022-06-02T13:39:30.000Z",
-            "status": ""
-        },
-        {
-            "id": 4,
-            "receptionist_id": 66,
-            "patient_id": 25,
-            "services_id": 2,
-            "result_id": null,
-            "create_time": "2022-06-02T13:39:46.000Z",
-            "status": ""
-        }
-    ]
-} 
+    {
+        "id": 4,
+        "receptionist_id": 66,
+        "patient_id": 25,
+        "services_id": 2,
+        "result_id": null,
+        "create_time": "2022-06-02T13:39:46.000Z",
+        "status": "",
+        "ptId": 25,
+        "ptUsername": "bedo12",
+        "ptEmail": null,
+        "ptFname": null,
+        "ptLname": null,
+        "ptBdate": null,
+        "ptGender": null,
+        "ptPhone": null,
+        "ptSSN": "01234567891234",
+        "ptAddress": "ajfhdsajfhajkdsfh sdjafjdskafhnk jkskddfjasdfhjksad jsdafjkhasd",
+        "ptRole": "patient",
+        "recptId": 66,
+        "recptUsername": "ahmedraouf",
+        "recptEmail": "ahmed@gmail.com",
+        "recptFname": "ahmed",
+        "recptLname": "raouf",
+        "recptBdate": "2001-07-11T21:00:00.000Z",
+        "recptGender": "male",
+        "recptPhone": "01067662457",
+        "recptSSN": "01234567893235",
+        "recptAddress": "5 hasan el saban fisl giza",
+        "recptRole": "Admin",
+        "recptShift": null,
+        "srvId": 2,
+        "srvName": "cat scan",
+        "cost": 5000,
+        "depName": "Radiology",
+        "catName": "scans",
+        "resID": null,
+        "fileId": null,
+        "fileURL": null,
+        "repId": null,
+        "repTxt": null
+    }
+]
 
 */
 //get order
@@ -61,14 +121,47 @@ router.get("/order", orderController.getAllOrders);
    * @apiSampleRequest http://127.0.0.1:4000/api/order/3
    * @apiSuccessExample sample:
    * {
-        "id": 3,
+        "id": 4,
         "receptionist_id": 66,
-        "patient_id": 30,
+        "patient_id": 25,
         "services_id": 2,
         "result_id": null,
-        "create_time": "2022-06-02T13:39:30.000Z",
-        "status": ""
-      }
+        "create_time": "2022-06-02T13:39:46.000Z",
+        "status": "",
+        "ptId": 25,
+        "ptUsername": "bedo12",
+        "ptEmail": null,
+        "ptFname": null,
+        "ptLname": null,
+        "ptBdate": null,
+        "ptGender": null,
+        "ptPhone": null,
+        "ptSSN": "01234567891234",
+        "ptAddress": "ajfhdsajfhajkdsfh sdjafjdskafhnk jkskddfjasdfhjksad jsdafjkhasd",
+        "ptRole": "patient",
+        "recptId": 66,
+        "recptUsername": "ahmedraouf",
+        "recptEmail": "ahmed@gmail.com",
+        "recptFname": "ahmed",
+        "recptLname": "raouf",
+        "recptBdate": "2001-07-11T21:00:00.000Z",
+        "recptGender": "male",
+        "recptPhone": "01067662457",
+        "recptSSN": "01234567893235",
+        "recptAddress": "5 hasan el saban fisl giza",
+        "recptRole": "Admin",
+        "recptShift": null,
+        "srvId": 2,
+        "srvName": "cat scan",
+        "cost": 5000,
+        "depName": "Radiology",
+        "catName": "scans",
+        "resID": null,
+        "fileId": null,
+        "fileURL": null,
+        "repId": null,
+        "repTxt": null
+    }
 */
 // get single order
 router.get("/order/:id", orderController.getOneOrder);
