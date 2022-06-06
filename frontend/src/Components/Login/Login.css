@@ -104,6 +104,7 @@ button {
   color: #888;
   transition: color   0.4s;
   opacity: 0.8;
+  z-index: 2;
 }
 
 .form-control input:focus ~ i {

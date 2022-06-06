@@ -1,7 +1,7 @@
 import "../SignUp/SignUp.css";
 import React  from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelopeCircleCheck,faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
+import {faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 // import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +17,7 @@ function Next1({step , setStep , setUser , setLast, setFirst ,fname ,lname ,user
         <div className="input-field-cont">
           <div class="input-field">
             <input type="text" required onChange={(e) => setFirst(e.target.value)} value={fname}></input>
-            <FontAwesomeIcon className="signup-icon" icon={faPerson} color="white" size="2x"/>
+            <FontAwesomeIcon className="icon" icon={faPerson} color="white" size="2x"/>
             <label>First Name</label>
           </div>
           <div class="input-field">

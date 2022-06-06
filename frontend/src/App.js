@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 import Login from "./Components/Login/Login";
 import Signup from "./Components/SignUp/Signup";
 import Forgetpass from "./Components/ForgetPass/ForgetPass";
@@ -12,8 +13,9 @@ import Services from "./Components/Services_web/Services";
 import ErrorPage from "./Components/404_page/ErrorPage";
 import AdminPage from "./Components/AdminPage/AdminPage";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Table from "./Components/Table/Table";
-import React from "react";
+import Test from "./Components/Test";
+import OrderDetails from "./Components/OrderDetails/OrderDetails";
+import UserDetails from "./Components/UserDetails/UserDetails";
 
 function App() {
   return (
@@ -31,7 +33,9 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/admin" element={<AdminPage />} />
-          <Route path="/table" element={<Table />} />
+          <Route path="/order" element={<OrderDetails />} />
+          <Route path="/user" element={<UserDetails />} />
+          <Route path="/test" element={<Test />} />
         </Routes>
       </Router>
     </div>
