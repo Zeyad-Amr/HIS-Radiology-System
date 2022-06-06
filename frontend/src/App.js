@@ -17,6 +17,7 @@ import Test from "./Components/Test";
 import OrderDetails from "./Components/OrderDetails/OrderDetails";
 import UserDetails from "./Components/UserDetails/UserDetails";
 import ServicesDetails from "./Components/ServicesDetails/ServicesDetails";
+import DevicesDetails from "./Components/DevicesDetails/DevicesDetails";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path="/order" element={<OrderDetails />} />
           <Route path="/user" element={<UserDetails />} />
           <Route path="/service" element={<ServicesDetails />} />
+          <Route path="/device" element={<DevicesDetails />} />
           <Route path="/test" element={<Test />} />
         </Routes>
       </Router>

@@ -2,6 +2,7 @@ import React from "react";
 import './UserDetails.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
+import Button from "../Button/Button";
 
 function UserDetails() {
   const data = {
@@ -21,6 +22,10 @@ function UserDetails() {
     shift: "night",
   };
 
+  function handleClick(event) {
+    event.preventDefault();
+    alert('Button Clicked');
+};
   return (
     <div className="log">
     <div className="text">Momen</div>
@@ -113,6 +118,10 @@ function UserDetails() {
             </select>
           </div>
           <div className="fady"></div>
+          <Button
+          onClick={handleClick}
+          value='Click me!'
+          />
       </form>
 
 
