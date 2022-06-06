@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
-import Admin from "../AdminPage/images/admin.png";
 
 function SideBar() {
   const [sidebar, setSidebar] = useState(true);

@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../Button/Button";
-import './Services.css'
+import Button from "../../shared/Button/Button";
+import "./Services.css";
 
 function ServicesDetails() {
   const data = [
@@ -14,18 +14,23 @@ function ServicesDetails() {
 
   function handleClick(event) {
     event.preventDefault();
-    alert('Button Clicked');
-  };
+    alert("Button Clicked");
+  }
 
   return (
     <section id="backG">
       <form className="signup-form">
         <div className="serv-cont">
-          <div className="text" style={{
-            textAlign: "center",
-            fontSize: "xx-large",
-            // marginTop: "80%"
-          }}>Services</div>
+          <div
+            className="text"
+            style={{
+              textAlign: "center",
+              fontSize: "xx-large",
+              // marginTop: "80%"
+            }}
+          >
+            Services
+          </div>
           <div class="input-field">
             <input type="text" required value={data[0].name}></input>
             <label>Name</label>
@@ -42,7 +47,7 @@ function ServicesDetails() {
           </div>
           <div class="input-field">
             <input type="text" required value={data[0].cost}></input>
-            <label >Cost</label>
+            <label>Cost</label>
           </div>
           <div class="input-field">
             <label>DeviceName</label>
@@ -54,10 +59,7 @@ function ServicesDetails() {
               <option value="MRI">MRI</option>
             </select>
           </div>
-          <Button
-            onClick={handleClick}
-            value='Click me!'
-          />
+          <Button onClick={handleClick} value="Click me!" />
         </div>
       </form>
     </section>

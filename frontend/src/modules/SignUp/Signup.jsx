@@ -1,11 +1,11 @@
 import "./SignUp.css";
 import React, { useState } from "react";
 import Next1 from "./Steps/Next1";
-import Next2 from "../Next_2/Next2";
-import Next3 from "../Next_3/Next3";
-import Next4 from "../Next_4/Next4";
-import Photo from "../SignUp/Images/doctorpatient.svg";
-import axios from "../API/axios";
+import Next2 from "./Steps/Next2";
+import Next3 from "./Steps/Next3";
+import Next4 from "./Steps/Next4";
+import Photo from "../../assets/images/doctorpatient.svg";
+import axios from "../../globals/API/axios";
 import { useNavigate } from "react-router-dom";
 
 function Signup() {

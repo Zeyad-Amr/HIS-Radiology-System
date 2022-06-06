@@ -1,34 +1,36 @@
-import React from 'react'
-import Button from '../Button/Button';
+import React from "react";
+import Button from "../../shared/Button/Button";
 
 function AppointmentDetails() {
+  const data = {
+    start_time: "2022-06-04",
+    end_time: "2022-06-04",
+    services_name: "null",
+    device_name: "null",
+  };
 
-    const data = 
-        {
-            start_time: "2022-06-04",
-            end_time: "2022-06-04",
-            services_name: "null",
-            device_name: "null",
-        };
-
-        function handleClick(event) {
-            event.preventDefault();
-            alert('Button Clicked');
-        };
+  function handleClick(event) {
+    event.preventDefault();
+    alert("Button Clicked");
+  }
 
   return (
     <form className="signup-form">
-    <div className="serv-cont">
-      <div className="text" style={{    textAlign: "center",
-        fontSize: "xx-large"}}>Appointment Details</div>
-      <div class="input-field">
+      <div className="serv-cont">
+        <div
+          className="text"
+          style={{ textAlign: "center", fontSize: "xx-large" }}
+        >
+          Appointment Details
+        </div>
+        <div class="input-field">
           <input type="text" required value={data.start_time}></input>
           <label>StartTime</label>
         </div>
         <div class="input-field">
-        <input type="text" required value={data.end_time}></input>
-        <label >EndTime</label>
-      </div>
+          <input type="text" required value={data.end_time}></input>
+          <label>EndTime</label>
+        </div>
         <div class="input-field">
           <label>Devices</label>
           <select class="gender-selection">
@@ -49,13 +51,10 @@ function AppointmentDetails() {
             <option value="MRI">Mix</option>
           </select>
         </div>
-        <Button
-        onClick={handleClick}
-          value='Click me!'
-        />
-        </div>
+        <Button onClick={handleClick} value="Click me!" />
+      </div>
     </form>
-  )
+  );
 }
 
-export default AppointmentDetails
+export default AppointmentDetails;

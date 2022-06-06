@@ -1,8 +1,8 @@
 import React from "react";
-import SideBar from "../SideBar/SideBar";
-import Table from "../Table/Table";
+import SideBar from "../../shared/SideBar/SideBar";
+import Table from "../../shared/Table/Table";
 import { useState, useEffect } from "react";
-import axios from "../API/axios";
+import axios from "../../globals/API/axios";
 
 function AdminPage() {
   const [data, setData] = useState([]);
