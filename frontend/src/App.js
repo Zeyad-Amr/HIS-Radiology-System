@@ -1,25 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
-import Login from "./Components/Login/Login";
-import Signup from "./Components/SignUp/Signup";
-import Forgetpass from "./Components/ForgetPass/ForgetPass";
-import Submit from "./Components/Submit/Submit";
-import Home from "./Components/Home/Home";
-import "./Components/SignUp/SignUp.css";
-import AboutUs from "./Components/About_us/AboutUs";
-import ContactUs from "./Components/Contact_us/ContactUs";
-import Departments from "./Components/Departments/Departments";
-import Services from "./Components/Services_web/Services";
-import ErrorPage from "./Components/404_page/ErrorPage";
+import Login from "./modules/Login/Login";
+import Signup from "./modules/SignUp/Signup";
+import Forgetpass from "./modules/ForgetPass/ForgetPass";
+import Submit from "./modules/Submit/Submit";
+import Home from "./modules/Home/Home";
+import "./modules/SignUp/SignUp.css";
+import AboutUs from "./modules/About_us/AboutUs";
+import ContactUs from "./modules/Contact_us/ContactUs";
+import Departments from "./modules/Departments/Departments";
+import Services from "./modules/Services_web/Services";
+import ErrorPage from "./modules/404_page/ErrorPage";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import Test from "./Components/Test";
-import OrderDetails from "./Components/OrderDetails/OrderDetails";
-import UserDetails from "./Components/UserDetails/UserDetails";
-import ServicesDetails from "./Components/ServicesDetails/ServicesDetails";
-import DevicesDetails from "./Components/DevicesDetails/DevicesDetails";
-import AppointmentDetails from "./Components/AppointmentDetails/AppointmentDetails";
+import Test from "./modules/Test";
+import OrderDetails from "./modules/OrderDetails/OrderDetails";
+import UserDetails from "./modules/UserDetails/UserDetails";
+import ServicesDetails from "./modules/ServicesDetails/ServicesDetails";
+import DevicesDetails from "./modules/DevicesDetails/DevicesDetails";
+import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails";
 
-import AdminPage from "./Components/AdminPage/AdminPage";
+import AdminPage from "./modules/AdminPage/AdminPage";
 
 function App() {
   return (
@@ -29,12 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/SignUp" element={<Signup />} />
-          <Route path="/forgetpass" element={<Forgetpass />} />
-          <Route path="/submit" element={<Submit />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<ContactUs />} />
           <Route path="/departments" element={<Departments />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/order" element={<OrderDetails />} />
           <Route path="/user" element={<UserDetails />} />
@@ -42,7 +37,6 @@ function App() {
           <Route path="/device" element={<DevicesDetails />} />
           <Route path="/appointment" element={<AppointmentDetails />} />
           <Route path="/test" element={<Test />} />
-
           <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </Router>
