@@ -37,11 +37,10 @@ module.exports = {
       FROM user recpt LEFT JOIN emp ON id = user_id) r ON orders.receptionist_id  = r.recptId
       LEFT JOIN (SELECT 
         s.id as srvId, s.name as srvName, s.cost, 
-        dep.name as depName,
-        c.name as catName
+        dep.name as depName
         FROM services s 
         LEFT JOIN dep ON s.dep_id = dep.id
-        LEFT JOIN category c ON s.category_id = c.id) service ON orders.services_id  = service.srvId
+        ) service ON orders.services_id  = service.srvId
       LEFT JOIN (SELECT 
         r.id as resID, 
         f.id as fileId, f.file_url as fileURL,
@@ -94,11 +93,9 @@ module.exports = {
       FROM user recpt LEFT JOIN emp ON id = user_id) r ON orders.receptionist_id  = r.recptId
       LEFT JOIN (SELECT 
         s.id as srvId, s.name as srvName, s.cost, 
-        dep.name as depName,
-        c.name as catName
+        dep.name as depName
         FROM services s 
-        LEFT JOIN dep ON s.dep_id = dep.id
-        LEFT JOIN category c ON s.category_id = c.id) service ON orders.services_id  = service.srvId
+        LEFT JOIN dep ON s.dep_id = dep.id) service ON orders.services_id  = service.srvId
       LEFT JOIN (SELECT
         r.id as resID, 
         f.id as fileId, f.file_url as fileURL,
