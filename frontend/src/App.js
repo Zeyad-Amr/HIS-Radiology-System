@@ -13,7 +13,7 @@ import UserDetails from "./modules/UserDetails/UserDetails";
 import ServicesDetails from "./modules/ServicesDetails/ServicesDetails";
 import DevicesDetails from "./modules/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails";
-
+import Side from "./SideBar/SideBar.jsx";
 import AdminPage from "./modules/AdminPage/AdminPage";
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
           <Route path="/appointment" element={<AppointmentDetails />} />
           <Route path="/test" element={<Test />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/side" element={<Side />} />
         </Routes>
       </Router>
     </div>

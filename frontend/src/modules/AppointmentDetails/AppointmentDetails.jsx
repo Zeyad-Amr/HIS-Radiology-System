@@ -1,10 +1,8 @@
-import React from 'react'
-import Button from '../Button/Button';
+import React from "react";
+import Button from "../../shared/Button/Button";
 
 function AppointmentDetails() {
-
-  const data =
-  {
+  const data = {
     start_time: "2022-06-04",
     end_time: "2022-06-04",
     services_name: "null",
@@ -13,24 +11,29 @@ function AppointmentDetails() {
 
   function handleClick(event) {
     event.preventDefault();
-    alert('Button Clicked');
-  };
+    alert("Button Clicked");
+  }
 
   return (
-    <section id='appoint'>
+    <section id="appoint">
       <form className="signup-form">
         <div className="serv-cont">
-          <div className="text" style={{
-            textAlign: "center",
-            fontSize: "xx-large"
-          }}>Appointment Details</div>
+          <div
+            className="text"
+            style={{
+              textAlign: "center",
+              fontSize: "xx-large",
+            }}
+          >
+            Appointment Details
+          </div>
           <div class="input-field">
             <input type="text" required value={data.start_time}></input>
             <label>StartTime</label>
           </div>
           <div class="input-field">
             <input type="text" required value={data.end_time}></input>
-            <label >EndTime</label>
+            <label>EndTime</label>
           </div>
           <div class="input-field">
             <label>Devices</label>
@@ -52,14 +55,11 @@ function AppointmentDetails() {
               <option value="MRI">Mix</option>
             </select>
           </div>
-          <Button
-            onClick={handleClick}
-            value='Click me!'
-          />
+          <Button onClick={handleClick} value="Click me!" />
         </div>
       </form>
     </section>
-  )
+  );
 }
 
-export default AppointmentDetails
+export default AppointmentDetails;
