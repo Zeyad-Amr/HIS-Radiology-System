@@ -7,7 +7,9 @@ import UserDetails from "./UserDetails/UserDetails";
 function Test() {
   return (
     <Layout>
-      <div>Home</div>
+      <div style={{ backgroundColor: "blue", width: "100%", height: "100vh" }}>
+        Home
+      </div>
     </Layout>
   );
 }

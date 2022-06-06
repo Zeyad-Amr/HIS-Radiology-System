@@ -29,9 +29,10 @@ const Layout = ({ children }) => {
             style={{
               height: "100%",
               position: "fixed",
-              background: "#fff",
+              background: "red",
+
               left: "0px",
-              width: collapsed ? "" : "15%",
+              width: collapsed ? "" : "20%",
               paddingTop: "4rem",
             }}
           ></div>
