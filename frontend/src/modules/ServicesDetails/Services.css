@@ -37,3 +37,14 @@
         height: 100vh;
     }
 }
+
+#appoint{
+    background-image: url(../AppointmentDetails/Images/appoint.svg);
+    background-size: 60%;
+    height: 100vh;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right; 
+}
