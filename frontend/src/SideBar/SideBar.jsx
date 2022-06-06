@@ -1,118 +1,88 @@
-import React, {useState} from 'react'
-import '../SideBar/side.css'
-
+import React, { useState } from "react";
+import "../SideBar/side.css";
+import { logo } from "../assets/images/logo.png";
 function SideBar() {
-    const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(true);
 
-    function showSidebar() {
-      setSidebar(!sidebar);
-      console.log("momen");
-    }
-    
-    return (
-        <div>
+  function showSidebar() {
+    setSidebar(!sidebar);
+    console.log("momen");
+  }
 
-            <nav className={sidebar ? "sideNav toggle" : "sideNav close"}>
-                <header>
-                    <div className="pic-text">
-                        <span className="pic">
-                            <img src="logo.png" alt=""/>
-                        </span>
+  const items = [
+    {
+      name: "Dashboard",
+      icon: "icon",
+    },
+    {
+      name: "Users",
+      icon: "icon",
+    },
+    {
+      name: "Departments",
+      icon: "icon",
+    },
+    {
+      name: "Services",
+      icon: "icon",
+    },
+    {
+      name: "Orders",
+      icon: "icon",
+    },
+    {
+      name: "Appointments",
+      icon: "icon",
+    },
+    {
+      name: "Devices",
+      icon: "icon",
+    },
+  ];
+  return (
+    <section style={{ backgroundColor: "red", width: "100%", height: "100vh" }}>
+      <nav className={sidebar ? "sideNav toggle" : "sideNav close"}>
+        <header>
+          <div className="pic-text">
+            <span className="pic">
+              <img src={logo} alt="" />
+            </span>
 
-                        <div className="text logo-text">
-                            <span className="name">Codinglab</span>
-                            <span className="profession">Web developer</span>
-                        </div>
-                    </div>
+            <div className="text logo-text">
+              <span className="name">Codinglab</span>
+              <span className="profession">Web developer</span>
+            </div>
+          </div>
 
-                    <i className='bx bx-chevron-right toggle' onClick={showSidebar}></i>
-                </header>
+          <i className="bx bx-chevron-right toggle" onClick={showSidebar}></i>
+        </header>
 
-                <div className="pro-bar">
-                    <div className="pro">
+        <div className="pro-bar">
+          <div className="pro">
+            <ul className="pro-links">
+              {items.map((item, index) => (
+                <li className="nav-link" key={index}>
+                  <a href="#">
+                    <i className="bx bx-bar-chart-alt-2 icon"></i>
+                    <span className="text nav-text">{item.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-                        <li className="search-box">
-                            <i className='bx bx-search icon'></i>
-                            <input type="text" placeholder="Search..."/>
-                        </li>
-
-                        <ul className="pro-links">
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-home-alt icon' ></i>
-                                    <span className="text nav-text">Dashboard</span>
-                                </a>
-                            </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-bar-chart-alt-2 icon' ></i>
-                                    <span className="text nav-text">Revenue</span>
-                                </a>
-                            </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-bell icon'></i>
-                                    <span className="text nav-text">Notifications</span>
-                                </a>
-                            </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-pie-chart-alt icon' ></i>
-                                    <span className="text nav-text">Analytics</span>
-                                </a>
-                            </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-heart icon' ></i>
-                                    <span className="text nav-text">Likes</span>
-                                </a>
-                            </li>
-
-                            <li className="nav-link">
-                                <a href="#">
-                                    <i className='bx bx-wallet icon' ></i>
-                                    <span className="text nav-text">Wallets</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                    <div className="bottom-content">
-                        <li className="">
-                            <a href="#">
-                                <i className='bx bx-log-out icon' ></i>
-                                <span className="text nav-text">Logout</span>
-                            </a>
-                        </li>
-
-                        <li className="mode">
-                            <div className="sun-moon">
-                                <i className='bx bx-moon icon moon'></i>
-                                <i className='bx bx-sun icon sun'></i>
-                            </div>
-                            <span className="mode-text text">Dark mode</span>
-
-                            <div className="toggle-switch">
-                                <span className="switch"></span>
-                            </div>
-                        </li>
-
-                    </div>
-                </div>
-
-            </nav>
-
-            <section className="home">
-                <div className="text">Dashboard Sidebar</div>
-            </section>
-
+          <div className="bottom-content">
+            <li className="">
+              <a href="#">
+                <i className="bx bx-log-out icon"></i>
+                <span className="text nav-text">Logout</span>
+              </a>
+            </li>
+          </div>
         </div>
-    )
+      </nav>
+    </section>
+  );
 }
 
-export default SideBar
+export default SideBar;
