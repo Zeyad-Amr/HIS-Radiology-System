@@ -1,3 +1,19 @@
+#backG{
+    background-image: url(./Images/serviceDetails.svg);
+    background-size: cover;
+    height: 100vh;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#backGR{
+    background-image: url(../DevicesDetails/Images/deviceDetails.svg);
+    background-size: cover;
+    height: 100vh;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .serv-cont {
     width: 40%;
     margin-left: 5%;
@@ -10,5 +26,14 @@
     width: 80%;
     margin-right: 10%;
     margin-left: 10%;
+    margin-bottom: 5%;
+    }
+
+    #backGR{
+        height: 100vh;
+    }
+
+    #backG{
+        height: 100vh;
     }
 }

@@ -1,5 +1,7 @@
 import React from 'react'
-import meeting from '../images/online-meeting.png';
+import booking from '../images/booking.jpg';
+import onRes from '../images/onlineRes.jpg';
+import tracking from '../images/tracking.jpg';
 import services from '../images/Services.png';
 import Carousel from 'react-bootstrap/Carousel'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Services() {
   return (
     <div> 
-      <section className="services">
+      <section className="services" id='services'>
 
         <div className="image" data-aos="fade-right">
               <h3>SERVICES</h3>
@@ -25,7 +27,7 @@ function Services() {
                 <Carousel.Item interval={3000}>
             <img
               className="d-block w-100" id="slide"
-              src= {meeting}
+              src= {tracking}
               alt="First slide"
             />
             <Carousel.Caption id='back-type'>
@@ -36,7 +38,7 @@ function Services() {
           <Carousel.Item interval={3000}>
             <img
               className="d-block w-100"
-              src={meeting}
+              src={booking}
               alt="Second slide"
               id="slide"
             />
@@ -49,7 +51,7 @@ function Services() {
           <Carousel.Item interval={3000}>
             <img
               className="d-block w-100"
-              src={meeting}
+              src={onRes}
               alt="Third slide"
               id="slide"
             />

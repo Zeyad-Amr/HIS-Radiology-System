@@ -10,7 +10,8 @@ function Contact() {
           <div class="content-contact block ">
             <h2>We are here to Serve you!</h2>
             <h5>
-              Your complaint, request and opanion must be tacken into account.
+              Your complaint, request and opanion must be tacken into account. <br/>
+              Our staff responds to text messages ASAP. You can even get answers via e-mail without having to talk to anyone.
             </h5>
             <img src={contact} alt="" />
           </div>

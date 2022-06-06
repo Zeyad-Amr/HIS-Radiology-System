@@ -17,6 +17,7 @@ import OrderDetails from "./Components/OrderDetails/OrderDetails";
 import UserDetails from "./Components/UserDetails/UserDetails";
 import ServicesDetails from "./Components/ServicesDetails/ServicesDetails";
 import DevicesDetails from "./Components/DevicesDetails/DevicesDetails";
+import AppointmentDetails from "./Components/AppointmentDetails/AppointmentDetails";
 
 import Dashboard from "./Layout/pages/Dashboard";
 import About from "./Layout/pages/About";
@@ -44,6 +45,7 @@ function App() {
           <Route path="/user" element={<UserDetails />} />
           <Route path="/service" element={<ServicesDetails />} />
           <Route path="/device" element={<DevicesDetails />} />
+          <Route path="/appointment" element={<AppointmentDetails />} />
           <Route path="/test" element={<Test />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
