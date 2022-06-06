@@ -58,7 +58,10 @@ const authz = require("../middlewares/authz");
         "fileId": null,
         "fileURL": null,
         "repId": null,
-        "repTxt": null
+        "repTxt": null,
+        "apptId": null,
+        "appt_start_time": null,
+        "appt_end_time": null
     },
     {
         "id": 4,
@@ -100,7 +103,10 @@ const authz = require("../middlewares/authz");
         "fileId": null,
         "fileURL": null,
         "repId": null,
-        "repTxt": null
+        "repTxt": null,
+        "apptId": 4,
+        "appt_start_time": null,
+        "appt_end_time": null
     }
 ]
 
@@ -121,23 +127,23 @@ router.get("/order", orderController.getAllOrders);
    * @apiSampleRequest http://127.0.0.1:4000/api/order/3
    * @apiSuccessExample sample:
    * {
-        "id": 4,
+        "id": 3,
         "receptionist_id": 66,
-        "patient_id": 25,
+        "patient_id": 30,
         "services_id": 2,
         "result_id": null,
-        "create_time": "2022-06-02T13:39:46.000Z",
+        "create_time": "2022-06-02T13:39:30.000Z",
         "status": "",
-        "ptId": 25,
-        "ptUsername": "bedo12",
-        "ptEmail": null,
+        "ptId": 30,
+        "ptUsername": "zexo12",
+        "ptEmail": "bedo@gmail.com",
         "ptFname": null,
         "ptLname": null,
         "ptBdate": null,
         "ptGender": null,
         "ptPhone": null,
-        "ptSSN": "01234567891234",
-        "ptAddress": "ajfhdsajfhajkdsfh sdjafjdskafhnk jkskddfjasdfhjksad jsdafjkhasd",
+        "ptSSN": "01234567893215",
+        "ptAddress": null,
         "ptRole": "patient",
         "recptId": 66,
         "recptUsername": "ahmedraouf",
@@ -160,7 +166,10 @@ router.get("/order", orderController.getAllOrders);
         "fileId": null,
         "fileURL": null,
         "repId": null,
-        "repTxt": null
+        "repTxt": null,
+        "apptId": null,
+        "appt_start_time": null,
+        "appt_end_time": null
     }
 */
 // get single order
