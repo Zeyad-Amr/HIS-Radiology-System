@@ -19,12 +19,7 @@ import ServicesDetails from "./Components/ServicesDetails/ServicesDetails";
 import DevicesDetails from "./Components/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./Components/AppointmentDetails/AppointmentDetails";
 
-import Dashboard from "./Layout/pages/Dashboard";
-import About from "./Layout/pages/About";
-import Comment from "./Layout/pages/Comment";
-import Analytics from "./Layout/pages/Analytics";
-import Product from "./Layout/pages/Product";
-import ProductList from "./Layout/pages/ProductList";
+import AdminPage from "./Components/AdminPage/AdminPage";
 
 function App() {
   return (
@@ -48,13 +43,7 @@ function App() {
           <Route path="/appointment" element={<AppointmentDetails />} />
           <Route path="/test" element={<Test />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/comment" element={<Comment />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/productList" element={<ProductList />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </Router>
     </div>
