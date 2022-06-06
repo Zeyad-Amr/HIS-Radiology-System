@@ -1,4 +1,4 @@
-const db = require("../mysql-con");
+const { db } = require("../mysql-con");
 const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -84,13 +84,16 @@ module.exports = {
 
   //create a new patient user
   createUser: async (req, res) => {
-    const result = validate(req.body);
-    if (result.error)
-      return res.status(400).send({ message: result.error.details[0].message });
+    // const result = validate(req.body);
+    // if (result.error)
+    //   return res.status(400).send({ message: result.error.details[0].message });
 
     if (req.body.password !== req.body.confirm_password) {
       return res.status(400).send({ message: "Password didn't match" });
     }
+
+    const value = req.body;
+    const result = { value };
 
     //encrypt password
     const salt = await bcrypt.genSalt(10);

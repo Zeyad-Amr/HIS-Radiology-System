@@ -45,7 +45,7 @@ const authz = require("../middlewares/authz");
 }
 */
 //get file
-router.get("/file", fileController.getAllfiles);
+router.get("/file", fileController.getAllfile);
 
 /**
    * @api {get} /file/:id GET/ file/:id
@@ -89,11 +89,7 @@ router.get("/file/:id", fileController.getOnefile);
  * Created
  */
 //add a file
-router.post(
-  "/file",
-  [authn, authz(["reseptionist", "Admin"])],
-  fileController.createfile
-);
+router.post("/file", [authn, authz(["doctor"])], fileController.createfile);
 
 //edit file
 // router.put("/file/:id", fileController.updatefile);
