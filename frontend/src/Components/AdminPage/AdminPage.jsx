@@ -42,16 +42,34 @@ function AdminPage() {
       </div>
 
       <div className="table-container">
+        <div
+          style={{
+            marginLeft: "80%",
+            padding: "10px",
+            height: "80px",
+            width: "120px",
+          }}
+        >
+          <button
+            style={{
+              // padding: "20px",
+              height: "40px",
+              width: "90px",
+              borderRadius: "20px",
+              fontSize: "15px",
+            }}
+          >
+            Create
+          </button>
+        </div>
         {data.length > 0 ? (
           <Table
+            style={{ width: "20%" }}
             list={data}
             headers={[
-              { fname: "First Name" },
-              { lname: "Last Name" },
-              { email: "Email" },
-              { role: "Role" },
-              { username: "username" },
-              { phone: "Phone" },
+              { field: "id", headerName: "ID" },
+              { field: "username", headerName: "Username" },
+              { field: "fname", headerName: "First Name" },
             ]}
           />
         ) : (

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import Admin from "../AdminPage/images/admin.png";
-import Table from "../Table/Table";
 
 function SideBar() {
   const [sidebar, setSidebar] = useState(true);
@@ -22,6 +21,7 @@ function SideBar() {
   //     }
   //     console.log('momen')
   //  }
+  // <img src={Admin} alt="" />
 
   return (
     <IconContext.Provider value={{ color: "#fff" }}>
@@ -30,17 +30,12 @@ function SideBar() {
           <FaIcons.FaBars onClick={showSidebar} />
         </Link>
       </div>
+
       <nav
         className={sidebar ? "nav-menu active" : "nav-menu"}
         style={{ display: sidebar === true ? "block" : "none" }}
       >
         <ul className="nav-menu-items">
-          <li className="navbar-toggle">
-            <Link to="#" className="menu-bars">
-              <AiIcons.AiOutlineClose />
-            </Link>
-          </li>
-          <img src={Admin} alt="" />
           {SidebarData.map((item, index) => {
             return (
               <li key={index} className={item.cName}>
@@ -53,6 +48,7 @@ function SideBar() {
           })}
         </ul>
       </nav>
+
       <div
         className="akwa"
         style={{ display: sidebar === false ? "block" : "none" }}
