@@ -6,14 +6,7 @@ import axios from "../API/axios";
 
 function AdminPage() {
   const [data, setData] = useState([]);
-  const [width, setWidth] = useState(0);
   const square_ref = React.createRef();
-
-  useEffect(() => {
-    if (square_ref.current) {
-      setWidth(square_ref.current.getBoundingClientRect().width);
-    }
-  }, []);
 
   const geetData = async () => {
     const response = await axios

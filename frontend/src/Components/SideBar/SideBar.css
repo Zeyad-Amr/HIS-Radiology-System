@@ -3,7 +3,13 @@
     justify-content: center;
     border-radius: 10px;
 } */
-
+/* Google Font Import - Poppins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 .navbar-admin {
   background-color: transparent;
   width: 5%;
@@ -84,6 +90,8 @@
 
 .nav-menu-items {
   width: 100%;
+  font-size: 17px;
+  font-weight: 500;
 }
 
 .navbar-toggle {
