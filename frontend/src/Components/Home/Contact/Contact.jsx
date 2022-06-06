@@ -7,8 +7,8 @@ function Contact() {
   <div>
       <section class="contact" id="contact">
         <div class="image">
-          <div class="content-contact">
-            <h2>We are here to <span>Serve</span> you!</h2>
+          <div class="content-contact block ">
+            <h2>We are here to Serve you!</h2>
             <h5>
               Your complaint, request and opanion must be tacken into account.
             </h5>
@@ -21,7 +21,6 @@ function Contact() {
             <form action="">
               <input class="input" type="text" placeholder="Your Name" name="name" />
               <input class="input" type="email" placeholder="Your Email" name="email" />
-              <input class="input" type="text" placeholder="Your Phone" name="mobile" />
               <textarea class="input" placeholder="Tell Us About Your Needs" name="message"></textarea>
               <input type="submit" value="Send" />
             </form>
