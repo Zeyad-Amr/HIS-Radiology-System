@@ -19,6 +19,7 @@ import UserDetails from "./Components/UserDetails/UserDetails";
 import ServicesDetails from "./Components/ServicesDetails/ServicesDetails";
 import DevicesDetails from "./Components/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./Components/AppointmentDetails/AppointmentDetails";
+import SideBar from "./SideBar/SideBar";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/service" element={<ServicesDetails />} />
           <Route path="/device" element={<DevicesDetails />} />
           <Route path="/appointment" element={<AppointmentDetails />} />
+          <Route path="/side" element={<SideBar />} />
           <Route path="/test" element={<Test />} />
         </Routes>
       </Router>
