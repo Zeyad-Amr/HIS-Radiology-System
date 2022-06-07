@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SideBar.css";
-import { logo } from "../assets/images/logo.png";
+import { logo } from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 function SideBar({ toggle }) {
   const [sidebar, setSidebar] = useState(true);
