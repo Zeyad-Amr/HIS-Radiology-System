@@ -39,6 +39,7 @@ const createToken = (payload) => {
  */
 router.post("/login", (req, res) => {
   const { user, pwd } = req.body;
+  console.log(req.body);
   db.query(
     `SELECT * FROM user
   WHERE username = ?`,

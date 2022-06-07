@@ -17,7 +17,7 @@ const Devices = () => {
         },
       })
       .then((response) => {
-        const result = response.data;
+        const result = response.data.data;
         console.log(result);
         if (result.length > 0) {
           setData(result);
@@ -55,7 +55,7 @@ const Devices = () => {
               { field: "installation_date", headerName: "Installation Date" },
               {
                 field: "callibration_date",
-                headerName: "Last Calibration Date",
+                headerName: "Calibration Date",
               },
             ]}
           />

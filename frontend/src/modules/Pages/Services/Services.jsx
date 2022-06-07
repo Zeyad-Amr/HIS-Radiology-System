@@ -49,13 +49,12 @@ const Services = () => {
             list={data}
             headers={[
               { field: "id", headerName: "ID" },
-              { field: "name", headerName: "Device Name" },
-              { field: "dep_id", headerName: "Serial Number" },
-              { field: "device_id", headerName: "Arrivial Date" },
-              { field: "", headerName: "Installation Date" },
+              { field: "name", headerName: "Service Name" },
+              { field: "dep_id", headerName: "Department ID" },
+              { field: "device_id", headerName: "Device ID" },
               {
-                field: "callibration_date",
-                headerName: "Last Calibration Date",
+                field: "cost",
+                headerName: "Cost (L.E)",
               },
             ]}
           />

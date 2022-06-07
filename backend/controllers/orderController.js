@@ -1,4 +1,5 @@
 const { db, conConfig } = require("../mysql-con");
+const mysql = require("mysql2/promise");
 
 module.exports = {
   //get all orders
@@ -39,12 +40,12 @@ module.exports = {
         LEFT JOIN dep ON s.dep_id = dep.id
         ) service ON orders.services_id  = service.srvId
       LEFT JOIN (SELECT 
-        r.id as resID, 
-        f.id as fileId, f.file_url as fileURL,
+        f.id as fileId, f.file_url as fileURL FROM file f) f 
+        ON orders.file_id = f.fileId
+      LEFT JOIN (SELECT
         rep.id as repId, rep.text as repTxt
-        FROM result r 
-        LEFT JOIN file f ON r.file_id = f.id
-        LEFT JOIN report rep ON r.report_id = rep.id) result ON orders.result_id  = result.resID
+        FROM report rep) rept
+        ON orders.report_id = rept.repId
       LEFT JOIN (SELECT 
         appt.id as apptId, appt.start_time as appt_start_time, appt.end_time as appt_end_time
         FROM appointment appt) apptm ON orders.appointment_id  = apptm.apptId

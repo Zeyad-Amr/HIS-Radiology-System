@@ -10,7 +10,7 @@ export default function Table({ headers, list }) {
       return {
         field: item.field,
         headerName: item.headerName,
-        width: 120,
+        width: item.width ? item.width : 120,
         headerAlign: "center",
         headerClassName: "super-app-theme--header",
         headerAlign: "center",

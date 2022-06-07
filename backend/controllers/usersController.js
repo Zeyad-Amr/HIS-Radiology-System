@@ -95,9 +95,6 @@ module.exports = {
     if (req.body.password !== req.body.confirm_password) {
       return res.status(400).send({ message: "Password didn't match" });
     }
-    const value=req.body;
-    const result={value};
-
     const value = req.body;
     const result = { value };
 
