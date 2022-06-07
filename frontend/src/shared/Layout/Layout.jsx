@@ -21,7 +21,9 @@ const Layout = ({ children }) => {
           xs={collapsed ? 1 : 2}
           md={collapsed ? 1 : 2}
           lg={collapsed ? 1 : 2}
-          style={{ backgroundColor: "red", height: "100vh" }}
+          style={{
+            height: "100vh",
+          }}
         >
           <SideBar toggle={toggleCollapsed} />
         </Col>

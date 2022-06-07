@@ -10,9 +10,8 @@ const Devices = () => {
           backgroundColor: "#f0f0f0",
           width: "100%",
           height: "100vh",
-          // padding: "20px",
+          padding: "30px",
           position: "absolute",
-          zIndex: "-1",
         }}
       >
         <Table
