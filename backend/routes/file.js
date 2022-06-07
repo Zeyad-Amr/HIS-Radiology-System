@@ -92,7 +92,7 @@ router.get("/file/:id", fileController.getOnefile);
 router.post("/file", [authn, authz(["doctor"])], fileController.createfile);
 
 //edit file
-router.put("/file/:id", fileController.updatefile);
+router.put("/file/:id", [authn], fileController.updatefile);
 
 /**
  * @api {delete} /file/:id DELETE/ file/:id

@@ -82,7 +82,7 @@ module.exports = {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
+      res.status(200).json(result[0]);
     });
   },
 
@@ -165,7 +165,8 @@ module.exports = {
       return res.status(403).send("Not Authorized");
     }
     db.query(
-      `UPDATE user SET ? WHERE id = ?`,
+      `UPDATE user LEFT JOIN emp 
+      ON id = user_id SET ? WHERE id = ?`,
       [req.body, id],
       (err, result) => {
         if (err) {

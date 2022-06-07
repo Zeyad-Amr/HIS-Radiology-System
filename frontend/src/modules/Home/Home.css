@@ -66,6 +66,7 @@ html {
 
 .header .image img {
   width: 120px;
+  margin-left: 5%;
 }
 
 .header .image a {
@@ -936,6 +937,7 @@ section {
 .footer .box .text {
   line-height: 2;
   color: white;
+  padding-left: 0px !important;
   /* text-align: center; */
   /* text-justify: inter-ideograph; */
 }
@@ -976,8 +978,9 @@ section {
 .footer .box .line {
   display: flex;
   align-items: center;
-  color: #b9b9b9;
+  color: white;
   margin-bottom: 30px;
+  flex-direction: column;
 }
 
 @media (max-width: 767px) {
@@ -1002,10 +1005,12 @@ section {
 .footer .box .line .info {
   line-height: 1.7;
   flex: 1;
+  color: white;
 }
 
 .footer .box .line .info span {
   display: block;
+  color: white;
 }
 
 .footer .copyright {
@@ -1016,4 +1021,10 @@ section {
   border-top: 1px solid #444;
 }
 
+.footer-gallery p{
+  text-align: center;
+  /* line-height: 2px; */
+  /* display: flex; */
+  color: white;
+}
 /* Footer -End */
