@@ -196,7 +196,7 @@ router.post(
 );
 
 //edit order
-// router.put("/order/:id", orderController.updateOrder);
+router.put("/order/:id", orderController.updateOrder);
 
 /**
  * @api {delete} /order/:id DELETE/ order/:id

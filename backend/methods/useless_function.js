@@ -29,17 +29,30 @@ const fanat = async (parent, mychilds, id) => {
 };
 
 module.exports = fanat;
-// await fanat(
-//   "orders",
-//   [
-//     { table: "user", var: "receptionist" },
-//     { table: "user", var: "patient" },
-//     await fanat("services", [
+
+//to use it with order
+// try {
+//   const ans = await fanat(
+//     "orders",
+//     [
+//       { table: "user", var: "receptionist" },
+//       { table: "user", var: "patient" },
+//       { table: "result", var: "result" },
+//     ],
+//     id
+//   );
+//   const service = await fanat(
+//     "services",
+//     [
 //       { table: "dep", var: "dep" },
 //       { table: "device", var: "device" },
-//     ]),
+//     ],
+//     ans.orders.services_id
+//   );
+//   const finalObj = { ...ans, ...service };
 
-//     { table: "result", var: "result" },
-//   ],
-//   id
-// );
+//   res.status(200).json(finalObj);
+// } catch (err) {
+//   console.log(err);
+//   res.status(500).json(err);
+// }

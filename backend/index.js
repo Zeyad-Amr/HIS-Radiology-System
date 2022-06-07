@@ -14,7 +14,7 @@ app.use(cors());
 
 //Router middlerwares
 app.use("/api", require("./routes/login"));
-// app.use("/api", require("./routes/patient"));
+app.use("/api", require("./routes/msg"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/departement"));
