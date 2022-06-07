@@ -101,6 +101,7 @@ html {
   border-radius: .5rem;
   background: rgb(133, 13, 13);
   color: var(--blue);
+  height: 30px;
   padding: 1rem 1.5rem;
   cursor: pointer;
   display: none;
