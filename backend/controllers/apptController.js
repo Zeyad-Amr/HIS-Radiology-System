@@ -7,7 +7,7 @@ module.exports = {
       FROM (SELECT a.start_time, a.end_time, a.id, a.services_id as srvId FROM appointment a) appt
       LEFT JOIN (SELECT 
         s.id as srvId, s.name as srvName, dep.name as depName, dep.id as depId
-        FROM services s JOIN dep ON s.id = dep.id) srv 
+        FROM services s LEFT JOIN dep ON s.dep_id = dep.id) srv 
       ON appt.srvId = srv.srvId
     WHERE id NOT IN (
     SELECT appointment_id
@@ -20,7 +20,7 @@ module.exports = {
     FROM (SELECT a.start_time, a.end_time, a.id, a.services_id as srvId FROM appointment a) appt
     LEFT JOIN (SELECT 
       s.id as srvId, s.name as srvName, dep.name as depName, dep.id as depId
-      FROM services s JOIN dep ON s.id = dep.id) srv 
+      FROM services s LEFT JOIN dep ON s.dep_id = dep.id) srv 
     ON appt.srvId = srv.srvId
     `;
     const { day } = req.query;
