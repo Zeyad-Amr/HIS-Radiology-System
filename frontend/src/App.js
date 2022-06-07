@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Switch } from "react-router-dom";
 import React from "react";
 import Login from "./modules/Login/Login";
 import Signup from "./modules/SignUp/Signup";
@@ -15,6 +15,7 @@ import DevicesDetails from "./modules/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails";
 import Side from "./SideBar/SideBar.jsx";
 import AdminPage from "./modules/AdminPage/AdminPage";
+import NotFound from "./modules/404_page/ErrorPage";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/side" element={<Side />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
