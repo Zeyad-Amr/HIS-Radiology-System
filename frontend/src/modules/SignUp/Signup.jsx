@@ -28,8 +28,9 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("/users", {
-      fname,
+    try { 
+      const response = await axios.post("/users", {
+        fname,
       lname,
       username,
       email,
@@ -41,10 +42,16 @@ function Signup() {
       gender,
       phone,
     });
-    // localStorage.setItem("token", response.data.token)
     console.log(response);
-    // window.location.href='/';
+    const {token, role,fname,id} = response.data
+    localStorage.setItem("token", token);
+    localStorage.setItem("role", role);
+    localStorage.setItem("name", fname);
+    localStorage.setItem("id", id);
     navigate("/");
+  } catch (error) {
+    console.log(error.response.data);
+  }
   };
 
   return (

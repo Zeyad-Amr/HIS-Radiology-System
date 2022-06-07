@@ -10,26 +10,35 @@ import axios from "../../globals/API/axios";
 import imgLeft from "./Images/login.svg";
 
 function Login() {
+  
   const navigate = useNavigate();
 
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
 
+  const [message, setMessage] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(`/login`, { user, pwd });
       console.log(response.data);
-      
-      localStorage.setItem("token", response.data.token);
-      localStorage.setItem("role", response.data.role);
-      localStorage.setItem("name", response.data.fname);
-      localStorage.setItem("id", response.data.id);
-      navigate('/');
+      const {token, role,fname,id} = response.data
+      localStorage.setItem("token", token);
+      localStorage.setItem("role", role);
+      localStorage.setItem("name", fname);
+      localStorage.setItem("id", id);
+      if(role === "patient"){
+        navigate('/');
+      }else{  
+        navigate('/dashboard');
+      }
     } catch (error) {
+      const resMessage =error.response.data
       console.log(error.response.data);
+      setMessage(resMessage)
     }
   };
+  
 
   return (
     <div className="login">
@@ -45,7 +54,13 @@ function Login() {
             Please, provide login credential to proceed and have access to all
             our services
           </p>
-
+          {/* {message && (
+            <div className="form-group">
+              <div className="alert alert-danger" role="alert">
+                {message}
+              </div>
+            </div>
+          )} */}
           <form class="login-form" onSubmit={handleSubmit}>
             <div class="form-control">
               <input
