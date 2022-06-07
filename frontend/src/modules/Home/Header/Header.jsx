@@ -51,6 +51,9 @@ console.log(loggedIn);
         {loggedIn()? 
         <a style={{cursor:'pointer'}} onClick={() => {
           localStorage.removeItem("token");
+          localStorage.removeItem("name");
+          localStorage.removeItem("id");
+          localStorage.removeItem("role");
           window.location.reload();
           }}>Log Out</a>
         :
