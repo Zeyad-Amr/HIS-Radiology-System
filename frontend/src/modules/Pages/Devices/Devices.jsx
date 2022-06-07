@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../../shared/Button/Button";
 import Layout from "../../../shared/Layout/Layout";
 import Table from "../../../shared/Table/Table";
 
@@ -7,13 +8,17 @@ const Devices = () => {
     <Layout>
       <div
         style={{
-          backgroundColor: "#f0f0f0",
+          display: "flex",
+          justifyContent: "space-between",
           width: "100%",
-          height: "100vh",
           padding: "30px",
-          position: "absolute",
+          alignItems: "center",
         }}
       >
+        <h1>Devices</h1>
+        <Button onClick={() => {}} value={"Create"} />{" "}
+      </div>
+      <div style={{ width: "100%" }}>
         <Table
           list={[
             {
