@@ -27,6 +27,28 @@ import Appointments from "./modules/Pages/Appointments/Appointments";
 import Services from "./modules/Pages/Services/Services";
 import Departments from "./modules/Pages/Departments/Departments";
 
+const obj = {
+  id: 88,
+  username: "ahmed",
+  email: "ahmed@gmail.com",
+  password: "$2b$10$1kkrooRWkNwUpiTZ28yle.EjuvGn2u.ymAPjk8.3it9MABy2qKmbG",
+  create_time: null,
+  fname: "ahmed",
+  lname: "raouf",
+  bdate: "2001-09-20T21:00:00.000Z",
+  gender: "male",
+  phone: "1067662457",
+  SSN: "01234567893231",
+  address: "5 hasan el saban fisl giza",
+  role: "patient",
+  country: "Egypt",
+  user_id: null,
+  salary: null,
+  degree: null,
+  shift: null,
+  holidays: null,
+  dep_id: null,
+};
 function App() {
   return (
     <div className="App">
@@ -37,7 +59,7 @@ function App() {
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/404" element={<ErrorPage />} />
           <Route path="/order" element={<OrderDetails />} />
-          <Route path="/user" element={<UserDetails />} />
+          <Route path="/user" element={<UserDetails userObj={obj} />} />
           <Route path="/service" element={<ServicesDetails />} />
           <Route path="/device" element={<DevicesDetails />} />
           <Route path="/appointment" element={<AppointmentDetails />} />
