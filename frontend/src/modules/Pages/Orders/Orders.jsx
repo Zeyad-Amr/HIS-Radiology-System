@@ -4,9 +4,15 @@ import Layout from "../../../shared/Layout/Layout";
 import Table from "../../../shared/Table/Table";
 import { useState, useEffect } from "react";
 import axios from "../../../globals/API/axios";
+import { useNavigate } from "react-router-dom";
 
 const Orders = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const onClickRow = (row) => {
+    console.log(row);
+    navigate("/");
+  };
 
   const geetData = async () => {
     const response = await axios
@@ -41,11 +47,12 @@ const Orders = () => {
         }}
       >
         <h1>Orders</h1>
-        <Button onClick={() => {}} value={"Create"} />{" "}
+        <Button onClick={(row) => onClickRow(row)} value={"Create"} />{" "}
       </div>
       <div style={{ width: "100%" }}>
         {data.length > 0 ? (
           <Table
+            onClick={(row) => onClickRow(row)}
             list={data}
             headers={[
               { field: "id", headerName: "ID", width: 70 },

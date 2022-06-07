@@ -4,9 +4,14 @@ import Layout from "../../../shared/Layout/Layout";
 import Table from "../../../shared/Table/Table";
 import { useState, useEffect } from "react";
 import axios from "../../../globals/API/axios";
-
+import { useNavigate } from "react-router-dom";
 const Appointments = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const onClickRow = (row) => {
+    console.log(row);
+    navigate("/users");
+  };
 
   const geetData = async () => {
     const response = await axios
@@ -46,11 +51,12 @@ const Appointments = () => {
       <div style={{ width: "100%" }}>
         {data.length > 0 ? (
           <Table
+            onClick={(row) => onClickRow(row)}
             list={data}
             headers={[
-              { field: "id", headerName: "ID" },
-              { field: "start_time", headerName: "Start Time" },
-              { field: "end_time", headerName: "End Time" },
+              { field: "id", headerName: "ID", width: 70 },
+              { field: "start_time", headerName: "Start Time", width: 150 },
+              { field: "end_time", headerName: "End Time", width: 150 },
               { field: "srvId", headerName: "Service Id" },
               {
                 field: "srvName",

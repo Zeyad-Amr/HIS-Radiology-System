@@ -4,8 +4,14 @@ import Layout from "../../../shared/Layout/Layout";
 import Table from "../../../shared/Table/Table";
 import { useState, useEffect } from "react";
 import axios from "../../../globals/API/axios";
+import { useNavigate } from "react-router-dom";
 const Users = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+  const onClickRow = (row) => {
+    console.log(row);
+    navigate("/");
+  };
 
   const geetData = async () => {
     const response = await axios
@@ -45,9 +51,10 @@ const Users = () => {
       <div style={{ width: "100%" }}>
         {data.length > 0 ? (
           <Table
+            onClick={(row) => onClickRow(row)}
             list={data}
             headers={[
-              { field: "id", headerName: "ID" },
+              { field: "id", headerName: "ID", width: 70 },
               { field: "username", headerName: "Username" },
               { field: "fname", headerName: "First Name" },
               { field: "lname", headerName: "Last Name" },
