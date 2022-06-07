@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./SideBar.css";
-import logo  from "../../assets/images/logo.png";
+import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import * as FaIcons from 'react-icons/fa';
-import * as HiIcons from 'react-icons/hi';
-import * as MdIcons from 'react-icons/md';
-import * as BsIcons from 'react-icons/bs';
-import * as AiIcons from 'react-icons/ai';
+import * as FaIcons from "react-icons/fa";
+import * as HiIcons from "react-icons/hi";
+import * as MdIcons from "react-icons/md";
+import * as BsIcons from "react-icons/bs";
+import * as AiIcons from "react-icons/ai";
 
 function SideBar({ toggle }) {
   const [sidebar, setSidebar] = useState(true);
@@ -15,182 +15,182 @@ function SideBar({ toggle }) {
     setSidebar(!sidebar);
     console.log("momen");
   }
-  const items = []
-  const role = localStorage.role
+  let items = [];
+  const role = localStorage.role;
   switch (role) {
     case "Admin":
       items = [
         {
-          role:'Admin',
-          roleIcon:<BsIcons.BsClipboardData  />,
+          role: "Admin",
+          roleIcon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Dashboard",
           route: "/dashboard",
-          icon: <BsIcons.BsClipboardData  />,
+          icon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Users",
           route: "/users",
-          icon: <FaIcons.FaUsers  />,
+          icon: <FaIcons.FaUsers />,
         },
         {
           name: "Departments",
           route: "/departments",
-          icon: <FaIcons.FaHospital  />,
+          icon: <FaIcons.FaHospital />,
         },
         {
           name: "Services",
           route: "/services",
-          icon: <MdIcons.MdMedicalServices  />,
+          icon: <MdIcons.MdMedicalServices />,
         },
         {
           name: "Orders",
           route: "/orders",
-          icon: <HiIcons.HiDocumentReport  />,
+          icon: <HiIcons.HiDocumentReport />,
         },
         {
           name: "Appointments",
           route: "/appointments",
-          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+          icon: <AiIcons.AiFillSchedule style={{ fontSize: "50px" }} />,
         },
         {
           name: "Devices",
           route: "/devices",
-          icon: <FaIcons.FaLaptopMedical  />,
+          icon: <FaIcons.FaLaptopMedical />,
         },
       ];
       break;
     case "Technician":
       items = [
         {
-          role:'Technician',
-          roleIcon:<BsIcons.BsClipboardData  />,
+          role: "Technician",
+          roleIcon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Dashboard",
           route: "/dashboard",
-          icon: <BsIcons.BsClipboardData  />,
+          icon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Users",
           route: "/users",
-          icon: <FaIcons.FaUsers  />,
+          icon: <FaIcons.FaUsers />,
         },
         {
           name: "Departments",
           route: "/departments",
-          icon: <FaIcons.FaHospital  />,
+          icon: <FaIcons.FaHospital />,
         },
         {
           name: "Services",
           route: "/services",
-          icon: <MdIcons.MdMedicalServices  />,
+          icon: <MdIcons.MdMedicalServices />,
         },
         {
           name: "Orders",
           route: "/orders",
-          icon: <HiIcons.HiDocumentReport  />,
+          icon: <HiIcons.HiDocumentReport />,
         },
         {
           name: "Appointments",
           route: "/appointments",
-          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+          icon: <AiIcons.AiFillSchedule style={{ fontSize: "50px" }} />,
         },
         {
           name: "Devices",
           route: "/devices",
-          icon: <FaIcons.FaLaptopMedical  />,
+          icon: <FaIcons.FaLaptopMedical />,
         },
       ];
       break;
     case "Doctor":
       items = [
         {
-          role:'Doctor',
-          roleIcon:<BsIcons.BsClipboardData  />,
+          role: "Doctor",
+          roleIcon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Dashboard",
           route: "/dashboard",
-          icon: <BsIcons.BsClipboardData  />,
+          icon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Users",
           route: "/users",
-          icon: <FaIcons.FaUsers  />,
+          icon: <FaIcons.FaUsers />,
         },
         {
           name: "Departments",
           route: "/departments",
-          icon: <FaIcons.FaHospital  />,
+          icon: <FaIcons.FaHospital />,
         },
         {
           name: "Services",
           route: "/services",
-          icon: <MdIcons.MdMedicalServices  />,
+          icon: <MdIcons.MdMedicalServices />,
         },
         {
           name: "Orders",
           route: "/orders",
-          icon: <HiIcons.HiDocumentReport  />,
+          icon: <HiIcons.HiDocumentReport />,
         },
         {
           name: "Appointments",
           route: "/appointments",
-          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+          icon: <AiIcons.AiFillSchedule style={{ fontSize: "50px" }} />,
         },
         {
           name: "Devices",
           route: "/devices",
-          icon: <FaIcons.FaLaptopMedical  />,
+          icon: <FaIcons.FaLaptopMedical />,
         },
       ];
       break;
     case "Reciptionist":
       items = [
         {
-          role:'Reciptionist',
-          roleIcon:<BsIcons.BsClipboardData  />,
+          role: "Reciptionist",
+          roleIcon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Dashboard",
           route: "/dashboard",
-          icon: <BsIcons.BsClipboardData  />,
+          icon: <BsIcons.BsClipboardData />,
         },
         {
           name: "Users",
           route: "/users",
-          icon: <FaIcons.FaUsers  />,
+          icon: <FaIcons.FaUsers />,
         },
         {
           name: "Departments",
           route: "/departments",
-          icon: <FaIcons.FaHospital  />,
+          icon: <FaIcons.FaHospital />,
         },
         {
           name: "Services",
           route: "/services",
-          icon: <MdIcons.MdMedicalServices  />,
+          icon: <MdIcons.MdMedicalServices />,
         },
         {
           name: "Orders",
           route: "/orders",
-          icon: <HiIcons.HiDocumentReport  />,
+          icon: <HiIcons.HiDocumentReport />,
         },
         {
           name: "Appointments",
           route: "/appointments",
-          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+          icon: <AiIcons.AiFillSchedule style={{ fontSize: "50px" }} />,
         },
         {
           name: "Devices",
           route: "/devices",
-          icon: <FaIcons.FaLaptopMedical  />,
+          icon: <FaIcons.FaLaptopMedical />,
         },
       ];
       break;
-  
+
     default:
       break;
   }
@@ -205,7 +205,7 @@ function SideBar({ toggle }) {
 
           <div className="textNav logo-textNav">
             {/* <FaBeer /> */}
-            <span className="name">{items.name}</span>
+            <span className="name">{items[0].role}</span>
             {/* <span className="profession">Web developer</span> */}
           </div>
         </div>
@@ -222,14 +222,18 @@ function SideBar({ toggle }) {
       <div className="pro-bar">
         <div className="pro">
           <ul className="pro-links" style={{ padding: "0px" }}>
-            {items.map((item, index) => (
-              <li className="nav-link" style={{ padding: "0" }} key={index}>
-                <Link to={item.route}>
-                    {item.icon}
-                  <span className="textNav nav-textNav">{item.name}</span>
-                </Link>
-              </li>
-            ))}
+            {items.map((item, index) => {
+              if (index !== 0) {
+                return (
+                  <li className="nav-link" style={{ padding: "0" }} key={index}>
+                    <Link to={item.route}>
+                      {item.icon}
+                      <span className="textNav nav-textNav">{item.name}</span>
+                    </Link>
+                  </li>
+                );
+              }
+            })}
           </ul>
         </div>
 

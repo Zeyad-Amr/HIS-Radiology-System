@@ -3,14 +3,15 @@ import "./UserDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../shared/Button/Button";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "../../globals/API/axios";
 import { padding } from "@mui/system";
 
 function UserDetails() {
   const { id } = useParams();
   const [data, setData] = useState({});
-
+  const [role, setRoleData] = useState("");
+  const navigate = useNavigate();
   // const [username, setUsername] = useState("");
   // const [email, setEmail] = useState("");
   // const [phone, setPhone] = useState("");
@@ -42,18 +43,57 @@ function UserDetails() {
       });
   };
 
+  const updateData = async () => {
+    const response = await axios
+      .put(
+        `/users/${id}`,
+        {
+          role: role,
+        },
+        {
+          headers: {
+            "auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY1NDE5Nzg2NH0.iIt0uRUfctdqZAtBTV3E6ylE-8LK_2IwwQH0S5j_tTM",
+          },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        navigate("/users");
+      });
+  };
+
   useEffect(() => {
-    getData();
-    console.log(data);
-  }, []);
+    if (role === "") {
+      getData();
+      console.log(data);
+    } else {
+      setRoleData(role);
+    }
+  }, [role]);
 
   function handleClick(event) {
-    event.preventDefault();
-    alert("Button Clicked");
+    // event.preventDefault();
+    // alert("Button Clicked");
+    updateData();
   }
   return (
     <div className="log" style={{ padding: "10px 30px" }}>
-      <div className="text">User Profile</div>
+      <div style={{ display: "flex" }}>
+        <div className="text">User Profile</div>{" "}
+        <div
+          style={{
+            padding: "10px",
+            marginRight: "20px",
+            width: "100%",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Button onClick={handleClick} value="Save" />
+        </div>
+      </div>
+
       <form className="signup-form" id="dataDisplay">
         <div class="input-field" id="inputField">
           <input
@@ -154,7 +194,13 @@ function UserDetails() {
 
         <div class="input-field" id="inputField">
           <label>Role</label>
-          <select class="gender-selection">
+          <select
+            class="gender-selection"
+            onChange={(event) => {
+              setRoleData(event.target.value);
+              console.log(role);
+            }}
+          >
             <option value="Choose Role" disabled selected hidden>
               {data.role}
             </option>
@@ -167,6 +213,7 @@ function UserDetails() {
         </div>
         <div className="fady"></div>
         <div className="fady"></div>
+
         <div className="text">Employment Data</div>
         <div class="input-field" id="inputField">
           <label>Department</label>
@@ -192,20 +239,14 @@ function UserDetails() {
             <option value="Night">Night</option>
           </select>
         </div>
-        <div className="fady"></div>
-        <div className="fady"></div>
-
-        <div
-          style={{
-            padding: "30px",
-            marginRight: "20px",
-            width: "100%",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Button onClick={handleClick} value="Save" />
+        <div class="input-field" id="inputField">
+          <input type="text" required value={data.degree}></input>
+          <label>Degree</label>
         </div>
+        <div className="fady"></div>
+        <div className="fady"></div>
+        <div className="fady"></div>
+        <div className="fady"></div>
       </form>
     </div>
   );
