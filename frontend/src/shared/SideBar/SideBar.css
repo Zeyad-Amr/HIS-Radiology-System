@@ -107,10 +107,12 @@
 .sideNav .sideHeader .pic-textNav {
   display: flex;
   align-items: center;
+  gap: 5%;
 }
 .sideNav .sideHeader .logo-textNav {
   display: flex;
   flex-direction: column;
+
 }
 .sideHeader .pic-textNav .name {
   margin-top: 2px;
@@ -128,6 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: -5%;
 }
 
 .sideNav .sideHeader .pic img {
@@ -199,6 +202,9 @@
   border-radius: 6px;
   text-decoration: none;
   transition: var(--tran-03);
+  font-size: 30px;
+  /* justify-content: space-between !important; */
+  gap: 10%; 
 }
 
 .sideNav li a:hover {
@@ -208,6 +214,7 @@
 .sideNav li a:hover .iconNav,
 .sideNav li a:hover .textNav {
   color: var(--sideNav-color);
+  opacity: 1;
 }
 /* body.dark .sideNav li a:hover .iconNav,
 body.dark .sideNav li a:hover .textNav{
