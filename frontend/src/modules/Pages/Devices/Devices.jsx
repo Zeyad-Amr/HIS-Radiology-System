@@ -2,8 +2,33 @@ import React from "react";
 import Button from "../../../shared/Button/Button";
 import Layout from "../../../shared/Layout/Layout";
 import Table from "../../../shared/Table/Table";
+import { useState, useEffect } from "react";
+import axios from "../../../globals/API/axios";
 
 const Devices = () => {
+  const [data, setData] = useState([]);
+
+  const geetData = async () => {
+    const response = await axios
+      .get(`/device`, {
+        headers: {
+          "auth-token":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY1NDE5Nzg2NH0.iIt0uRUfctdqZAtBTV3E6ylE-8LK_2IwwQH0S5j_tTM",
+        },
+      })
+      .then((response) => {
+        const result = response.data.data;
+        console.log(result);
+        if (result.length > 0) {
+          setData(result);
+        }
+      });
+  };
+  useEffect(() => {
+    geetData();
+    console.log(data);
+  }, []);
+
   return (
     <Layout>
       <div
@@ -19,89 +44,26 @@ const Devices = () => {
         <Button onClick={() => {}} value={"Create"} />{" "}
       </div>
       <div style={{ width: "100%" }}>
-        <Table
-          list={[
-            {
-              id: 80,
-              username: "zoz1234",
-              email: "ahmed@gmail.com",
-              password:
-                "$2b$10$TQMJiqzKvJq/pXZHWaWnCOGJeHj9ZH1MGAD8Z8JEj5yyZP1Zw0W8G",
-              create_time: null,
-              fname: "Zeyad",
-              lname: "Amr",
-              bdate: "2001-07-10T21:00:00.000Z",
-              gender: "null",
-              phone: "1067662457",
-              SSN: "01234527873221",
-              address: "null",
-              role: "patient",
-              country: "null",
-              user_id: null,
-              salary: null,
-              degree: null,
-              shift: null,
-              holidays: null,
-              dep_id: null,
-            },
-            {
-              id: 90,
-              username: "zoz1234",
-              email: "ahmed@gmail.com",
-              password:
-                "$2b$10$TQMJiqzKvJq/pXZHWaWnCOGJeHj9ZH1MGAD8Z8JEj5yyZP1Zw0W8G",
-              create_time: null,
-              fname: "Ahmed",
-              lname: "Amr",
-              bdate: "2001-07-10T21:00:00.000Z",
-              gender: "null",
-              phone: "1067662457",
-              SSN: "01234527873221",
-              address: "null",
-              role: "patient",
-              country: "null",
-              user_id: null,
-              salary: null,
-              degree: null,
-              shift: null,
-              holidays: null,
-              dep_id: null,
-            },
-            {
-              id: 92,
-              username: "zoz1234",
-              email: "ahmed@gmail.com",
-              password:
-                "$2b$10$TQMJiqzKvJq/pXZHWaWnCOGJeHj9ZH1MGAD8Z8JEj5yyZP1Zw0W8G",
-              create_time: null,
-              fname: "Zeyad",
-              lname: "Amr",
-              bdate: "2001-07-10T21:00:00.000Z",
-              gender: "null",
-              phone: "1067662457",
-              SSN: "01234527873221",
-              address: "null",
-              role: "patient",
-              country: "null",
-              user_id: null,
-              salary: null,
-              degree: null,
-              shift: null,
-              holidays: null,
-              dep_id: null,
-            },
-          ]}
-          headers={[
-            { field: "id", headerName: "ID" },
-            { field: "username", headerName: "Username" },
-            { field: "fname", headerName: "First Name" },
-            { field: "lname", headerName: "Last Name" },
-            { field: "email", headerName: "Email" },
-            { field: "phone", headerName: "Phone" },
-            { field: "SSN", headerName: "SSN" },
-            { field: "role", headerName: "Role" },
-          ]}
-        />
+        {data.length > 0 ? (
+          <Table
+            list={data}
+            headers={[
+              { field: "id", headerName: "ID" },
+              { field: "name", headerName: "Device Name" },
+              { field: "serial_number", headerName: "Serial Number" },
+              { field: "arrivial_date", headerName: "Arrivial Date" },
+              { field: "installation_date", headerName: "Installation Date" },
+              {
+                field: "callibration_date",
+                headerName: "Last Calibration Date",
+              },
+            ]}
+          />
+        ) : (
+          <div style={{ position: "absolute", top: "50%", left: "45%" }}>
+            No Data Found
+          </div>
+        )}
       </div>
     </Layout>
   );
