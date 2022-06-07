@@ -73,19 +73,9 @@ function Login() {
             </div>
             <button className="submit">Login</button>
             <div className="other">
-              <Link to="/forgetpass">
-                <a href="">Forget Password?</a>
-              </Link>
               <Link to="/SignUp">
                 <a href="">Creat an account</a>
               </Link>
-            </div>
-            <div id="google">
-              <h5>or</h5>
-              <h5>Login with</h5>
-              <a href="#" className="facebook">
-                <FontAwesomeIcon icon={faGoogle} color="white" size="2x" />
-              </a>
             </div>
           </form>
         </div>

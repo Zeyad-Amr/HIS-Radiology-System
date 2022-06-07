@@ -31,8 +31,7 @@ function Services() {
               alt="First slide"
             />
             <Carousel.Caption id='back-type'>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Track your results at your home</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={3000}>
@@ -44,8 +43,7 @@ function Services() {
             />
 
             <Carousel.Caption id='back-type'>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Online booking for your tests</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item interval={3000}>
@@ -57,8 +55,7 @@ function Services() {
             />
 
             <Carousel.Caption id='back-type'>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <h3>Get your Results online</h3>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
