@@ -46,7 +46,7 @@ module.exports = {
       return res.sendStatus(400);
     }
     const data = { ...req.body, tech_id: creatorId };
-    db.query(`UPDATE file SET ? WHERE id = ?`, data, (err, result) => {
+    db.query(`UPDATE file SET ? WHERE id = ?`, [data, id], (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.affectedRows === 0)
         return res.status(404).json({ message: "Not Found" });
