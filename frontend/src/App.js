@@ -14,6 +14,7 @@ import DevicesDetails from "./modules/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails";
 import Side from "./SideBar/SideBar.jsx";
 import AdminPage from "./modules/AdminPage/AdminPage";
+import Message from "./modules/Message/Message";
 
 import Users from "./modules/Pages/Users/Users";
 import Devices from "./modules/Pages/Devices/Devices";
@@ -22,6 +23,7 @@ import Orders from "./modules/Pages/Orders/Orders";
 import Appointments from "./modules/Pages/Appointments/Appointments";
 import Services from "./modules/Pages/Services/Services";
 import Departments from "./modules/Pages/Departments/Departments";
+
 
 function App() {
   return (
@@ -48,6 +50,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/message" element={<Message />} />
         </Routes>
       </Router>
     </div>
