@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../SideBar/side.css";
 import { logo } from "../assets/images/logo.png";
-function SideBar() {
+function SideBar({ toggle }) {
   const [sidebar, setSidebar] = useState(true);
 
   function showSidebar() {
@@ -40,48 +40,52 @@ function SideBar() {
     },
   ];
   return (
-    <section style={{ backgroundColor: "red", width: "100%", height: "100vh" }}>
-      <nav className={sidebar ? "sideNav toggle" : "sideNav close"}>
-        <header>
-          <div className="pic-text">
-            <span className="pic">
-              <img src={logo} alt="" />
-            </span>
+    <nav className={sidebar ? "sideNav toggle" : "sideNav close"}>
+      <header>
+        <div className="pic-text">
+          <span className="pic">
+            <img src={logo} alt="" />
+          </span>
 
-            <div className="text logo-text">
-              <span className="name">Codinglab</span>
-              <span className="profession">Web developer</span>
-            </div>
-          </div>
-
-          <i className="bx bx-chevron-right toggle" onClick={showSidebar}></i>
-        </header>
-
-        <div className="pro-bar">
-          <div className="pro">
-            <ul className="pro-links">
-              {items.map((item, index) => (
-                <li className="nav-link" key={index}>
-                  <a href="#">
-                    <i className="bx bx-bar-chart-alt-2 icon"></i>
-                    <span className="text nav-text">{item.name}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bottom-content">
-            <li className="">
-              <a href="#">
-                <i className="bx bx-log-out icon"></i>
-                <span className="text nav-text">Logout</span>
-              </a>
-            </li>
+          <div className="text logo-text">
+            <span className="name">Codinglab</span>
+            <span className="profession">Web developer</span>
           </div>
         </div>
-      </nav>
-    </section>
+
+        <i
+          className="bx bx-chevron-right toggle"
+          onClick={(event) => {
+            showSidebar();
+            return toggle(sidebar);
+          }}
+        ></i>
+      </header>
+
+      <div className="pro-bar">
+        <div className="pro">
+          <ul className="pro-links">
+            {items.map((item, index) => (
+              <li className="nav-link" key={index}>
+                <a href="#">
+                  <i className="bx bx-bar-chart-alt-2 icon"></i>
+                  <span className="text nav-text">{item.name}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="bottom-content">
+          <li className="">
+            <a href="#">
+              <i className="bx bx-log-out icon"></i>
+              <span className="text nav-text">Logout</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
   );
 }
 
