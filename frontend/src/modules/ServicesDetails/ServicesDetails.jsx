@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "../../shared/Button/Button";
 import "./Services.css";
+import { useParams } from "react-router-dom";
 
 function ServicesDetails() {
+  const { id } = useParams();
+
   const data = [
     {
       name: "cat scan",
