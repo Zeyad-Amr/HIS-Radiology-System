@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../../shared/Button/Button";
+import { useParams } from "react-router-dom";
 
 function DevicesDetails() {
+  const { id } = useParams();
+
   const data = {
     name: "X-ray",
     arrival_date: "null",

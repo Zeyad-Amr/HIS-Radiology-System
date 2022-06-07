@@ -17,6 +17,7 @@ import UserDetails from "./modules/UserDetails/UserDetails";
 import ServicesDetails from "./modules/ServicesDetails/ServicesDetails";
 import DevicesDetails from "./modules/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails";
+import Message from "./modules/Message/Message";
 import NotFound from "./modules/404_page/ErrorPage";
 
 import Users from "./modules/Pages/Users/Users";
@@ -58,11 +59,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/404" element={<ErrorPage />} />
-          <Route path="/order" element={<OrderDetails />} />
-          <Route path="/user" element={<UserDetails userObj={obj} />} />
-          <Route path="/service" element={<ServicesDetails />} />
-          <Route path="/device" element={<DevicesDetails />} />
-          <Route path="/appointment" element={<AppointmentDetails />} />
+
+          <Route path="/order/:id" element={<OrderDetails />} />
+          <Route path="/user/:id" element={<UserDetails />} />
+          <Route path="/service/:id" element={<ServicesDetails />} />
+          <Route path="/device/:id" element={<DevicesDetails />} />
+          <Route path="/appointment/:id" element={<AppointmentDetails />} />
+
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
 
@@ -73,6 +76,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/message" element={<Message />} />
         </Routes>
       </Router>
     </div>

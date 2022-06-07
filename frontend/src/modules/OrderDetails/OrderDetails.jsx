@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import "./OrderDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglassStart, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -7,8 +7,11 @@ import * as HiIcons from "react-icons/hi";
 import * as AiIcons from "react-icons/ai";
 import * as TbIcons from "react-icons/tb";
 import Button from "../../shared/Button/Button";
+import { useParams } from "react-router-dom";
 
 function OrderDetails() {
+  const { id } = useParams();
+
   var [step, setSidebar] = useState(3);
   const data = {
     receptionist_id: "66",
@@ -61,9 +64,9 @@ function OrderDetails() {
                     id="progressbar-2"
                     className="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2"
                   >
-                    <li className= { step >= 1 ? "holding1" : ""} id="step1"></li>
-                    <li className= { step >= 2 ? "holding2" : ""} id="step2"></li>
-                    <li className= { step >= 3 ? "holding3" : ""} id="step3"></li>
+                    <li className={step >= 1 ? "holding1" : ""} id="step1"></li>
+                    <li className={step >= 2 ? "holding2" : ""} id="step2"></li>
+                    <li className={step >= 3 ? "holding3" : ""} id="step3"></li>
                   </ul>
 
                   <div

@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "../../../globals/API/axios";
 const Departments = () => {
   const [data, setData] = useState([]);
+  const onClickRow = (row) => {};
 
   const geetData = async () => {
     const response = await axios
@@ -44,6 +45,7 @@ const Departments = () => {
       <div style={{ width: "100%" }}>
         {data.length > 0 ? (
           <Table
+            onClick={(row) => onClickRow(row)}
             list={data}
             headers={[
               { field: "id", headerName: "ID" },

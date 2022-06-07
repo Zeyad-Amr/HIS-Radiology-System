@@ -1,29 +1,12 @@
-import React, { useState }  from "react";
+import React, { useEffect } from "react";
 import "./UserDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../shared/Button/Button";
+import { useParams } from "react-router-dom";
+function UserDetails({ props }) {
+  const { id } = useParams();
 
-import axios from "../../globals/API/axios";
-
-
-
-function UserDetails({userObj}) {
-  const [fname, setFirst] = useState("");
-  const [lname, setLast] = useState("");
-  const [username, setUser] = useState("");
-  const [email, setEmail] = useState("");
-  const [SSN, setNationalId] = useState("");
-  const [country, setCountry] = useState("");
-  const [address, setAddress] = useState("");
-  const [gender, setGender] = useState("");
-  const [phone, setPhone] = useState("");
-  const [role, setRole] = useState("");
-  const [dep, setDep] = useState("");
-  const [salary, setSalary] = useState("");
-  const [shift, setShift] = useState("");
-  const [bdate, setBdate] = useState("");
-  // ({fname,lname,username,email,SSN,country,address,gender,phone,bdate,role,dep,salary,shift} = userObj)
   const data = {
     username,
     email,
@@ -49,6 +32,9 @@ function UserDetails({userObj}) {
     // navigate("/");
   };
 
+  useEffect(() => {
+    console.log(props);
+  }, []);
   function handleClick(event) {
     event.preventDefault();
     alert("Button Clicked");

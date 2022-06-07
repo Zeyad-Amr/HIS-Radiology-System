@@ -1,7 +1,7 @@
 import "./Table.css";
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
-export default function Table({ headers, list }) {
+export default function Table({ headers, list, onClick }) {
   const [pageSize, setPageSize] = React.useState(5);
   const [headersList, setHeadersList] = React.useState([]);
 
@@ -29,9 +29,10 @@ export default function Table({ headers, list }) {
         pagination
         columns={headersList}
         rows={list}
-        checkboxSelection
+        // checkboxSelection
         disableSelectionOnClick
         getRowClassName={(params) => `super-app-theme-row`}
+        onCellClick={(params, event) => onClick(params.row)}
       />
     </div>
   );
