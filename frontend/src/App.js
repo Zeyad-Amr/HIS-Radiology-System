@@ -17,6 +17,9 @@ import UserDetails from "./modules/UserDetails/UserDetails";
 import ServicesDetails from "./modules/ServicesDetails/ServicesDetails";
 import DevicesDetails from "./modules/DevicesDetails/DevicesDetails";
 import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails";
+import Side from "./SideBar/SideBar.jsx";
+import AdminPage from "./modules/AdminPage/AdminPage";
+import Message from "./modules/Message/Message";
 import NotFound from "./modules/404_page/ErrorPage";
 
 import Users from "./modules/Pages/Users/Users";
@@ -26,6 +29,7 @@ import Orders from "./modules/Pages/Orders/Orders";
 import Appointments from "./modules/Pages/Appointments/Appointments";
 import Services from "./modules/Pages/Services/Services";
 import Departments from "./modules/Pages/Departments/Departments";
+
 
 function App() {
   return (
@@ -51,6 +55,7 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/message" element={<Message />} />
         </Routes>
       </Router>
     </div>
