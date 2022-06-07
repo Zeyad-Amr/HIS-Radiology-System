@@ -10,7 +10,7 @@ const Users = () => {
   const navigate = useNavigate();
   const onClickRow = (row) => {
     console.log(row);
-    navigate("/");
+    navigate("/users/" + row.id);
   };
 
   const geetData = async () => {

@@ -42,6 +42,7 @@ module.exports = {
   updatefile: (req, res) => {
     const id = req.params.id;
     const creatorId = req.user.id;
+    console.log(req.user);
     if (Object.keys(req.body).length === 0) {
       return res.sendStatus(400);
     }
@@ -56,11 +57,15 @@ module.exports = {
   //delete file
   deletefile: (req, res) => {
     const id = req.params.id;
-    db.query(`DELETE FROM file WHERE id = ?`, id, (err, result) => {
-      if (err) return res.status(400).send(err);
-      if (result.affectedRows === 0)
-        return res.status(404).json({ message: "Not Found" });
-      res.status(200).json({ message: "file deleted successfully" });
-    });
+    db.query(
+      `UPDATE file SET file_url = null WHERE id = ?`,
+      id,
+      (err, result) => {
+        if (err) return res.status(400).send(err);
+        if (result.affectedRows === 0)
+          return res.status(404).json({ message: "Not Found" });
+        res.status(200).json({ message: "file deleted successfully" });
+      }
+    );
   },
 };

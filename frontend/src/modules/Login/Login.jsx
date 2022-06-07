@@ -20,8 +20,12 @@ function Login() {
     try {
       const response = await axios.post(`/login`, { user, pwd });
       console.log(response.data);
+      
       localStorage.setItem("token", response.data.token);
-      // navigate('/');
+      localStorage.setItem("role", response.data.role);
+      localStorage.setItem("name", response.data.fname);
+      localStorage.setItem("id", response.data.id);
+      navigate('/');
     } catch (error) {
       console.log(error.response.data);
     }
