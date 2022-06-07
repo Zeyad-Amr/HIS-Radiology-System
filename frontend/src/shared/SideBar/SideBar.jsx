@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SideBar.css";
 import logo from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as HiIcons from "react-icons/hi";
 import * as MdIcons from "react-icons/md";
@@ -9,6 +9,7 @@ import * as BsIcons from "react-icons/bs";
 import * as AiIcons from "react-icons/ai";
 
 function SideBar({ toggle }) {
+  const navigate = useNavigate();
   const [sidebar, setSidebar] = useState(true);
 
   function showSidebar() {
@@ -239,7 +240,13 @@ function SideBar({ toggle }) {
 
         <div className="bottom-content">
           <li className="">
-            <a href="#">
+            <a style={{cursor:'pointer'}} onClick={() => {
+              localStorage.removeItem("token");
+              localStorage.removeItem("name");
+              localStorage.removeItem("id");
+              localStorage.removeItem("role");
+              navigate("/login")
+              }}>
               <i className="bx bx-log-out iconNav"></i>
               <span className="textNav nav-textNav">Logout</span>
             </a>
