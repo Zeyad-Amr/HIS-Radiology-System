@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from 'react'
 import "./OrderDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglassStart, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +9,7 @@ import * as TbIcons from "react-icons/tb";
 import Button from "../../shared/Button/Button";
 
 function OrderDetails() {
+  var [step, setSidebar] = useState(3);
   const data = {
     receptionist_id: "66",
     patient_id: "30",
@@ -34,7 +35,7 @@ function OrderDetails() {
             <div className="col-12">
               <div className="card card-stepper text-black">
                 <div className="card-body p-5">
-                  <div className="d-flex justify-content-between align-items-center mb-5">
+                  {/* <div className="d-flex justify-content-between align-items-center mb-5">
                     <div>
                       <h5 className="mb-0">
                         INVOICE{" "}
@@ -54,20 +55,15 @@ function OrderDetails() {
                         </span>
                       </p>
                     </div>
-                  </div>
+                  </div> */}
 
                   <ul
                     id="progressbar-2"
                     className="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2"
                   >
-                    <li className="step0 active text-center" id="step1"></li>
-                    <li className="step0 active text-center" id="step2"></li>
-                    <li className="step0 active text-center" id="step3"></li>
-                    <li
-                      className="step0 text-muted text-center"
-                      id="step4"
-                    ></li>
-                    <li className="step0 text-muted text-end" id="step5"></li>
+                    <li className= { step >= 1 ? "holding1" : ""} id="step1"></li>
+                    <li className= { step >= 2 ? "holding2" : ""} id="step2"></li>
+                    <li className= { step >= 3 ? "holding3" : ""} id="step3"></li>
                   </ul>
 
                   <div
@@ -75,22 +71,10 @@ function OrderDetails() {
                     id="icons-bar"
                   >
                     <div className="d-lg-flex align-items-center">
-                      <FontAwesomeIcon
-                        className="fas fa-clipboard-list fa-3x me-lg-4 mb-3 mb-lg-0 ml-1"
-                        icon={faHourglassStart}
-                        color="white"
-                        size="3x"
-                        id="icons-details"
-                      />
-                      <div>
-                        <p className="fw-bold mb-1">Start</p>
-                        {/* <p className="fw-bold mb-0">Processed</p> */}
-                      </div>
-                    </div>
-                    <div className="d-lg-flex align-items-center">
                       <GiIcons.GiArchiveResearch
                         className="fas fa-box-open fa-3x me-lg-4 mb-3 mb-lg-0 ml-3"
                         id="icons-details"
+                        // size={'1.5x'}
                       />
                       <div>
                         <p className="fw-bold mb-1">Examining</p>
@@ -114,16 +98,6 @@ function OrderDetails() {
                       />
                       <div>
                         <p className="fw-bold mb-1">Finished</p>
-                        {/* <p className="fw-bold mb-0">Arrived</p> */}
-                      </div>
-                    </div>
-                    <div className="d-lg-flex align-items-center">
-                      <TbIcons.TbAmbulance
-                        className="fas fa-home fa-3x me-lg-4 mb-3 mb-lg-0 ml-3"
-                        id="icons-details"
-                      />
-                      <div>
-                        <p className="fw-bold mb-1">Delivered</p>
                         {/* <p className="fw-bold mb-0">Arrived</p> */}
                       </div>
                     </div>

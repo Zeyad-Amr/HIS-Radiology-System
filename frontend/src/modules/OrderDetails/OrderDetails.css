@@ -4,6 +4,7 @@
     
     #progressbar-2 {
     color: #455a64;
+    width: 140%;
     }
     
     #progressbar-2 li {
@@ -31,24 +32,6 @@
     }
     
     #progressbar-2 #step3:before {
-    content: '\f058';
-    font-family: "Font Awesome 5 Free";
-    color: #fff;
-    width: 37px;
-    margin-right: 0;
-    text-align: center;
-    }
-    
-    #progressbar-2 #step4:before {
-    content: '\f058';
-    font-family: "Font Awesome 5 Free";
-    color: #fff;
-    width: 37px;
-    margin-right: 0;
-    text-align: center;
-    }
-
-    #progressbar-2 #step5:before {
     content: '\f058';
     font-family: "Font Awesome 5 Free";
     color: #fff;
@@ -91,19 +74,9 @@
     #progressbar-2 li:nth-child(3):after {
     left: 1%;
     width: 100%;
+    display: none;
     }
 
-    #progressbar-2 li:nth-child(4):after {
-    left: 1%;
-    width: 100%;
-    }
-    
-    #progressbar-2 li:nth-child(5):after {
-        left: 0;
-        width: 0;
-    /* changing state bar*/
-    /* background: #c5cae9; */
-    }
 
     .holding1::before{
         background: #6520ff !important;
@@ -125,24 +98,13 @@
         text-align: center;
     }
 
-    .holding4::before,
     .holding3::after{
         background: #6520ff !important;
         text-align: center;
+        display: none;
     }
 
-    .holding5::before,
-    .holding5::after,
-    .holding4::after{
-        background: #6520ff !important;
-        text-align: center;
-    }
 
-    
-    #progressbar-2 li:nth-child(5) {
-    left: 0;
-    width: 37px;
-    }
     
     /* #progressbar-2 li:nth-child(4):after {
     left: 0;
@@ -154,20 +116,22 @@
     background: #6520ff;
     }
 
-    li#step5{
-        transform: rotateY(180deg);
-    }
-
     #icons-bar{
-        width: 100%;
+        width: 98%;
         /* grid-gap: 11.8rem; */
     }
 
     #icons-details{
-        margin-right: 70%;
+        margin-right: 10%;
+        width: 80%;
+        /* line-height: 20px; */
     }
 
     #order {
         text-align: center;
         font-size: xx-large;
     }
+
+    /* #step3{
+        transform: rotateY(180deg);
+    } */
