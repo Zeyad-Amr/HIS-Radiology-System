@@ -150,7 +150,7 @@ function SideBar({ toggle }) {
       <header className="sideHeader">
         <div className="pic-textNav">
           <span className="pic">
-            <img src={logo} alt="" />
+          <FaIcons.FaUserCircle />
           </span>
 
           <div className="textNav logo-textNav">
