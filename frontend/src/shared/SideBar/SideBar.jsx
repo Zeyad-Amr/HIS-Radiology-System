@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import "./SideBar.css";
-import { logo } from "../../assets/images/logo.png";
+import logo  from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import * as FaIcons from 'react-icons/fa';
+import * as HiIcons from 'react-icons/hi';
+import * as MdIcons from 'react-icons/md';
+import * as BsIcons from 'react-icons/bs';
+import * as AiIcons from 'react-icons/ai';
+
 function SideBar({ toggle }) {
   const [sidebar, setSidebar] = useState(true);
 
@@ -9,44 +15,186 @@ function SideBar({ toggle }) {
     setSidebar(!sidebar);
     console.log("momen");
   }
+  const items = []
+  const role = localStorage.role
+  switch (role) {
+    case "Admin":
+      items = [
+        {
+          role:'Admin',
+          roleIcon:<BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Dashboard",
+          route: "/dashboard",
+          icon: <BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Users",
+          route: "/users",
+          icon: <FaIcons.FaUsers  />,
+        },
+        {
+          name: "Departments",
+          route: "/departments",
+          icon: <FaIcons.FaHospital  />,
+        },
+        {
+          name: "Services",
+          route: "/services",
+          icon: <MdIcons.MdMedicalServices  />,
+        },
+        {
+          name: "Orders",
+          route: "/orders",
+          icon: <HiIcons.HiDocumentReport  />,
+        },
+        {
+          name: "Appointments",
+          route: "/appointments",
+          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+        },
+        {
+          name: "Devices",
+          route: "/devices",
+          icon: <FaIcons.FaLaptopMedical  />,
+        },
+      ];
+      break;
+    case "Technician":
+      items = [
+        {
+          role:'Technician',
+          roleIcon:<BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Dashboard",
+          route: "/dashboard",
+          icon: <BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Users",
+          route: "/users",
+          icon: <FaIcons.FaUsers  />,
+        },
+        {
+          name: "Departments",
+          route: "/departments",
+          icon: <FaIcons.FaHospital  />,
+        },
+        {
+          name: "Services",
+          route: "/services",
+          icon: <MdIcons.MdMedicalServices  />,
+        },
+        {
+          name: "Orders",
+          route: "/orders",
+          icon: <HiIcons.HiDocumentReport  />,
+        },
+        {
+          name: "Appointments",
+          route: "/appointments",
+          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+        },
+        {
+          name: "Devices",
+          route: "/devices",
+          icon: <FaIcons.FaLaptopMedical  />,
+        },
+      ];
+      break;
+    case "Doctor":
+      items = [
+        {
+          role:'Doctor',
+          roleIcon:<BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Dashboard",
+          route: "/dashboard",
+          icon: <BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Users",
+          route: "/users",
+          icon: <FaIcons.FaUsers  />,
+        },
+        {
+          name: "Departments",
+          route: "/departments",
+          icon: <FaIcons.FaHospital  />,
+        },
+        {
+          name: "Services",
+          route: "/services",
+          icon: <MdIcons.MdMedicalServices  />,
+        },
+        {
+          name: "Orders",
+          route: "/orders",
+          icon: <HiIcons.HiDocumentReport  />,
+        },
+        {
+          name: "Appointments",
+          route: "/appointments",
+          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+        },
+        {
+          name: "Devices",
+          route: "/devices",
+          icon: <FaIcons.FaLaptopMedical  />,
+        },
+      ];
+      break;
+    case "Reciptionist":
+      items = [
+        {
+          role:'Reciptionist',
+          roleIcon:<BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Dashboard",
+          route: "/dashboard",
+          icon: <BsIcons.BsClipboardData  />,
+        },
+        {
+          name: "Users",
+          route: "/users",
+          icon: <FaIcons.FaUsers  />,
+        },
+        {
+          name: "Departments",
+          route: "/departments",
+          icon: <FaIcons.FaHospital  />,
+        },
+        {
+          name: "Services",
+          route: "/services",
+          icon: <MdIcons.MdMedicalServices  />,
+        },
+        {
+          name: "Orders",
+          route: "/orders",
+          icon: <HiIcons.HiDocumentReport  />,
+        },
+        {
+          name: "Appointments",
+          route: "/appointments",
+          icon: <AiIcons.AiFillSchedule style={{fontSize: '50px'}}  />,
+        },
+        {
+          name: "Devices",
+          route: "/devices",
+          icon: <FaIcons.FaLaptopMedical  />,
+        },
+      ];
+      break;
+  
+    default:
+      break;
+  }
 
-  const items = [
-    {
-      name: "Dashboard",
-      route: "/dashboard",
-      icon: "icon",
-    },
-    {
-      name: "Users",
-      route: "/users",
-      icon: "icon",
-    },
-    {
-      name: "Departments",
-      route: "/departments",
-      icon: "icon",
-    },
-    {
-      name: "Services",
-      route: "/services",
-      icon: "icon",
-    },
-    {
-      name: "Orders",
-      route: "/orders",
-      icon: "icon",
-    },
-    {
-      name: "Appointments",
-      route: "/appointments",
-      icon: "icon",
-    },
-    {
-      name: "Devices",
-      route: "/devices",
-      icon: "icon",
-    },
-  ];
   return (
     <nav className={sidebar ? "sideNav toggle" : "sideNav close"}>
       <header className="sideHeader">
@@ -56,8 +204,9 @@ function SideBar({ toggle }) {
           </span>
 
           <div className="textNav logo-textNav">
-            <span className="name">Codinglab</span>
-            <span className="profession">Web developer</span>
+            {/* <FaBeer /> */}
+            <span className="name">{items.name}</span>
+            {/* <span className="profession">Web developer</span> */}
           </div>
         </div>
 
@@ -76,7 +225,7 @@ function SideBar({ toggle }) {
             {items.map((item, index) => (
               <li className="nav-link" style={{ padding: "0" }} key={index}>
                 <Link to={item.route}>
-                  <i className="bx bx-bar-chart-alt-2 iconNav"></i>
+                    {item.icon}
                   <span className="textNav nav-textNav">{item.name}</span>
                 </Link>
               </li>
