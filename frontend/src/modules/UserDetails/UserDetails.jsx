@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./UserDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../shared/Button/Button";
 
-function UserDetails() {
+function UserDetails({ props }) {
   const data = {
     username: "ahmedraouf4",
     email: "ahmed@gmail.com",
@@ -22,6 +22,9 @@ function UserDetails() {
     shift: "night",
   };
 
+  useEffect(() => {
+    console.log(props);
+  }, []);
   function handleClick(event) {
     event.preventDefault();
     alert("Button Clicked");
