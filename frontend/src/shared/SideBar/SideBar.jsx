@@ -19,7 +19,7 @@ function SideBar({ toggle }) {
   let items = [];
   const role = localStorage.role;
   switch (role) {
-    case "Admin":
+    case "admin":
       items = [
         {
           role: "Admin",
@@ -62,80 +62,49 @@ function SideBar({ toggle }) {
         },
       ];
       break;
-    case "Technician":
+    case "technician":
       items = [
         {
           role: "Technician",
           roleIcon: <BsIcons.BsClipboardData />,
         },
-        {
-          name: "Dashboard",
-          route: "/dashboard",
-          icon: <BsIcons.BsClipboardData />,
-        },
-        {
-          name: "Users",
-          route: "/users",
-          icon: <FaIcons.FaUsers />,
-        },
-        {
-          name: "Departments",
-          route: "/departments",
-          icon: <FaIcons.FaHospital />,
-        },
-        {
-          name: "Services",
-          route: "/services",
-          icon: <MdIcons.MdMedicalServices />,
-        },
+
         {
           name: "Orders",
           route: "/orders",
           icon: <HiIcons.HiDocumentReport />,
         },
         {
+          name: "Services",
+          route: "/services",
+          icon: <MdIcons.MdMedicalServices />,
+        },
+
+        {
           name: "Appointments",
           route: "/appointments",
           icon: <AiIcons.AiFillSchedule style={{ fontSize: "50px" }} />,
         },
-        {
-          name: "Devices",
-          route: "/devices",
-          icon: <FaIcons.FaLaptopMedical />,
-        },
       ];
       break;
-    case "Doctor":
+    case "doctor":
       items = [
         {
           role: "Doctor",
           roleIcon: <BsIcons.BsClipboardData />,
         },
+
         {
-          name: "Dashboard",
-          route: "/dashboard",
-          icon: <BsIcons.BsClipboardData />,
-        },
-        {
-          name: "Users",
-          route: "/users",
-          icon: <FaIcons.FaUsers />,
-        },
-        {
-          name: "Departments",
-          route: "/departments",
-          icon: <FaIcons.FaHospital />,
+          name: "Orders",
+          route: "/orders",
+          icon: <HiIcons.HiDocumentReport />,
         },
         {
           name: "Services",
           route: "/services",
           icon: <MdIcons.MdMedicalServices />,
         },
-        {
-          name: "Orders",
-          route: "/orders",
-          icon: <HiIcons.HiDocumentReport />,
-        },
+
         {
           name: "Appointments",
           route: "/appointments",
@@ -148,21 +117,16 @@ function SideBar({ toggle }) {
         },
       ];
       break;
-    case "Reciptionist":
+    case "receptionist":
       items = [
         {
           role: "Reciptionist",
           roleIcon: <BsIcons.BsClipboardData />,
         },
         {
-          name: "Dashboard",
-          route: "/dashboard",
-          icon: <BsIcons.BsClipboardData />,
-        },
-        {
-          name: "Users",
-          route: "/users",
-          icon: <FaIcons.FaUsers />,
+          name: "Orders",
+          route: "/orders",
+          icon: <HiIcons.HiDocumentReport />,
         },
         {
           name: "Departments",
@@ -173,21 +137,6 @@ function SideBar({ toggle }) {
           name: "Services",
           route: "/services",
           icon: <MdIcons.MdMedicalServices />,
-        },
-        {
-          name: "Orders",
-          route: "/orders",
-          icon: <HiIcons.HiDocumentReport />,
-        },
-        {
-          name: "Appointments",
-          route: "/appointments",
-          icon: <AiIcons.AiFillSchedule style={{ fontSize: "50px" }} />,
-        },
-        {
-          name: "Devices",
-          route: "/devices",
-          icon: <FaIcons.FaLaptopMedical />,
         },
       ];
       break;

@@ -5,13 +5,14 @@ import { faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../shared/Button/Button";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "../../globals/API/axios";
-import { padding } from "@mui/system";
 
 function UserDetails() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [data, setData] = useState({});
   const [role, setRoleData] = useState("");
-  const navigate = useNavigate();
+  // const [role, setRoleData] = useState("");
   // const [username, setUsername] = useState("");
   // const [email, setEmail] = useState("");
   // const [phone, setPhone] = useState("");
@@ -22,10 +23,9 @@ function UserDetails() {
   // const [SSN, setSSN] = useState("");
   // const [gender, setGender] = useState("");
   // const [country, setCountry] = useState("");
-  // const [role, setRole] = useState("");
-  // const [dep, setDep] = useState("");
-  // const [salary, setSalary] = useState("");
-  // const [shift, setShift] = useState("");
+  const [degree, setDegreeData] = useState("");
+  const [dep, setDepData] = useState("");
+  const [salary, setSalaryData] = useState("");
 
   const getData = async () => {
     const response = await axios
@@ -39,7 +39,11 @@ function UserDetails() {
       .then((response) => {
         const result = response.data;
 
-        setData({ ...result[0], gender: "Male" });
+        setData(result[0]);
+        setRoleData(result[0].role);
+        setDepData(result[0].dep);
+        setSalaryData(result[0].salary);
+        setDegreeData(result[0].degree);
       });
   };
 
@@ -58,8 +62,32 @@ function UserDetails() {
         }
       )
       .then((response) => {
-        console.log(response);
-        navigate("/users");
+        if (role !== "patient") {
+          console.log(response);
+          navigate("/users");
+        } else {
+          console.log(response);
+          navigate("/users");
+          const updateData = async () => {
+            const response = await axios
+              .put(
+                `/emp`,
+                {
+                  user_id: data.id,
+                  salary: salary,
+                  degree: degree,
+                  dep_id: dep,
+                },
+                {
+                  headers: {
+                    "auth-token":
+                      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY1NDE5Nzg2NH0.iIt0uRUfctdqZAtBTV3E6ylE-8LK_2IwwQH0S5j_tTM",
+                  },
+                }
+              )
+              .then((response) => {});
+          };
+        }
       });
   };
 
@@ -75,7 +103,9 @@ function UserDetails() {
   function handleClick(event) {
     // event.preventDefault();
     // alert("Button Clicked");
-    updateData();
+    if (role !== "") {
+      updateData();
+    }
   }
   return (
     <div className="log" style={{ padding: "10px 30px" }}>
@@ -217,35 +247,46 @@ function UserDetails() {
         <div className="text">Employment Data</div>
         <div class="input-field" id="inputField">
           <label>Department</label>
-          <select class="gender-selection">
+          <select
+            class="gender-selection"
+            onChange={(event) => {
+              setDepData(event.target.value);
+              console.log(role);
+            }}
+          >
             <option value="Choose Department" disabled selected hidden>
-              {data.dep}
+              {dep}
             </option>
             <option value="Radiology">Radiology</option>
             <option value="Lab">Lab</option>
           </select>
         </div>
         <div class="input-field" id="inputField">
-          <input type="text" required value={data.salary}></input>
+          <input
+            type="text"
+            required
+            value={salary}
+            onChange={(event) => {
+              setSalaryData(event.target.value);
+              console.log(role);
+            }}
+          ></input>
           <label>Salary</label>
         </div>
+
         <div class="input-field" id="inputField">
-          <label className="input-field-cont-1">Shift</label>
-          <select class="gender-selection">
-            <option value="Choose Shift" disabled selected hidden>
-              {data.shift}
-            </option>
-            <option value="Day">Day</option>
-            <option value="Night">Night</option>
-          </select>
-        </div>
-        <div class="input-field" id="inputField">
-          <input type="text" required value={data.degree}></input>
+          <input
+            type="text"
+            required
+            value={degree}
+            onChange={(event) => {
+              setDegreeData(event.target.value);
+              console.log(role);
+            }}
+          ></input>
           <label>Degree</label>
         </div>
-        <div className="fady"></div>
-        <div className="fady"></div>
-        <div className="fady"></div>
+
         <div className="fady"></div>
       </form>
     </div>
