@@ -20,8 +20,12 @@ function Login() {
     try {
       const response = await axios.post(`/login`, { user, pwd });
       console.log(response.data);
+      
       localStorage.setItem("token", response.data.token);
-      // navigate('/');
+      localStorage.setItem("role", response.data.role);
+      localStorage.setItem("name", response.data.fname);
+      localStorage.setItem("id", response.data.id);
+      navigate('/');
     } catch (error) {
       console.log(error.response.data);
     }
@@ -73,19 +77,9 @@ function Login() {
             </div>
             <button className="submit">Login</button>
             <div className="other">
-              <Link to="/forgetpass">
-                <a href="">Forget Password?</a>
-              </Link>
               <Link to="/SignUp">
                 <a href="">Creat an account</a>
               </Link>
-            </div>
-            <div id="google">
-              <h5>or</h5>
-              <h5>Login with</h5>
-              <a href="#" className="facebook">
-                <FontAwesomeIcon icon={faGoogle} color="white" size="2x" />
-              </a>
             </div>
           </form>
         </div>

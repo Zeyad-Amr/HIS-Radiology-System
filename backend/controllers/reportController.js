@@ -52,11 +52,15 @@ module.exports = {
   //delete report
   deletereport: (req, res) => {
     const id = req.params.id;
-    db.query(`DELETE FROM report WHERE id = ?`, id, (err, result) => {
-      if (err) return res.status(400).send(err);
-      if (result.affectedRows === 0)
-        return res.status(404).json({ message: "Not Found" });
-      res.status(200).json({ message: "report deleted successfully" });
-    });
+    db.query(
+      `UPDATE report SET text = null WHERE id = ?`,
+      id,
+      (err, result) => {
+        if (err) return res.status(400).send(err);
+        if (result.affectedRows === 0)
+          return res.status(404).json({ message: "Not Found" });
+        res.status(200).json({ message: "report deleted successfully" });
+      }
+    );
   },
 };

@@ -110,7 +110,14 @@ module.exports = {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
-      res.status(200).json(result);
+      const order = result[0];
+      if (order.fileURL) {
+        order.status = 1;
+        if (order.repTxt) {
+          order.status = 2;
+        }
+      }
+      res.status(200).json(order);
     });
   },
   createOrder: async (req, res) => {

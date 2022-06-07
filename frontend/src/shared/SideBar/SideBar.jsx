@@ -10,6 +10,8 @@ function SideBar({ toggle }) {
     console.log("momen");
   }
 
+  // if
+
   const items = [
     {
       name: "Dashboard",

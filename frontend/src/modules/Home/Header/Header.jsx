@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 // for images
-import logo from '../images/logo.png';
+import logo from '../../../assets/images/Hospital-Logo.svg';
 import home from '../images/home.png';
 
 function Header() {
@@ -15,13 +15,21 @@ function Header() {
     AOS.refresh();
   }, []);
 
+  const loggedIn = () => {
+  if(!localStorage.token){
+    return false
+  }
+  return true
+}
+console.log(loggedIn);
+
+
   return (
   <div>
     <header className="header" id="home"  data-aos="zoom-out">
 
     <div className="image">
-        <img src= {logo} alt=""/>
-        <a href="#home">LOGO</a>  
+        <img src= {logo} alt="" size='2x'/>
 
     </div>
     
@@ -40,12 +48,17 @@ function Header() {
         {/* <Link to="/contact"> */}
         <a href="#contact">Contact</a>
         {/* </Link> */}
-        <Link to="/login">
-        <a>Login</a>
-        </Link>
-        <Link to="/SignUp">
-        <a>Sign UP</a>
-        </Link>
+        {loggedIn()? 
+        <a style={{cursor:'pointer'}} onClick={() => {
+          localStorage.removeItem("token");
+          window.location.reload();
+          }}>Log Out</a>
+        :
+        <><Link to="/login">
+              <a>Login</a>
+            </Link><Link to="/SignUp">
+                <a>Sign UP</a>
+              </Link></> }
     </nav>
 
     {/* responsive */}
@@ -55,7 +68,7 @@ function Header() {
 <section className="home" id="home-even" >
 
   <div className="content" data-aos="fade-left">
-      <h3>HOSPITAL<span1> NAME </span1> </h3>
+      <h3>MedMix<span1> Hospital </span1> </h3>
       <h2> YOUR HEALTH IS OUR <span1> PRIORIT </span1></h2>
       <p></p>
       {/* <a href="/test" class="btn"> Check the result <span class="fas fa-chevron-right"></span> </a> */}

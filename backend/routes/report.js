@@ -96,7 +96,7 @@ router.post(
 );
 
 //edit report
-// router.put("/report/:id", reportController.updatereport);
+router.put("/report/:id", [authn], reportController.updatereport);
 
 /**
  * @api {delete} /report/:id DELETE/ report/:id
