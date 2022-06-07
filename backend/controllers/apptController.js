@@ -1,23 +1,47 @@
-const db = require("../mysql-con");
-const paginate = require("../methods/paginate");
+const { db } = require("../mysql-con");
 
 module.exports = {
   //get all appointment
   getAllAppts: (req, res) => {
-    const page = parseInt(req.query.page);
-    const limit = parseInt(req.query.limit);
-    db.query(`SELECT * FROM appointment`, (err, result) => {
+    const selectFilter = `SELECT *
+      FROM (SELECT a.start_time, a.end_time, a.id, a.services_id as srvId FROM appointment a) appt
+      LEFT JOIN (SELECT 
+        s.id as srvId, s.name as srvName, dep.name as depName, dep.id as depId
+        FROM services s LEFT JOIN dep ON s.dep_id = dep.id) srv 
+      ON appt.srvId = srv.srvId
+    WHERE id NOT IN (
+    SELECT appointment_id
+    FROM orders o
+    JOIN appointment app
+    ON o.appointment_id = app.id
+    AND DATE(o.create_time) = ?
+    )`;
+    const select = `SELECT *
+    FROM (SELECT a.start_time, a.end_time, a.id, a.services_id as srvId FROM appointment a) appt
+    LEFT JOIN (SELECT 
+      s.id as srvId, s.name as srvName, dep.name as depName, dep.id as depId
+      FROM services s LEFT JOIN dep ON s.dep_id = dep.id) srv 
+    ON appt.srvId = srv.srvId
+    `;
+    const { day } = req.query;
+    db.query(!day ? select : selectFilter, day, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });
-      const paginatedResult = paginate(result, page, limit);
-      res.status(200).send(paginatedResult);
+      res.status(200).send(result);
     });
   },
   //get one appointment
   getOneAppt: (req, res) => {
     const id = req.params.id;
-    db.query(`SELECT * FROM appointment WHERE id = ?`, id, (err, result) => {
+    const select = `SELECT *
+    FROM (SELECT a.start_time, a.end_time, a.id, a.services_id as srvId FROM appointment a) appt
+    LEFT JOIN (SELECT 
+      s.id as srvId, s.name as srvName, dep.name as depName, dep.id as depId
+      FROM services s JOIN dep ON s.id = dep.id) srv 
+    ON appt.srvId = srv.srvId
+    `;
+    db.query(select, id, (err, result) => {
       if (err) return res.status(400).send(err);
       if (result.length === 0)
         return res.status(404).json({ message: "Not Found" });

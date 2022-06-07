@@ -10,7 +10,7 @@ export default function Table({ headers, list }) {
       return {
         field: item.field,
         headerName: item.headerName,
-        width: 120,
+        width: item.width ? item.width : 120,
         headerAlign: "center",
         headerClassName: "super-app-theme--header",
         headerAlign: "center",
@@ -21,7 +21,7 @@ export default function Table({ headers, list }) {
   }, [headersList]);
 
   return (
-    <div style={{ height: 400, marginLeft: "30px", marginRight: "30px" }}>
+    <div style={{ height: 450, marginLeft: "30px", marginRight: "30px" }}>
       <DataGrid
         pageSize={pageSize}
         onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}

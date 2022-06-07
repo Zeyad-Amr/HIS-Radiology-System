@@ -95,7 +95,7 @@ const usersController = require("../controllers/usersController");
 }
 */
 //get users
-router.get("/users", [authn, authz("Admin")], usersController.getAllUsers);
+// router.get("/users", [authn, authz("Admin")], usersController.getAllUsers);
 
 /**
    * @api {get} /users/:id GET/ users/:id
@@ -132,7 +132,7 @@ router.get("/users", [authn, authz("Admin")], usersController.getAllUsers);
         }
 */
 //get one user
-router.get("/users/:id", authn, usersController.getOneUser);
+router.get("/users", authn, usersController.getUser);
 
 /**
  * @api {post} /users POST/ users

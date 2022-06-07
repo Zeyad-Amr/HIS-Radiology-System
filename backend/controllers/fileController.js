@@ -1,4 +1,4 @@
-const db = require("../mysql-con");
+const { db } = require("../mysql-con");
 const paginate = require("../methods/paginate");
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
     if (Object.keys(req.body).length === 0) {
       return res.sendStatus(400);
     }
-    const data = { ...req.body, doctor_id: creatorId };
+    const data = { ...req.body, tech_id: creatorId };
     const sqlStatment = `INSERT INTO file SET ?`;
     db.query(sqlStatment, data, (err, result) => {
       if (err) {
@@ -41,16 +41,17 @@ module.exports = {
   //edit file
   updatefile: (req, res) => {
     const id = req.params.id;
-    db.query(
-      `UPDATE file SET ? WHERE id = ?`,
-      [req.body, id],
-      (err, result) => {
-        if (err) return res.status(400).send(err);
-        if (result.affectedRows === 0)
-          return res.status(404).json({ message: "Not Found" });
-        res.status(200).json({ message: "file edited successfully" });
-      }
-    );
+    const creatorId = req.user.id;
+    if (Object.keys(req.body).length === 0) {
+      return res.sendStatus(400);
+    }
+    const data = { ...req.body, tech_id: creatorId };
+    db.query(`UPDATE file SET ? WHERE id = ?`, [data, id], (err, result) => {
+      if (err) return res.status(400).send(err);
+      if (result.affectedRows === 0)
+        return res.status(404).json({ message: "Not Found" });
+      res.status(200).json({ message: "file edited successfully" });
+    });
   },
   //delete file
   deletefile: (req, res) => {

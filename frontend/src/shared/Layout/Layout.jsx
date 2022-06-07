@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 // import { Redirect } from "react-router-dom";
 import "./Layout.css";
 import NavBar from "../NavBar/NavBar";
-import SideBar from "../../SideBar/SideBar";
+import SideBar from "../SideBar/SideBar";
 const Layout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
@@ -34,7 +34,21 @@ const Layout = ({ children }) => {
           lg={collapsed ? 11 : 10}
           style={{ padding: "0rem" }}
         >
-          <div>{children}</div>
+          <div
+            style={{
+              backgroundColor: "#f0f0f0",
+              width: "100%",
+              height: "100vh",
+              padding: "30px 30px 50px 40px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              justifyContent: "space-between",
+              // overflow: "hidden",
+            }}
+          >
+            {children}
+          </div>
         </Col>
       </Row>
     </Container>

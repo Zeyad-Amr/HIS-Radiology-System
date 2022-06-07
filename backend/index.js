@@ -1,5 +1,5 @@
 const express = require("express");
-const db = require("./mysql-con");
+const { db } = require("./mysql-con");
 const cors = require("cors");
 const app = express();
 
@@ -14,18 +14,17 @@ app.use(cors());
 
 //Router middlerwares
 app.use("/api", require("./routes/login"));
-// app.use("/api", require("./routes/patient"));
+app.use("/api", require("./routes/msg"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/users"));
 app.use("/api", require("./routes/departement"));
 app.use("/api", require("./routes/device"));
 app.use("/api", require("./routes/appointment"));
 // app.use("/api", require("./routes/bill"));
-app.use("/api", require("./routes/category"));
 app.use("/api", require("./routes/services"));
 app.use("/api", require("./routes/order"));
 app.use("/api", require("./routes/report"));
-// app.use("/api", require("./routes/file"));
+app.use("/api", require("./routes/file"));
 
 //connect to database
 db.connect((err) => {

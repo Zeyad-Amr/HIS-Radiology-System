@@ -1,68 +1,100 @@
-// import React, { useState } from "react";
-// import "./SideBar.css";
-// import * as FaIcons from "react-icons/fa";
-// import { Link } from "react-router-dom";
-// import { SidebarData } from "./SidebarData";
-// import { IconContext } from "react-icons";
+import React, { useState } from "react";
+import "./SideBar.css";
+import { logo } from "../../assets/images/logo.png";
+import { Link } from "react-router-dom";
+function SideBar({ toggle }) {
+  const [sidebar, setSidebar] = useState(true);
 
-// function SideBar() {
-//   const [sidebar, setSidebar] = useState(true);
+  function showSidebar() {
+    setSidebar(!sidebar);
+    console.log("momen");
+  }
 
-//   function showSidebar() {
-//     setSidebar(!sidebar);
-//     console.log("momen");
-//   }
+  const items = [
+    {
+      name: "Dashboard",
+      route: "/dashboard",
+      icon: "icon",
+    },
+    {
+      name: "Users",
+      route: "/users",
+      icon: "icon",
+    },
+    {
+      name: "Departments",
+      route: "/departments",
+      icon: "icon",
+    },
+    {
+      name: "Services",
+      route: "/services",
+      icon: "icon",
+    },
+    {
+      name: "Orders",
+      route: "/orders",
+      icon: "icon",
+    },
+    {
+      name: "Appointments",
+      route: "/appointments",
+      icon: "icon",
+    },
+    {
+      name: "Devices",
+      route: "/devices",
+      icon: "icon",
+    },
+  ];
+  return (
+    <nav className={sidebar ? "sideNav toggle" : "sideNav close"}>
+      <header className="sideHeader">
+        <div className="pic-textNav">
+          <span className="pic">
+            <img src={logo} alt="" />
+          </span>
 
-//   // function close() {
-//   //     if(sidebar === true) {
-//   //         setSidebar(false);
-//   //     }
-//   //     console.log('momen')
-//   //  }
-//   // <img src={Admin} alt="" />
+          <div className="textNav logo-textNav">
+            <span className="name">Codinglab</span>
+            <span className="profession">Web developer</span>
+          </div>
+        </div>
 
-//   return (
-//     <IconContext.Provider value={{ color: "#fff" }}>
-//       <div className="navbar-admin">
-//         <Link to="#" className="menu-bars">
-//           <FaIcons.FaBars onClick={showSidebar} />
-//         </Link>
-//       </div>
+        <i
+          className="bx bx-chevron-right toggle"
+          onClick={(event) => {
+            showSidebar();
+            toggle(sidebar);
+          }}
+        ></i>
+      </header>
 
-//       <nav
-//         className={sidebar ? "nav-menu active" : "nav-menu"}
-//         style={{ display: sidebar === true ? "block" : "none" }}
-//       >
-//         <ul className="nav-menu-items">
-//           {SidebarData.map((item, index) => {
-//             return (
-//               <li key={index} className={item.cName}>
-//                 <Link to={item.path} className="choices">
-//                   {item.icon}
-//                   <span>{item.title}</span>
-//                 </Link>
-//               </li>
-//             );
-//           })}
-//         </ul>
-//       </nav>
+      <div className="pro-bar">
+        <div className="pro">
+          <ul className="pro-links" style={{ padding: "0px" }}>
+            {items.map((item, index) => (
+              <li className="nav-link" style={{ padding: "0" }} key={index}>
+                <Link to={item.route}>
+                  <i className="bx bx-bar-chart-alt-2 iconNav"></i>
+                  <span className="textNav nav-textNav">{item.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-//       <div
-//         className="akwa"
-//         style={{ display: sidebar === false ? "block" : "none" }}
-//       >
-//         <div className="icon-flex">
-//           {SidebarData.map((item, index) => {
-//             return (
-//               <li key={index} className="icons">
-//                 <Link to="/">{item.icon}</Link>
-//               </li>
-//             );
-//           })}
-//         </div>
-//       </div>
-//     </IconContext.Provider>
-//   );
-// }
+        <div className="bottom-content">
+          <li className="">
+            <a href="#">
+              <i className="bx bx-log-out iconNav"></i>
+              <span className="textNav nav-textNav">Logout</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </nav>
+  );
+}
 
-// export default SideBar;
+export default SideBar;

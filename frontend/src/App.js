@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Switch,
+} from "react-router-dom";
 import React from "react";
 import Login from "./modules/Login/Login";
 import Signup from "./modules/SignUp/Signup";
@@ -15,6 +20,7 @@ import AppointmentDetails from "./modules/AppointmentDetails/AppointmentDetails"
 import Side from "./SideBar/SideBar.jsx";
 import AdminPage from "./modules/AdminPage/AdminPage";
 import Message from "./modules/Message/Message";
+import NotFound from "./modules/404_page/ErrorPage";
 
 import Users from "./modules/Pages/Users/Users";
 import Devices from "./modules/Pages/Devices/Devices";
@@ -40,8 +46,7 @@ function App() {
           <Route path="/device" element={<DevicesDetails />} />
           <Route path="/appointment" element={<AppointmentDetails />} />
           <Route path="/test" element={<Test />} />
-          <Route path="/admin" element={<AdminPage />} />
-          <Route path="/side" element={<Side />} />
+          <Route path="*" element={<NotFound />} />
 
           <Route path="/users" element={<Users />} />
           <Route path="/departments" element={<Departments />} />

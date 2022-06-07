@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
-const db = require("../mysql-con");
+const { db } = require("../mysql-con");
 const jwt = require("jsonwebtoken");
 
 const createToken = (payload) => {
@@ -39,6 +39,7 @@ const createToken = (payload) => {
  */
 router.post("/login", (req, res) => {
   const { user, pwd } = req.body;
+  console.log(req.body);
   db.query(
     `SELECT * FROM user
   WHERE username = ?`,

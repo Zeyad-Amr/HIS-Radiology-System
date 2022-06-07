@@ -1,8 +1,25 @@
-import React from 'react'
+import React,{ useState } from 'react'
 
-import contact from '../images/contactUs.png'  
+
+import contact from '../images/contactUs.png' 
+import axios from "../../../globals/API/axios";
+
 
 function Contact() {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [msg, setMsg] = useState();
+
+  const handleSubmit = async (e) => {
+    // e.preventDefault();
+    try {
+      const response = await axios.post(`/contact_us`, { name, email, msg });
+      console.log(response.data);
+      // navigate('/');
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
   return (
   <div>
       <section class="contact" id="contact">
@@ -19,10 +36,22 @@ function Contact() {
         <div class="form-contact">
           <div class="content-contact">
             <h3>Contact Us</h3>
-            <form action="">
-              <input class="input" type="text" placeholder="Your Name" name="name" />
-              <input class="input" type="email" placeholder="Your Email" name="email" />
-              <textarea class="input" placeholder="Tell Us About Your Needs" name="message"></textarea>
+            <form action="" onSubmit={handleSubmit}>
+              <input class="input" 
+              type="text" placeholder="Your Name" 
+              name="name" 
+              onChange={(e) => setName(e.target.value)}
+                value={name} />
+              <input class="input" type="email" 
+              placeholder="Your Email" name="email"
+              onChange={(e) => setEmail(e.target.value)}
+                value={email} />
+              <textarea class="input" 
+              placeholder="Tell Us About Your Needs" 
+              name="message"
+              onChange={(e) => setMsg(e.target.value)}
+                value={msg}
+              ></textarea>
               <input type="submit" value="Send" />
             </form>
           </div>
