@@ -23,7 +23,7 @@ const Users = () => {
       })
       .then((response) => {
         const result = response.data;
-        console.log(result);
+        // console.log(result);
         if (result.length > 0) {
           setData(result);
         }
