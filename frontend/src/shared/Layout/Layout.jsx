@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 // import { Redirect } from "react-router-dom";
 import "./Layout.css";
 import NavBar from "../NavBar/NavBar";
-import SideBar from "../../SideBar/SideBar";
+import SideBar from "../SideBar/SideBar";
 const Layout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 

@@ -17,7 +17,7 @@ const Devices = () => {
         },
       })
       .then((response) => {
-        const result = response.data.data;
+        const result = response.data;
         console.log(result);
         if (result.length > 0) {
           setData(result);

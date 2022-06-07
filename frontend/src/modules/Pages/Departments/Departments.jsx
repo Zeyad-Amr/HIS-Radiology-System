@@ -16,7 +16,7 @@ const Departments = () => {
         },
       })
       .then((response) => {
-        const result = response.data.data;
+        const result = response.data;
         console.log(result);
         if (result.length > 0) {
           setData(result);
@@ -40,7 +40,6 @@ const Departments = () => {
         }}
       >
         <h1>Departments</h1>
-        <Button onClick={() => {}} value={"Create"} />{" "}
       </div>
       <div style={{ width: "100%" }}>
         {data.length > 0 ? (
