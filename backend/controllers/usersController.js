@@ -165,7 +165,8 @@ module.exports = {
       return res.status(403).send("Not Authorized");
     }
     db.query(
-      `UPDATE user SET ? WHERE id = ?`,
+      `UPDATE user LEFT JOIN emp 
+      ON id = user_id SET ? WHERE id = ?`,
       [req.body, id],
       (err, result) => {
         if (err) {
