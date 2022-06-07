@@ -38,11 +38,11 @@ function App() {
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/404" element={<ErrorPage />} />
 
-          <Route path="/order/:id" element={<OrderDetails />} />
-          <Route path="/user/:id" element={<UserDetails />} />
-          <Route path="/service/:id" element={<ServicesDetails />} />
-          <Route path="/device/:id" element={<DevicesDetails />} />
-          <Route path="/appointment/:id" element={<AppointmentDetails />} />
+          <Route path="/orders/:id" element={<OrderDetails />} />
+          <Route path="/users/:id" element={<UserDetails />} />
+          <Route path="/services/:id" element={<ServicesDetails />} />
+          <Route path="/devices/:id" element={<DevicesDetails />} />
+          <Route path="/appointments/:id" element={<AppointmentDetails />} />
 
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
