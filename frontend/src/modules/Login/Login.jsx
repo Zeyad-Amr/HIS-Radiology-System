@@ -21,7 +21,7 @@ function Login() {
       const response = await axios.post(`/login`, { user, pwd });
       console.log(response.data);
       localStorage.setItem("token", response.data.token);
-      // navigate('/');
+      navigate('/');
     } catch (error) {
       console.log(error.response.data);
     }

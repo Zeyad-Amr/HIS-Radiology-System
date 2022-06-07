@@ -15,6 +15,15 @@ function Header() {
     AOS.refresh();
   }, []);
 
+  const loggedIn = () => {
+  if(!localStorage.token){
+    return false
+  }
+  return true
+}
+console.log(loggedIn);
+
+
   return (
   <div>
     <header className="header" id="home"  data-aos="zoom-out">
@@ -40,12 +49,17 @@ function Header() {
         {/* <Link to="/contact"> */}
         <a href="#contact">Contact</a>
         {/* </Link> */}
-        <Link to="/login">
-        <a>Login</a>
-        </Link>
-        <Link to="/SignUp">
-        <a>Sign UP</a>
-        </Link>
+        {loggedIn()? 
+        <a style={{cursor:'pointer'}} onClick={() => {
+          localStorage.removeItem("token");
+          window.location.reload();
+          }}>Log Out</a>
+        :
+        <><Link to="/login">
+              <a>Login</a>
+            </Link><Link to="/SignUp">
+                <a>Sign UP</a>
+              </Link></> }
     </nav>
 
     {/* responsive */}
