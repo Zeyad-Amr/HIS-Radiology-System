@@ -11,7 +11,7 @@ const Orders = () => {
   const navigate = useNavigate();
   const onClickRow = (row) => {
     console.log(row);
-    navigate("/");
+    navigate("/orders/" + row.id);
   };
 
   const geetData = async () => {

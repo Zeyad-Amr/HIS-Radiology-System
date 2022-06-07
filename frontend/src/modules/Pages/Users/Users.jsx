@@ -46,7 +46,6 @@ const Users = () => {
         }}
       >
         <h1>Users</h1>
-        <Button onClick={() => {}} value={"Create"} />{" "}
       </div>
       <div style={{ width: "100%" }}>
         {data.length > 0 ? (
@@ -75,3 +74,4 @@ const Users = () => {
 };
 
 export default Users;
+// <Button onClick={() => {}} value={"Create"} />{" "}

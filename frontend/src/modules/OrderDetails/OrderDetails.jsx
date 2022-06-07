@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OrderDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHourglassStart, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -8,64 +8,42 @@ import * as AiIcons from "react-icons/ai";
 import * as TbIcons from "react-icons/tb";
 import Button from "../../shared/Button/Button";
 import { useParams } from "react-router-dom";
-
+import axios from "../../globals/API/axios";
+import { useNavigate } from "react-router-dom";
 function OrderDetails() {
+  const { id } = useParams();
+  const navigate = useNavigate();
 
-  const [report , setReport] = useState("")
-  const [url , setUrl] = useState("")
+  const [report, setReport] = useState("");
+  const [url, setUrl] = useState("");
 
-  const [data , setData] = useState(
-    {
-      id: 3,
-      receptionist_id: "66",
-      patient_id: "30",
-      services_id: "2",
-      result_id: "null",
-      create_time: "2022-06-02T13:39:30.000Z",
-      status: "null",
-      ptId: "30",
-      ptUsername: "zexo12",
-      ptEmail: "bedo@gmail.com",
-      ptFname: "null",
-      ptLname: "null",
-      ptBdate: "null",
-      ptGender: "null",
-      ptPhone: "null",
-      ptSSN: "01234567893215",
-      ptAddress: "null",
-      ptRole: "patient",
-      recptId: "66",
-      recptUsername: "ahmedraouf",
-      recptEmail: "ahmed@gmail.com",
-      recptFname: "ahmed",
-      recptLname: "raouf",
-      recptBdate: "2001-07-11T21:00:00.000Z",
-      recptGender: "male",
-      recptPhone: "01067662457",
-      recptSSN: "01234567893235",
-      recptAddress: "5 hasan el saban fisl giza",
-      recptRole: "Admin",
-      recptShift: "null",
-      srvId: 2,
-      srvName: "cat scan",
-      cost: "5000",
-      depName: "Radiology",
-      resID: "null",
-      fileId: "null",
-      fileURL: "null",
-      repId: "null",
-      repTxt: "null",
-      apptId: "null",
-      appt_start_time: "null",
-      appt_end_time: "null"
-  }
-  )
-  var [step, setSidebar] = useState(3)
+  const [data, setData] = useState({});
+  var [step, setSidebar] = useState(1);
 
   function handleClick(event) {
     event.preventDefault();
     alert("Button Clicked");
   }
+
+  const getData = async () => {
+    const response = await axios
+      .get(`/order`, {
+        params: { id: id },
+        headers: {
+          "auth-token":
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY1NDE5Nzg2NH0.iIt0uRUfctdqZAtBTV3E6ylE-8LK_2IwwQH0S5j_tTM",
+        },
+      })
+      .then((response) => {
+        const result = response.data;
+
+        setData(result[0]);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div>
@@ -152,84 +130,183 @@ function OrderDetails() {
 
           <form className="signup-form m-5" id="dataDisplay">
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.ptFname + " " + data.ptLname} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.ptFname + " " + data.ptLname}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Patien tName</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.recptFname + " " +data.recptLname} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.recptFname + " " + data.recptLname}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Receptionist Name</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.create_time} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.create_time}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Create Time</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.ptBdate} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.ptBdate}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Patient Date</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.ptGender} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.ptGender}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Patient Gender</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.ptPhone} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.ptPhone}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Patient Phone</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.ptSSN} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.ptSSN}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Patient SSN</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.appt_start_time} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.appt_start_time}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>App Start Time</label>
             </div>
 
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.cost} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.cost}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Cost</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.depName} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.depName}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Dep Name</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.fileURL} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.fileURL}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Field URL</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.recptPhone} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.recptPhone}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Rec Phone</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.srvName} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.srvName}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Service Name</label>
             </div>
             <div class="input-field" id="inputField">
-              <input type="text" required value={data.status} disabled={true} style={{backgroundColor:"white"}}></input>
+              <input
+                type="text"
+                required
+                value={data.status}
+                disabled={true}
+                style={{ backgroundColor: "white" }}
+              ></input>
               <label>Status</label>
             </div>
 
-            <label htmlFor="" className='text' >Report</label>
-            <input type="text" 
-            style={{minWidth:"50%", paddingLeft:"15px", height:"80px", margin:"16px"}}
-            value={report}
-            onChange={(e) => setReport(e.target.value)}
+            <label htmlFor="" className="text">
+              Report
+            </label>
+            <input
+              type="text"
+              style={{
+                minWidth: "50%",
+                paddingLeft: "15px",
+                height: "80px",
+                margin: "16px",
+              }}
+              value={report}
+              onChange={(e) => setReport(e.target.value)}
             />
             <div class="input-field" id="inputField">
-            <input type="text" required value={url} onChange={(e) => setUrl(e.target.value)} ></input>
-            <label>URL</label>
-          </div>
-            <div style={{margin:"26px"}}>
-            <Button onClick={handleClick} value="save" />
+              <input
+                type="text"
+                required
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+              ></input>
+              <label>URL</label>
+            </div>
+            <div style={{ margin: "26px" }}>
+              <Button onClick={handleClick} value="save" />
             </div>
           </form>
           <div
             className="m-4"
-            style={{ display: "flex", width:"95%" , justifyContent:"flex-end"}}
+            style={{
+              display: "flex",
+              width: "95%",
+              justifyContent: "flex-end",
+            }}
           >
-
             <Button onClick={handleClick} value="preview report" />
-          
           </div>
         </div>
       </section>
