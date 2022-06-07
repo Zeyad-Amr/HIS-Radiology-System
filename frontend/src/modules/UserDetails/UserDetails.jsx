@@ -3,8 +3,10 @@ import "./UserDetails.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson, faUser } from "@fortawesome/free-solid-svg-icons";
 import Button from "../../shared/Button/Button";
-
+import { useParams } from "react-router-dom";
 function UserDetails({ props }) {
+  const { id } = useParams();
+
   const data = {
     username: "ahmedraouf4",
     email: "ahmed@gmail.com",

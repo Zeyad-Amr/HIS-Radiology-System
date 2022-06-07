@@ -1,7 +1,10 @@
 import React from "react";
 import Button from "../../shared/Button/Button";
+import { useParams } from "react-router-dom";
 
 function AppointmentDetails() {
+  const { id } = useParams();
+
   const data = {
     start_time: "2022-06-04",
     end_time: "2022-06-04",

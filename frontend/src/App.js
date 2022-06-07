@@ -37,11 +37,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/SignUp" element={<Signup />} />
           <Route path="/404" element={<ErrorPage />} />
-          <Route path="/order" element={<OrderDetails />} />
-          <Route path="/user" element={<UserDetails />} />
-          <Route path="/service" element={<ServicesDetails />} />
-          <Route path="/device" element={<DevicesDetails />} />
-          <Route path="/appointment" element={<AppointmentDetails />} />
+
+          <Route path="/order/:id" element={<OrderDetails />} />
+          <Route path="/user/:id" element={<UserDetails />} />
+          <Route path="/service/:id" element={<ServicesDetails />} />
+          <Route path="/device/:id" element={<DevicesDetails />} />
+          <Route path="/appointment/:id" element={<AppointmentDetails />} />
+
           <Route path="/test" element={<Test />} />
           <Route path="*" element={<NotFound />} />
 
