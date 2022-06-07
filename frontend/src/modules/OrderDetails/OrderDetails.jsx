@@ -21,8 +21,30 @@ function OrderDetails() {
   var [step, setSidebar] = useState(1);
 
   function handleClick(event) {
-    event.preventDefault();
-    alert("Button Clicked");
+    // event.preventDefault();
+    // alert("Button Clicked");
+    if (url !== "") {
+      window.location.href = url;
+    }
+  }
+
+  const updateData = async () => {
+    const response = await axios
+      .put(
+        `/emp`,
+        {},
+        {
+          headers: {
+            "auth-token":
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY1NDE5Nzg2NH0.iIt0uRUfctdqZAtBTV3E6ylE-8LK_2IwwQH0S5j_tTM",
+          },
+        }
+      )
+      .then((response) => {});
+  };
+
+  function handleClickSave(event) {
+    // updateData();
   }
 
   const getData = async () => {
@@ -43,7 +65,9 @@ function OrderDetails() {
 
   useEffect(() => {
     getData();
-  }, []);
+    setReport(report);
+    setUrl(url);
+  }, [url]);
 
   return (
     <div>
@@ -56,28 +80,6 @@ function OrderDetails() {
             <div className="col-12">
               <div className="card card-stepper text-black">
                 <div className="card-body p-5">
-                  {/* <div className="d-flex justify-content-between align-items-center mb-5">
-                    <div>
-                      <h5 className="mb-0">
-                        INVOICE{" "}
-                        <span className="text-primary font-weight-bold">
-                          #Y34XDHR
-                        </span>
-                      </h5>
-                    </div>
-                    <div className="text-end">
-                      <p className="mb-0">
-                        Expected Arrival <span>01/12/19</span>
-                      </p>
-                      <p className="mb-0">
-                        USPS{" "}
-                        <span className="font-weight-bold">
-                          234094567242423422898
-                        </span>
-                      </p>
-                    </div>
-                  </div> */}
-
                   <ul
                     id="progressbar-2"
                     className="d-flex justify-content-between mx-0 mt-0 mb-5 px-0 pt-0 pb-2"
@@ -295,7 +297,7 @@ function OrderDetails() {
               <label>URL</label>
             </div>
             <div style={{ margin: "26px" }}>
-              <Button onClick={handleClick} value="save" />
+              <Button onClick={handleClick} value="preview report" />
             </div>
           </form>
           <div
@@ -306,7 +308,7 @@ function OrderDetails() {
               justifyContent: "flex-end",
             }}
           >
-            <Button onClick={handleClick} value="preview report" />
+            <Button onClick={handleClickSave} value="save" />
           </div>
         </div>
       </section>
