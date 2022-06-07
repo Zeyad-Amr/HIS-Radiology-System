@@ -2,11 +2,13 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { loggedIn, logOut } from "../../Login/loginService";
 
 
 // for images
 import logo from '../../../assets/images/Hospital-Logo.svg';
 import home from '../images/home.png';
+
 
 function Header() {
   
@@ -14,13 +16,12 @@ function Header() {
     AOS.init();
     AOS.refresh();
   }, []);
-
-  const loggedIn = () => {
-  if(!localStorage.token){
-    return false
+  const logout = () => {
+    logOut()
+    window.location.reload();
   }
-  return true
-}
+
+  
 console.log(loggedIn);
 
 
