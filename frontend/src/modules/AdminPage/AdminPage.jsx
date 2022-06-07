@@ -18,6 +18,7 @@ function AdminPage() {
       })
       .then((response) => {
         const result = response.data.data;
+        console.log(result);
         if (result.length > 0) {
           setData(result);
         }
