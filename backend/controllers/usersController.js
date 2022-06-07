@@ -47,8 +47,8 @@ module.exports = {
   getAllUsers: (req, res) => {
     db.query(
       `SELECT * 
-    FROM user LEFT JOIN emp
-    ON id = user_id`,
+    FROM user LEFT JOIN (SELECT dep.name emp LEFT JOIN dep ON emp.dep_id = dep.id)
+     ON id = user_id`,
       (err, result) => {
         if (err) {
           return res.status(400).json(err);
@@ -69,13 +69,13 @@ module.exports = {
     console.log(filterName);
     console.log(filter);
     let selectStat = `SELECT * 
-    FROM user LEFT JOIN emp 
-    ON id = user_id 
+    FROM user LEFT JOIN (SELECT * FROM emp LEFT JOIN (SELECT name,id FROM dep) dep ON emp.dep_id = dep.id) emp
+    ON id = emp.user_id 
     WHERE ${filterName} = ?`;
     if (!filterName) {
       selectStat = `SELECT * 
-      FROM user LEFT JOIN emp 
-      ON id = user_id `;
+      FROM user LEFT JOIN (SELECT * FROM emp LEFT JOIN (SELECT name,id FROM dep) dep ON emp.dep_id = dep.id) emp
+      ON user.id = emp.user_id `;
     }
 
     db.query(selectStat, filter, (err, result) => {
