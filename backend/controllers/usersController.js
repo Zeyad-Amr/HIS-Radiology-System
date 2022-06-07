@@ -1,4 +1,4 @@
-const db = require("../mysql-con");
+const { db } = require("../mysql-con");
 const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -93,6 +93,9 @@ module.exports = {
     }
     const value=req.body;
     const result={value};
+
+    const value = req.body;
+    const result = { value };
 
     //encrypt password
     const salt = await bcrypt.genSalt(10);

@@ -1,4 +1,4 @@
-const db = require("../mysql-con");
+const { db } = require("../mysql-con");
 const paginate = require("../methods/paginate");
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
     if (Object.keys(req.body).length === 0) {
       return res.sendStatus(400);
     }
-    const data = { ...req.body, doctor_id: creatorId };
+    const data = { ...req.body, tech_id: creatorId };
     const sqlStatment = `INSERT INTO file SET ?`;
     db.query(sqlStatment, data, (err, result) => {
       if (err) {

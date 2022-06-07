@@ -1,5 +1,3 @@
-const db = require("../mysql-con");
+const { db } = require("../mysql-con");
 
-module.exports = {
-  
-};
+module.exports = {};
