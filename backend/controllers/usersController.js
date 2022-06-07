@@ -3,7 +3,6 @@ const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const passwordComplexity = require("joi-password-complexity");
-const paginate = require("../methods/paginate");
 
 function validate(user) {
   const passwordValidations = {
