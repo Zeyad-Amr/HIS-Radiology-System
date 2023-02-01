@@ -1,10 +1,15 @@
 # HIS Radiology System
 - Hospital Information System specialy radiology department managing all the operations between patients, receptionist, technicians, doctors.
+- Multi Users, booking appointments, reports, results.
 
 ## Technologies
+### Frontend
 - React Js
+- CSS
 - Bootstrap
+### Backend
 - Node Js
+- Rest APIs
 - MySQL Database
 
 ## Installation
