@@ -1,4 +1,4 @@
-# Akwa-HIS-System
+# HIS Radiology System
 
 ## Installation
 1. run `npm install` to install all backend packages
