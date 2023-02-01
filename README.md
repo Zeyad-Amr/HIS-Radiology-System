@@ -1,8 +1,16 @@
 # HIS Radiology System
+- Hospital Information System specialy radiology department managing all the operations between patients, receptionist, technicians, doctors.
+
+## Technologies
+- React Js
+- Bootstrap
+- Node Js
+- MySQL Database
 
 ## Installation
-1. run `npm install` to install all backend packages
-2. run `npm run install-client` to install all frontend packages
+- Run `npm install` to install all backend packages
+- Run `npm run install-client` to install all frontend packages
+
 ## Run the application
 ### To run the whole website run this command
 - `npm run dev-start`
