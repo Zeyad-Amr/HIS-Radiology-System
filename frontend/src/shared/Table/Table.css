@@ -1,0 +1,19 @@
+.super-app-theme--header {
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.super-app-theme-row {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+.MuiDataGrid-renderingZone,
+.MuiDataGrid-root .MuiDataGrid-row {
+  width: 100% !important;
+  font-size: 12px;
+}

@@ -1,0 +1,50 @@
+#backG {
+  background-image: url(./Images/serviceDetails.svg);
+  background-size: cover;
+  height: 100vh;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#backGR {
+  background-image: url(../DevicesDetails/Images/deviceDetails.svg);
+  background-size: cover;
+  height: 100vh;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.serv-cont {
+  width: 40%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 3%;
+}
+
+@media (max-width: 900px) {
+  .serv-cont {
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+  }
+
+  #backGR {
+    height: 100vh;
+  }
+
+  #backG {
+    height: 100vh;
+  }
+}
+
+#appoint {
+  background-image: url(../AppointmentDetails/Images/appoint.svg);
+  background-size: 60%;
+  height: 100vh;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right;
+}

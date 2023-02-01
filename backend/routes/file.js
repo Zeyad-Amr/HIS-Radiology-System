@@ -1,21 +1,21 @@
 const router = require("express").Router();
-const orderController = require("../controllers/orderController");
+const fileController = require("../controllers/fileController");
 
 const authn = require("../middlewares/authn");
 const authz = require("../middlewares/authz");
 
 /**
-   * @api {get} /order GET/ order/
-   * @apiName GetAllOrders
-   * @apiGroup Order Router
+   * @api {get} /file GET/ file/
+   * @apiName GetAllfiles
+   * @apiGroup file Router
    * @apiVersion 1.0.0
-   * @apiSuccess {Object[]} order A list of all orders in db 
+   * @apiSuccess {Object[]} file A list of all files in db 
    * @apiError (Error 400) valdiationError Something wrong with the body of the request 
-   * @apiError (Error 404) orderNotFound error occur when there is no order stored in db
+   * @apiError (Error 404) fileNotFound error occur when there is no file stored in db
    * @apiHeader (Header) {String} (not working to make testing easy) auth-token the token of the user loged in
    * @apiParam {String} page number of the page (defult value 1)
    * @apiParam {String} limit limit of items per page (if you didn't send it the response will have all the data)
-   * @apiSampleRequest http://127.0.0.1:4000/api/order?page=1&limit=3
+   * @apiSampleRequest http://127.0.0.1:4000/api/file?page=1&limit=3
    * @apiSuccessExample sample:
    *{
     "totalData": 2,
@@ -45,20 +45,20 @@ const authz = require("../middlewares/authz");
 } 
 
 */
-//get order
-router.get("/order", orderController.getAllOrders);
+//get file
+router.get("/file", fileController.getAllfile);
 
 /**
-   * @api {get} /order/:id GET/ order/:id
-   * @apiName GetSingleOrder
-   * @apiGroup Order Router
+   * @api {get} /file/:id GET/ file/:id
+   * @apiName GetSinglefile
+   * @apiGroup file Router
    * @apiVersion 1.0.0
-   * @apiSuccess {Object} order An order w/ given id
+   * @apiSuccess {Object} file An file w/ given id
    * @apiError (Error 400) valdiationError Something wrong with the body of the request 
-   * @apiError (Error 404) orderNotFound error occur when there is no order w/ given id in db
+   * @apiError (Error 404) fileNotFound error occur when there is no file w/ given id in db
    * @apiHeader (Header) {String} (not working to make testing easy) auth-token the token of the user loged in
-   * @apiParam {String} id id of the order
-   * @apiSampleRequest http://127.0.0.1:4000/api/order/3
+   * @apiParam {String} id id of the file
+   * @apiSampleRequest http://127.0.0.1:4000/api/file/3
    * @apiSuccessExample sample:
    * {
         "id": 3,
@@ -70,50 +70,46 @@ router.get("/order", orderController.getAllOrders);
         "status": ""
       }
 */
-// get single order
-router.get("/order/:id", orderController.getOneOrder);
+// get single file
+router.get("/file/:id", fileController.getOnefile);
 
 /**
- * @api {post} /order POST/ order/
- * @apiName PostOrder
- * @apiGroup Order Router
+ * @api {post} /file POST/ file/
+ * @apiName Postfile
+ * @apiGroup file Router
  * @apiVersion 1.0.0
- * @apiSuccess {Object} order An order w/ given id
+ * @apiSuccess {Object} file An file w/ given id
  * @apiError (Error 400) valdiationError Something wrong with the body of the request
- * @apiError (Error 404) orderNotFound error occur when there is no order w/ given id in db
+ * @apiError (Error 404) fileNotFound error occur when there is no file w/ given id in db
  * @apiHeader (Header) {String} auth-token the token of the user loged in (Admin token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjYsInJvbGUiOiJBZG1pbiIsImlhdCI6MTY1NDE5Nzg2NH0.iIt0uRUfctdqZAtBTV3E6ylE-8LK_2IwwQH0S5j_tTM)
- * @apiBody {Integer} patient_id The id of the patient want the order
- * @apiBody {Integer} result_id The id of the result of the order
- * @apiBody {String} status The status of the order
- * @apiSampleRequest http://127.0.0.1:4000/api/order
+ * @apiBody {Integer} patient_id The id of the patient want the file
+ * @apiBody {Integer} result_id The id of the result of the file
+ * @apiBody {String} status The status of the file
+ * @apiSampleRequest http://127.0.0.1:4000/api/file
  * @apiSuccessExample sample:
  * Created
  */
-//add a order
-router.post(
-  "/order",
-  [authn, authz(["reseptionist", "Admin"])],
-  orderController.createOrder
-);
+//add a file
+router.post("/file", [authn, authz(["doctor"])], fileController.createfile);
 
-//edit order
-// router.put("/order/:id", orderController.updateOrder);
+//edit file
+router.put("/file/:id", [authn], fileController.updatefile);
 
 /**
- * @api {delete} /order/:id DELETE/ order/:id
- * @apiName DeleteOrder
- * @apiGroup Order Router
+ * @api {delete} /file/:id DELETE/ file/:id
+ * @apiName Deletefile
+ * @apiGroup file Router
  * @apiVersion 1.0.0
- * @apiSuccess {Object} message order deleted successfully
+ * @apiSuccess {Object} message file deleted successfully
  * @apiError (Error 400) valdiationError Something wrong with the body of the request
- * @apiError (Error 404) orderNotFound error occur when there is no Order w/ given id in db
+ * @apiError (Error 404) fileNotFound error occur when there is no file w/ given id in db
  * @apiHeader (Header) {String} (not working to make testing easy) auth-token the token of the user loged in
  * @apiParam {String} id id of the sevice
- * @apiSampleRequest http://127.0.0.1:4000/api/order/3
+ * @apiSampleRequest http://127.0.0.1:4000/api/file/3
  * @apiSuccessExample sample:
- * { message: "order deleted successfully" }
+ * { message: "file deleted successfully" }
  */
-delete order;
-router.delete("/order/:id", orderController.deleteOrder);
+delete file;
+router.delete("/file/:id", fileController.deletefile);
 
 module.exports = router;
